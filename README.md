@@ -1,20 +1,45 @@
+
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,50:2563eb,100:38bdf8&height=280&section=header&text=EROLLA%20RISHVIN%20REDDY&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=38" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,35:0f172a,70:2563eb,100:38bdf8&height=280&section=header&text=EROLLA%20RISHVIN%20REDDY&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=38" width="100%" />
 
-  <img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&weight=700&size=24&pause=1100&color=38BDF8&center=true&vCenter=true&width=1000&lines=IoT+%7C+Backend+%7C+Cybersecurity+Developer;Building+secure%2C+intelligent%2C+real-world+systems;Arduino+%7C+ESP32+%7C+Python+%7C+DSA+%7C+AI" />
+  <img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&weight=700&size=24&pause=1000&color=38BDF8&center=true&vCenter=true&width=1000&lines=IoT+%7C+Backend+%7C+Cybersecurity+Developer;Building+secure%2C+intelligent%2C+real-world+systems;Arduino+%7C+ESP32+%7C+Python+%7C+DSA+%7C+AI" />
 
-  <p>
-    <img src="https://img.shields.io/badge/Woxsen_University-Class_of_2028-2563eb?style=for-the-badge&logo=google-scholar&logoColor=white" />
-    <img src="https://komarev.com/ghpvc/?username=RishvinReddy&label=PROFILE%20VIEWS&color=020617&style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Status-Open%20for%20Collaboration-16a34a?style=for-the-badge&logo=github&logoColor=white" />
-  </p>
+  <br>
+
+  <img src="https://img.shields.io/badge/Woxsen_University-Class_of_2028-2563eb?style=for-the-badge&logo=google-scholar&logoColor=white" />
+  <img src="https://komarev.com/ghpvc/?username=RishvinReddy&label=PROFILE%20VIEWS&color=020617&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Open_for_Collaboration-16a34a?style=for-the-badge&logo=github&logoColor=white" />
 
 </div>
 
 ---
 
-## ✦ SYSTEM IDENTITY
+<div style="background: linear-gradient(180deg, #0f172a 0%, #111827 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+
+## ✦ About Me
+
+I’m **Erolla Rishvin Reddy**, a **B.Tech student from India** focused on designing **secure, intelligent, and practical systems**.
+
+I work across:
+
+- **IoT and Embedded Systems**
+- **Backend Development**
+- **Cybersecurity**
+- **Data Structures & Algorithms**
+- **AI-powered problem solving**
+
+I enjoy building projects that are not only technically strong, but also clean, useful, and easy to understand.
+
+> I do not just write code. I design systems that solve real problems.
+
+</div>
+
+---
+
+<div style="background: linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(17,24,39,0.95) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+
+## ✦ Core Identity
 
 <table>
   <tr>
@@ -23,7 +48,11 @@
   </tr>
   <tr>
     <td><b>Role</b></td>
-    <td>IoT + Backend + Cybersecurity Developer</td>
+    <td>IoT, Backend & Cybersecurity Developer</td>
+  </tr>
+  <tr>
+    <td><b>Education</b></td>
+    <td>B.Tech @ Woxsen University</td>
   </tr>
   <tr>
     <td><b>Focus</b></td>
@@ -35,45 +64,46 @@
   </tr>
 </table>
 
----
-
-## ✦ ABOUT ME
-
-I’m a **B.Tech student from India** who enjoys turning ideas into **practical, secure, and intelligent systems**.
-
-My work sits at the intersection of:
-
-- **IoT and Embedded Systems**
-- **Backend Development**
-- **Cybersecurity**
-- **Data Structures & Algorithms**
-- **AI-based problem solving**
-
-I like building projects that feel polished, useful, and technically strong.
-
-> I do not just code features. I design systems.
+</div>
 
 ---
 
-## ✦ WHAT I BUILD
+<div style="background: linear-gradient(180deg, rgba(2,6,23,0.95) 0%, rgba(15,23,42,0.95) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
 
-<div align="center">
+## ✦ What I Build
 
-| Layer | What I Do |
-|---|---|
-| 🔌 **IoT & Embedded** | Arduino, ESP32, sensors, automation, device integration |
-| 🧠 **Backend Systems** | Python, Flask, FastAPI, APIs, application logic |
-| 🔐 **Cybersecurity** | Secure communication, packet analysis, network defense |
-| 📊 **DSA** | Tries, KMP, visualizers, optimization, problem solving |
-| 🤖 **AI & Smart Systems** | Intelligent automation, data-driven workflows |
+<table>
+  <tr>
+    <td><b>🔌 IoT & Embedded</b></td>
+    <td>Arduino, ESP32, sensor automation, device integration</td>
+  </tr>
+  <tr>
+    <td><b>🧠 Backend Systems</b></td>
+    <td>Python, Flask, FastAPI, APIs, structured application logic</td>
+  </tr>
+  <tr>
+    <td><b>🔐 Cybersecurity</b></td>
+    <td>Secure communication, packet analysis, network defense, cryptography</td>
+  </tr>
+  <tr>
+    <td><b>📊 DSA</b></td>
+    <td>Tries, KMP, algorithm design, optimization, visualizers</td>
+  </tr>
+  <tr>
+    <td><b>🤖 AI & Smart Systems</b></td>
+    <td>Intelligent automation, data-driven workflows, future-focused projects</td>
+  </tr>
+</table>
 
 </div>
 
 ---
 
-## ✦ TECH MATRIX
+<div style="background: linear-gradient(180deg, rgba(15,23,42,0.98) 0%, rgba(17,24,39,0.98) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
 
-### Languages & Backend
+## ✦ Tech Stack
+
+### Programming & Backend
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
@@ -113,47 +143,91 @@ I like building projects that feel polished, useful, and technically strong.
   <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" />
 </p>
 
+</div>
+
 ---
 
-## ✦ FEATURED PROJECTS
+<div style="background: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(15,23,42,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+
+## ✦ Currently Working On
+
+<!--
+Replace LATEST_REPO with your real latest repo name via GitHub Actions automation.
+The workflow can update this placeholder automatically.
+-->
 
 <div align="center">
 
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=LATEST_REPO&theme=transparent&hide_border=true" />
+
+</div>
+
+<p align="center">
+  <i>Auto-updated latest repository highlight</i>
+</p>
+
+</div>
+
+---
+
+<div style="background: linear-gradient(180deg, rgba(15,23,42,0.96) 0%, rgba(17,24,39,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+
+## ✦ Featured Projects
+
+<div align="center">
+
+| Project | Domain | Impact | Core Tech |
+|---|---|---|---|
+| **SecureComm Analyzer** | Network Security | Traffic analysis and secure communication insights | Python, JavaScript, Packet Analysis |
+| **NetShield IDS** | Intrusion Detection | Snort-based detection and monitoring | Snort, Linux, Security Monitoring |
+| **Smart Irrigation System** | IoT & Smart Agriculture | Sensor-based automated water management | Arduino, Sensors, IoT Dashboard |
+| **Smart Dustbin System** | IoT Automation | Waste monitoring using ultrasonic sensing | Arduino, Ultrasonic Sensor, LEDs |
+| **Disk Scheduling Visualizer** | Operating Systems | Algorithm visualization and learning tool | Python, Tkinter |
+| **Text Search Engine** | DSA | Trie + KMP based search optimization | Tries, KMP Algorithm |
+
+</div>
+
+</div>
+
+---
+
+<div style="background: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(15,23,42,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+
+## ✦ Project Showcase
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Smart-Irrigation-System&theme=transparent&hide_border=true" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Text-Search-Engine&theme=transparent&hide_border=true" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Disk-Scheduling-Visualizer&theme=transparent&hide_border=true" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Smart-Dustbin-System&theme=transparent&hide_border=true" />
+
+</div>
+
+</div>
+
+---
+
+<div style="background: linear-gradient(180deg, rgba(15,23,42,0.96) 0%, rgba(17,24,39,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+
+## ✦ Current Focus
+
 <table>
   <tr>
-    <th>Project</th>
-    <th>Domain</th>
-    <th>Impact</th>
+    <td><b>Security</b></td>
+    <td>Secure communications, IDS, cryptography, network analysis</td>
   </tr>
   <tr>
-    <td><b>SecureComm Analyzer</b></td>
-    <td>Network Security</td>
-    <td>Traffic analysis and secure communication insights</td>
+    <td><b>Development</b></td>
+    <td>Backend APIs, modular systems, clean architecture</td>
   </tr>
   <tr>
-    <td><b>NetShield IDS</b></td>
-    <td>Intrusion Detection</td>
-    <td>Snort-based detection and monitoring</td>
+    <td><b>Embedded</b></td>
+    <td>Sensor-driven IoT systems with practical automation</td>
   </tr>
   <tr>
-    <td><b>Smart Irrigation System</b></td>
-    <td>IoT & Smart Agriculture</td>
-    <td>Sensor-based automated water management</td>
-  </tr>
-  <tr>
-    <td><b>Smart Dustbin System</b></td>
-    <td>IoT Automation</td>
-    <td>Waste monitoring using ultrasonic sensing</td>
-  </tr>
-  <tr>
-    <td><b>Disk Scheduling Visualizer</b></td>
-    <td>Operating Systems</td>
-    <td>Algorithm visualization and learning tool</td>
-  </tr>
-  <tr>
-    <td><b>Text Search Engine</b></td>
-    <td>DSA</td>
-    <td>Trie + KMP based search optimization</td>
+    <td><b>Growth</b></td>
+    <td>AI integration, scalable systems, better UI/UX, stronger deployment</td>
   </tr>
 </table>
 
@@ -161,29 +235,93 @@ I like building projects that feel polished, useful, and technically strong.
 
 ---
 
-## ✦ WHY THIS PROFILE STANDS OUT
+<div style="background: linear-gradient(180deg, rgba(2,6,23,0.98) 0%, rgba(15,23,42,0.98) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
 
-- I build **real-world systems**, not just classroom demos.
-- I combine **hardware, software, security, and logic** in one flow.
-- I care about **clean structure, usability, and performance**.
-- I value projects that are **practical, secure, and scalable**.
+## ✦ Engineering Philosophy
 
----
+<div align="center">
 
-## ✦ GITHUB METRICS
+```text
+Code → System → Intelligence → Impact
+
+</div>
+
+
+	•	I don’t just write code — I design systems
+	•	I don’t just build features — I build solutions
+	•	I don’t just connect devices — I create intelligence
+	•	I don’t just make projects — I make them useful
+
+</div>
+
+
+
+⸻
+
+
+<div style="background: linear-gradient(180deg, rgba(15,23,42,0.96) 0%, rgba(17,24,39,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+
+
+✦ Milestones & Strengths
+
+<table>
+  <tr>
+    <td><b>Problem Solving</b></td>
+    <td>Strong foundation in DSA and algorithm design</td>
+  </tr>
+  <tr>
+    <td><b>Project Thinking</b></td>
+    <td>Builds systems around real use cases</td>
+  </tr>
+  <tr>
+    <td><b>Security Mindset</b></td>
+    <td>Prefers secure design over shortcuts</td>
+  </tr>
+  <tr>
+    <td><b>Full-Stack Awareness</b></td>
+    <td>Understands hardware, backend logic, and deployment</td>
+  </tr>
+  <tr>
+    <td><b>Learning Curve</b></td>
+    <td>Continuously improving in AI, cybersecurity, and scalable software</td>
+  </tr>
+</table>
+
+
+</div>
+
+
+
+⸻
+
+
+<div style="background: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(15,23,42,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+
+
+✦ GitHub Metrics
 
 <p align="center">
   <img width="48%" src="https://github-readme-stats.vercel.app/api?username=RishvinReddy&show_icons=true&theme=transparent&hide_border=true" />
   <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=RishvinReddy&theme=transparent&hide_border=true" />
 </p>
 
+
 <p align="center">
   <img width="90%" src="https://github-readme-activity-graph.vercel.app/graph?username=RishvinReddy&theme=github-compact&hide_border=true" />
 </p>
 
----
 
-## ✦ CONNECT
+</div>
+
+
+
+⸻
+
+
+<div style="background: linear-gradient(180deg, rgba(15,23,42,0.96) 0%, rgba(17,24,39,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+
+
+✦ Connect
 
 <p align="center">
   <a href="https://linkedin.com/in/rishvin-reddy">
@@ -203,12 +341,23 @@ I like building projects that feel polished, useful, and technically strong.
   </a>
 </p>
 
----
+
+</div>
+
+
+
+⸻
+
 
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:38bdf8,50:2563eb,100:020617&height=140&section=footer" width="100%" />
 
-  ### Secure systems. Smart code. Real impact.
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:38bdf8,50:2563eb,100:020617&height=150&section=footer" width="100%" />
+
+
+Secure systems. Smart code. Real impact.
 
 </div>
+```
+
+
