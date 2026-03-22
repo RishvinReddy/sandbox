@@ -1,66 +1,67 @@
 <div align="center">
 
-  <svg width="100%" height="140" viewBox="0 0 1000 140" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#111827" />
-        <stop offset="50%" stop-color="#2563eb" />
-        <stop offset="100%" stop-color="#0f172a" />
-      </linearGradient>
-    </defs>
-    <style>
-      .name { font: bold 46px 'Segoe UI', Arial, sans-serif; fill: url(#titleGradient); letter-spacing: 2px; }
-      .subtitle { font: 600 18px 'Segoe UI', Arial, sans-serif; fill: #475569; letter-spacing: 3px; }
-    </style>
-    <text x="50%" y="55" text-anchor="middle" class="name">EROLLA RISHVIN REDDY</text>
-    <text x="50%" y="98" text-anchor="middle" class="subtitle">
-      SOFTWARE ENGINEERING • IOT • CYBERSECURITY • AI
-    </text>
-  </svg>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,100:2563eb&height=180&section=header&text=EROLLA%20RISHVIN%20REDDY&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-  <p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&weight=700&size=22&pause=1200&color=2563EB&center=true&vCenter=true&width=900&lines=Software+Engineering+Student;IoT+%7C+Backend+%7C+Cybersecurity+Developer;Building+secure%2C+intelligent+systems+with+Python+%26+ESP32" />
+
+  <p>
     <img src="https://img.shields.io/badge/Woxsen_University-Class_of_2028-2563eb?style=for-the-badge&logo=google-scholar&logoColor=white" />
     <img src="https://komarev.com/ghpvc/?username=RishvinReddy&label=PROFILE%20VIEWS&color=111827&style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Status-Open%20for%20Collaboration-16a34a?style=for-the-badge&logo=github&logoColor=white" />
+    <img src="https://img.shields.io/badge/Open%20for-Collaboration-16a34a?style=for-the-badge&logo=github&logoColor=white" />
   </p>
 
 </div>
 
 ---
 
-## 👋 About Me
+## ✦ About Me
 
-I’m **Erolla Rishvin Reddy**, a **B.Tech student from India** focused on building practical, high-impact technology solutions.
+I am **Erolla Rishvin Reddy**, a **B.Tech student from India** focused on building **secure, intelligent, and practical technology systems**.
 
-My work sits at the intersection of:
+My work combines:
 
 - **IoT and Embedded Systems**
 - **Backend Development**
 - **Cybersecurity**
 - **Data Structures & Algorithms**
-- **AI-driven problem solving**
+- **AI-powered problem solving**
 
-I enjoy creating systems that are **secure, scalable, and useful in the real world**.
+I like building projects that feel real, useful, and technically solid.
 
-> I build projects with purpose: not just to code, but to solve real problems.
-
----
-
-## 🎯 What I Focus On
-
-| Area | Focus |
-|---|---|
-| **IoT & Embedded** | Arduino, ESP32, sensor-based automation |
-| **Backend Development** | Flask, FastAPI, Python APIs, system logic |
-| **Cybersecurity** | Secure communication, network defense, packet analysis |
-| **DSA & Problem Solving** | Tries, KMP, visualizers, algorithm design |
-| **AI & Smart Systems** | Intelligent automation, data-driven applications |
+> My goal is simple: create systems that are not only functional, but smart, secure, and scalable.
 
 ---
 
-## 🧰 Tech Stack
+## ✦ Core Strengths
 
-### 🚀 Programming & Backend
+<table>
+  <tr>
+    <td><b>IoT & Embedded</b></td>
+    <td>Arduino, ESP32, sensor-based automation, hardware-software integration</td>
+  </tr>
+  <tr>
+    <td><b>Backend Development</b></td>
+    <td>Python, Flask, FastAPI, logic design, API development</td>
+  </tr>
+  <tr>
+    <td><b>Cybersecurity</b></td>
+    <td>Secure communication, packet analysis, network defense, cryptography basics</td>
+  </tr>
+  <tr>
+    <td><b>DSA</b></td>
+    <td>Tries, KMP, visualizers, algorithm design, optimization</td>
+  </tr>
+  <tr>
+    <td><b>AI & Smart Systems</b></td>
+    <td>Intelligent automation, data-driven applications, practical AI exploration</td>
+  </tr>
+</table>
+
+---
+
+## ✦ Tech Stack
+
+### Languages & Backend
 <p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
@@ -70,29 +71,29 @@ I enjoy creating systems that are **secure, scalable, and useful in the real wor
   <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
 </p>
 
-### 🌐 IoT & Embedded
+### IoT & Embedded
 <p>
   <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" />
   <img src="https://img.shields.io/badge/ESP32-000000?style=for-the-badge&logo=espressif&logoColor=white" />
   <img src="https://img.shields.io/badge/Tinkercad-FF6F00?style=for-the-badge&logo=autodesk&logoColor=white" />
 </p>
 
-### 🔐 Cybersecurity & Networking
+### Cybersecurity & Networking
 <p>
   <img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" />
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
   <img src="https://img.shields.io/badge/Snort-CC0000?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
   <img src="https://img.shields.io/badge/Cryptography-0f172a?style=for-the-badge&logo=security&logoColor=white" />
 </p>
 
-### 📊 Data & AI
+### Data & AI
 <p>
   <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
   <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
   <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" />
 </p>
 
-### ☁️ Deployment
+### Deployment
 <p>
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
   <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
@@ -102,7 +103,7 @@ I enjoy creating systems that are **secure, scalable, and useful in the real wor
 
 ---
 
-## 🚀 Featured Projects
+## ✦ Featured Projects
 
 <div align="center">
 
@@ -119,16 +120,16 @@ I enjoy creating systems that are **secure, scalable, and useful in the real wor
 
 ---
 
-## 📌 What Makes My Work Different
+## ✦ Why My Profile Stands Out
 
-- I build **real-world systems**, not just demo projects.
-- I focus on **security, performance, and clean structure**.
-- I like combining **hardware + software + logic** into one complete solution.
-- I care about **usability**, so my projects are made to be understandable and practical.
+- I build **real-world systems**, not just tutorial projects.
+- I combine **hardware, software, logic, and security** into one workflow.
+- I focus on **clean structure, strong fundamentals, and practical results**.
+- I care about making projects that are **easy to understand and valuable to use**.
 
 ---
 
-## 📈 GitHub Stats
+## ✦ GitHub Metrics
 
 <p align="center">
   <img width="48%" src="https://github-readme-stats.vercel.app/api?username=RishvinReddy&show_icons=true&theme=transparent&hide_border=true" />
@@ -136,12 +137,12 @@ I enjoy creating systems that are **secure, scalable, and useful in the real wor
 </p>
 
 <p align="center">
-  <img width="80%" src="https://github-readme-activity-graph.vercel.app/graph?username=RishvinReddy&theme=github-compact&hide_border=true" />
+  <img width="85%" src="https://github-readme-activity-graph.vercel.app/graph?username=RishvinReddy&theme=github-compact&hide_border=true" />
 </p>
 
 ---
 
-## 🤝 Connect With Me
+## ✦ Connect With Me
 
 <p align="center">
   <a href="https://linkedin.com/in/rishvin-reddy">
@@ -165,6 +166,8 @@ I enjoy creating systems that are **secure, scalable, and useful in the real wor
 
 <div align="center">
 
-### ✨ Building secure, intelligent, and impactful systems.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563eb,100:0f172a&height=120&section=footer" width="100%" />
+
+### Secure systems. Smart code. Real impact.
 
 </div>
