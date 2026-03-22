@@ -1,13 +1,13 @@
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,100:2563eb&height=180&section=header&text=EROLLA%20RISHVIN%20REDDY&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:2563eb,100:38bdf8&height=220&section=header&text=EROLLA%20RISHVIN%20REDDY&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35" width="100%" />
 
-  <img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&weight=700&size=22&pause=1200&color=2563EB&center=true&vCenter=true&width=900&lines=Software+Engineering+Student;IoT+%7C+Backend+%7C+Cybersecurity+Developer;Building+secure%2C+intelligent+systems+with+Python+%26+ESP32" />
+  <img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&weight=700&size=22&pause=1200&color=2563EB&center=true&vCenter=true&width=900&lines=B.Tech+Student+%7C+IoT+%26+Backend+Developer+%7C+Cybersecurity+Enthusiast;Building+secure%2C+intelligent%2C+and+impactful+systems;Arduino+%7C+ESP32+%7C+Python+%7C+DSA+%7C+AI" />
 
   <p>
     <img src="https://img.shields.io/badge/Woxsen_University-Class_of_2028-2563eb?style=for-the-badge&logo=google-scholar&logoColor=white" />
     <img src="https://komarev.com/ghpvc/?username=RishvinReddy&label=PROFILE%20VIEWS&color=111827&style=for-the-badge" />
-    <img src="https://img.shields.io/badge/Open%20for-Collaboration-16a34a?style=for-the-badge&logo=github&logoColor=white" />
+    <img src="https://img.shields.io/badge/Status-Open%20for%20Collaboration-16a34a?style=for-the-badge&logo=github&logoColor=white" />
   </p>
 
 </div>
@@ -16,52 +16,52 @@
 
 ## ✦ About Me
 
-I am **Erolla Rishvin Reddy**, a **B.Tech student from India** focused on building **secure, intelligent, and practical technology systems**.
+I’m **Erolla Rishvin Reddy**, a **B.Tech student from India** focused on designing **secure, intelligent, and practical systems**.
 
-My work combines:
+My work blends:
 
 - **IoT and Embedded Systems**
 - **Backend Development**
 - **Cybersecurity**
 - **Data Structures & Algorithms**
-- **AI-powered problem solving**
+- **AI-driven problem solving**
 
-I like building projects that feel real, useful, and technically solid.
+I enjoy building projects that are not only technically strong, but also useful in real-world scenarios.
 
-> My goal is simple: create systems that are not only functional, but smart, secure, and scalable.
+> I believe great engineering is not just about code — it is about clarity, security, and impact.
 
 ---
 
-## ✦ Core Strengths
+## ✦ What I Build
 
 <table>
   <tr>
     <td><b>IoT & Embedded</b></td>
-    <td>Arduino, ESP32, sensor-based automation, hardware-software integration</td>
+    <td>Arduino, ESP32, sensor automation, device communication</td>
   </tr>
   <tr>
-    <td><b>Backend Development</b></td>
-    <td>Python, Flask, FastAPI, logic design, API development</td>
+    <td><b>Backend Systems</b></td>
+    <td>Python, Flask, FastAPI, APIs, structured application logic</td>
   </tr>
   <tr>
     <td><b>Cybersecurity</b></td>
-    <td>Secure communication, packet analysis, network defense, cryptography basics</td>
+    <td>Secure communication, network defense, packet analysis, cryptography basics</td>
   </tr>
   <tr>
     <td><b>DSA</b></td>
-    <td>Tries, KMP, visualizers, algorithm design, optimization</td>
+    <td>Tries, KMP, visualizers, algorithmic problem solving</td>
   </tr>
   <tr>
     <td><b>AI & Smart Systems</b></td>
-    <td>Intelligent automation, data-driven applications, practical AI exploration</td>
+    <td>Intelligent automation, data-driven tools, future-focused projects</td>
   </tr>
 </table>
 
 ---
 
-## ✦ Tech Stack
+## ✦ Core Skills
 
-### Languages & Backend
+### Programming & Backend
 <p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
@@ -120,16 +120,16 @@ I like building projects that feel real, useful, and technically solid.
 
 ---
 
-## ✦ Why My Profile Stands Out
+## ✦ Why My Work Stands Out
 
-- I build **real-world systems**, not just tutorial projects.
-- I combine **hardware, software, logic, and security** into one workflow.
-- I focus on **clean structure, strong fundamentals, and practical results**.
-- I care about making projects that are **easy to understand and valuable to use**.
+- I build **real-world systems**, not just demo code.
+- I combine **hardware, software, security, and logic** in one workflow.
+- I focus on **clean design, strong fundamentals, and practical execution**.
+- I value projects that are **useful, understandable, and scalable**.
 
 ---
 
-## ✦ GitHub Metrics
+## ✦ GitHub Stats
 
 <p align="center">
   <img width="48%" src="https://github-readme-stats.vercel.app/api?username=RishvinReddy&show_icons=true&theme=transparent&hide_border=true" />
@@ -166,8 +166,8 @@ I like building projects that feel real, useful, and technically solid.
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563eb,100:0f172a&height=120&section=footer" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:38bdf8,50:2563eb,100:0f172a&height=120&section=footer" width="100%" />
 
-### Secure systems. Smart code. Real impact.
+  ### Secure systems. Smart code. Real impact.
 
 </div>
