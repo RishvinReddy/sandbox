@@ -139,10 +139,11 @@ My work sits at the intersection of **embedded systems**, **backend engineering*
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Smart-Irrigation-System&theme=github_dark&hide_border=true&bg_color=0c1527&title_color=38bdf8&icon_color=1d4ed8" />
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Text-Search-Engine&theme=github_dark&hide_border=true&bg_color=0c1527&title_color=38bdf8&icon_color=1d4ed8" />
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Disk-Scheduling-Visualizer&theme=github_dark&hide_border=true&bg_color=0c1527&title_color=38bdf8&icon_color=1d4ed8" />
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Smart-Dustbin-System&theme=github_dark&hide_border=true&bg_color=0c1527&title_color=38bdf8&icon_color=1d4ed8" />
+<!-- PINNED_REPOS_START -->
+
+<!-- This section is auto-updated by GitHub Actions → .github/workflows/update-pins.yml -->
+
+<!-- PINNED_REPOS_END -->
 
 </div>
 
