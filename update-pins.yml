@@ -1,0 +1,96 @@
+name: Update Pinned Repos in README
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Runs every day at midnight UTC
+    - cron: "0 0 * * *"
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch real repos and update README
+        env:
+          GH_USERNAME: RishvinReddy
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fetch up to 8 most recently pushed public repos (exclude the profile repo itself)
+          REPOS=$(curl -s \
+            -H "Authorization: token $GH_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/users/$GH_USERNAME/repos?sort=pushed&direction=desc&per_page=8&type=public" \
+            | python3 -c "
+          import sys, json
+          repos = json.load(sys.stdin)
+          names = [
+            r['name'] for r in repos
+            if not r.get('fork')
+            and not r.get('archived')
+            and r['name'] != '$GH_USERNAME'  # skip the profile repo
+          ][:4]  # take the 4 most recent
+          print('\n'.join(names))
+          ")
+
+          echo "Detected repos:"
+          echo "$REPOS"
+
+          # Build the pin card markdown block
+          CARDS=""
+          while IFS= read -r REPO; do
+            if [ -n "$REPO" ]; then
+              CARDS+="<img src=\"https://github-readme-stats.vercel.app/api/pin/?username=${GH_USERNAME}&repo=${REPO}&theme=github_dark&hide_border=true&bg_color=0c1527&title_color=38bdf8&icon_color=1d4ed8\" />\n"
+            fi
+          done <<< "$REPOS"
+
+          # Replace the content between the automation markers in README.md
+          python3 - <<'PYEOF'
+          import re, os
+
+          username = os.environ["GH_USERNAME"]
+          repos_raw = """$REPOS"""
+          repos = [r.strip() for r in repos_raw.strip().split("\n") if r.strip()]
+
+          cards = "\n".join([
+            f'<img src="https://github-readme-stats.vercel.app/api/pin/?username={username}&repo={repo}&theme=github_dark&hide_border=true&bg_color=0c1527&title_color=38bdf8&icon_color=1d4ed8" />'
+            for repo in repos
+          ])
+
+          new_block = (
+            "<!-- PINNED_REPOS_START -->\n"
+            "<!-- This section is auto-updated by GitHub Actions → .github/workflows/update-pins.yml -->\n"
+            + cards + "\n"
+            "<!-- PINNED_REPOS_END -->"
+          )
+
+          with open("README.md", "r") as f:
+            content = f.read()
+
+          updated = re.sub(
+            r"<!-- PINNED_REPOS_START -->.*?<!-- PINNED_REPOS_END -->",
+            new_block,
+            content,
+            flags=re.DOTALL
+          )
+
+          with open("README.md", "w") as f:
+            f.write(updated)
+
+          print("README.md updated successfully.")
+          PYEOF
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --staged --quiet || git commit -m "chore: auto-update pinned repo cards [skip ci]"
+          git push
