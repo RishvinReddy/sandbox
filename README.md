@@ -1,363 +1,249 @@
-
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,35:0f172a,70:2563eb,100:38bdf8&height=280&section=header&text=EROLLA%20RISHVIN%20REDDY&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=38" width="100%" />
-
-  <img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&weight=700&size=24&pause=1000&color=38BDF8&center=true&vCenter=true&width=1000&lines=IoT+%7C+Backend+%7C+Cybersecurity+Developer;Building+secure%2C+intelligent%2C+real-world+systems;Arduino+%7C+ESP32+%7C+Python+%7C+DSA+%7C+AI" />
-
-  <br>
-
-  <img src="https://img.shields.io/badge/Woxsen_University-Class_of_2028-2563eb?style=for-the-badge&logo=google-scholar&logoColor=white" />
-  <img src="https://komarev.com/ghpvc/?username=RishvinReddy&label=PROFILE%20VIEWS&color=020617&style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Status-Open_for_Collaboration-16a34a?style=for-the-badge&logo=github&logoColor=white" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:020617,30:0c1527,65:1d4ed8,100:38bdf8&height=300&section=header&text=EROLLA%20RISHVIN%20REDDY&fontSize=48&fontColor=ffffff&animation=fadeIn&fontAlignY=40&desc=IoT%20%7C%20Backend%20%7C%20Cybersecurity%20Developer&descAlignY=58&descSize=18&descColor=94a3b8" width="100%" />
 
 </div>
 
----
+<div align="center">
 
-<div style="background: linear-gradient(180deg, #0f172a 0%, #111827 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&pause=1200&color=38BDF8&center=true&vCenter=true&width=1000&lines=Building+secure%2C+intelligent%2C+real-world+systems;IoT+%7C+Backend+%7C+Cybersecurity+%7C+AI;Arduino+%7C+ESP32+%7C+Python+%7C+Flask+%7C+FastAPI;Designing+systems+that+solve+real+problems" />
+
+</div>
+
+<br>
+
+<div align="center">
+
+![Woxsen University](https://img.shields.io/badge/Woxsen_University-Class_of_2028-1d4ed8?style=for-the-badge&logo=google-scholar&logoColor=white)
+![Profile Views](https://komarev.com/ghpvc/?username=RishvinReddy&label=PROFILE+VIEWS&color=0c1527&style=for-the-badge)
+![Open for Collaboration](https://img.shields.io/badge/Status-Open_for_Collaboration-16a34a?style=for-the-badge&logo=github&logoColor=white)
+![Location](https://img.shields.io/badge/Based_in-India-ff9933?style=for-the-badge&logo=googlemaps&logoColor=white)
+
+</div>
+
+-----
 
 ## ✦ About Me
 
-I’m **Erolla Rishvin Reddy**, a **B.Tech student from India** focused on designing **secure, intelligent, and practical systems**.
+I’m **Erolla Rishvin Reddy** — a B.Tech CSE student at Woxsen University (Class of 2028) who builds across the full hardware-to-cloud spectrum.
 
-I work across:
+My work sits at the intersection of **embedded systems**, **backend engineering**, and **network security** — not just as a student exploring theory, but as someone building real tools for real use cases. From sensor-driven IoT automation to secure web APIs to intrusion detection pipelines, I care about systems that are *correct*, *clean*, and *useful*.
 
-- **IoT and Embedded Systems**
-- **Backend Development**
-- **Cybersecurity**
-- **Data Structures & Algorithms**
-- **AI-powered problem solving**
+> **I do not just write code. I design systems that solve real problems.**
 
-I enjoy building projects that are not only technically strong, but also clean, useful, and easy to understand.
-
-> I do not just write code. I design systems that solve real problems.
-
-</div>
-
----
-
-<div style="background: linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(17,24,39,0.95) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+-----
 
 ## ✦ Core Identity
 
-<table>
-  <tr>
-    <td><b>Name</b></td>
-    <td>Erolla Rishvin Reddy</td>
-  </tr>
-  <tr>
-    <td><b>Role</b></td>
-    <td>IoT, Backend & Cybersecurity Developer</td>
-  </tr>
-  <tr>
-    <td><b>Education</b></td>
-    <td>B.Tech @ Woxsen University</td>
-  </tr>
-  <tr>
-    <td><b>Focus</b></td>
-    <td>Secure intelligent systems, automation, and scalable logic</td>
-  </tr>
-  <tr>
-    <td><b>Mindset</b></td>
-    <td>Build real solutions. Keep them secure. Make them elegant.</td>
-  </tr>
-</table>
+|             |                                                          |
+|-------------|----------------------------------------------------------|
+|**Name**     |Erolla Rishvin Reddy                                      |
+|**Role**     |IoT · Backend · Cybersecurity Developer                   |
+|**Education**|B.Tech CSE @ Woxsen University, Hyderabad                 |
+|**Focus**    |Secure intelligent systems, automation, scalable logic    |
+|**Mindset**  |Build real solutions. Keep them secure. Make them elegant.|
 
-</div>
-
----
-
-<div style="background: linear-gradient(180deg, rgba(2,6,23,0.95) 0%, rgba(15,23,42,0.95) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+-----
 
 ## ✦ What I Build
 
-<table>
-  <tr>
-    <td><b>🔌 IoT & Embedded</b></td>
-    <td>Arduino, ESP32, sensor automation, device integration</td>
-  </tr>
-  <tr>
-    <td><b>🧠 Backend Systems</b></td>
-    <td>Python, Flask, FastAPI, APIs, structured application logic</td>
-  </tr>
-  <tr>
-    <td><b>🔐 Cybersecurity</b></td>
-    <td>Secure communication, packet analysis, network defense, cryptography</td>
-  </tr>
-  <tr>
-    <td><b>📊 DSA</b></td>
-    <td>Tries, KMP, algorithm design, optimization, visualizers</td>
-  </tr>
-  <tr>
-    <td><b>🤖 AI & Smart Systems</b></td>
-    <td>Intelligent automation, data-driven workflows, future-focused projects</td>
-  </tr>
-</table>
+|Domain                  |Stack & Tools                                                    |
+|------------------------|-----------------------------------------------------------------|
+|**🔌 IoT & Embedded**    |Arduino, ESP32, sensor integration, Tinkercad, device automation |
+|**🧠 Backend Systems**   |Python, Flask, FastAPI, REST APIs, structured application logic  |
+|**🔐 Cybersecurity**     |Wireshark, Snort, Cryptography, packet analysis, network defense |
+|**📊 DSA & Algorithms**  |Tries, KMP, scheduling algorithms, algorithm visualizers         |
+|**🤖 AI & Smart Systems**|Intelligent automation, TensorFlow, OpenCV, data-driven workflows|
 
-</div>
-
----
-
-<div style="background: linear-gradient(180deg, rgba(15,23,42,0.98) 0%, rgba(17,24,39,0.98) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+-----
 
 ## ✦ Tech Stack
 
-### Programming & Backend
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" />
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
-</p>
-
-### IoT & Embedded
-<p align="center">
-  <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" />
-  <img src="https://img.shields.io/badge/ESP32-000000?style=for-the-badge&logo=espressif&logoColor=white" />
-  <img src="https://img.shields.io/badge/Tinkercad-FF6F00?style=for-the-badge&logo=autodesk&logoColor=white" />
-</p>
-
-### Cybersecurity & Networking
-<p align="center">
-  <img src="https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white" />
-  <img src="https://img.shields.io/badge/Snort-CC0000?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
-  <img src="https://img.shields.io/badge/Cryptography-0f172a?style=for-the-badge&logo=security&logoColor=white" />
-</p>
-
-### Data & AI
-<p align="center">
-  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
-  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
-  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" />
-</p>
-
-### Deployment
-<p align="center">
-  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
-  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
-  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" />
-  <img src="https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" />
-</p>
-
-</div>
-
----
-
-<div style="background: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(15,23,42,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
-
-## ✦ Currently Working On
-
-<!--
-Replace LATEST_REPO with your real latest repo name via GitHub Actions automation.
-The workflow can update this placeholder automatically.
--->
+### ⚙️ Programming & Backend
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=LATEST_REPO&theme=transparent&hide_border=true" />
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 
 </div>
 
-<p align="center">
-  <i>Auto-updated latest repository highlight</i>
-</p>
+### 🔌 IoT & Embedded
+
+<div align="center">
+
+![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
+![ESP32](https://img.shields.io/badge/ESP32-000000?style=for-the-badge&logo=espressif&logoColor=white)
+![Tinkercad](https://img.shields.io/badge/Tinkercad-FF6F00?style=for-the-badge&logo=autodesk&logoColor=white)
+![Cisco Packet Tracer](https://img.shields.io/badge/Packet_Tracer-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white)
 
 </div>
 
----
+### 🔐 Cybersecurity & Networking
 
-<div style="background: linear-gradient(180deg, rgba(15,23,42,0.96) 0%, rgba(17,24,39,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+<div align="center">
+
+![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
+![Snort](https://img.shields.io/badge/Snort-CC0000?style=for-the-badge&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Cryptography](https://img.shields.io/badge/Cryptography-0f172a?style=for-the-badge&logo=keybase&logoColor=38bdf8)
+
+</div>
+
+### 🤖 Data & AI
+
+<div align="center">
+
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+
+</div>
+
+### 🚀 Deployment & Tools
+
+<div align="center">
+
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-181717?style=for-the-badge&logo=github&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+</div>
+
+-----
 
 ## ✦ Featured Projects
 
-<div align="center">
+|Project                                                                                     |Domain             |Core Tech                          |Highlights                                     |
+|--------------------------------------------------------------------------------------------|-------------------|-----------------------------------|-----------------------------------------------|
+|[**SecureComm Analyzer**](https://github.com/RishvinReddy)                                  |Network Security   |Python · JS · Packet Analysis      |Traffic inspection & secure comms insights     |
+|[**NetShield IDS**](https://github.com/RishvinReddy)                                        |Intrusion Detection|Snort · Linux · Security Monitoring|Rule-based threat detection & alerting         |
+|[**Smart Irrigation System**](https://github.com/RishvinReddy/Smart-Irrigation-System)      |IoT & Agriculture  |Arduino · Sensors · IoT Dashboard  |Automated sensor-driven water management       |
+|[**Smart Dustbin System**](https://github.com/RishvinReddy/Smart-Dustbin-System)            |IoT Automation     |Arduino · Ultrasonic · LEDs        |Real-time waste level monitoring               |
+|[**Disk Scheduling Visualizer**](https://github.com/RishvinReddy/Disk-Scheduling-Visualizer)|Operating Systems  |Python · Tkinter                   |Algorithm visualizer for OS concepts           |
+|[**Text Search Engine**](https://github.com/RishvinReddy/Text-Search-Engine)                |DSA                |Tries · KMP Algorithm              |High-performance pattern search engine         |
+|[**Outing Permission Generator**](https://github.com/RishvinReddy)                          |Web Tools          |HTML · JS · Canvas API · PDF       |Hostel system tool — signature, PDF, CSV export|
 
-| Project | Domain | Impact | Core Tech |
-|---|---|---|---|
-| **SecureComm Analyzer** | Network Security | Traffic analysis and secure communication insights | Python, JavaScript, Packet Analysis |
-| **NetShield IDS** | Intrusion Detection | Snort-based detection and monitoring | Snort, Linux, Security Monitoring |
-| **Smart Irrigation System** | IoT & Smart Agriculture | Sensor-based automated water management | Arduino, Sensors, IoT Dashboard |
-| **Smart Dustbin System** | IoT Automation | Waste monitoring using ultrasonic sensing | Arduino, Ultrasonic Sensor, LEDs |
-| **Disk Scheduling Visualizer** | Operating Systems | Algorithm visualization and learning tool | Python, Tkinter |
-| **Text Search Engine** | DSA | Trie + KMP based search optimization | Tries, KMP Algorithm |
-
-</div>
-
-</div>
-
----
-
-<div style="background: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(15,23,42,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+-----
 
 ## ✦ Project Showcase
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Smart-Irrigation-System&theme=transparent&hide_border=true" />
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Text-Search-Engine&theme=transparent&hide_border=true" />
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Disk-Scheduling-Visualizer&theme=transparent&hide_border=true" />
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Smart-Dustbin-System&theme=transparent&hide_border=true" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Smart-Irrigation-System&theme=github_dark&hide_border=true&bg_color=0c1527&title_color=38bdf8&icon_color=1d4ed8" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Text-Search-Engine&theme=github_dark&hide_border=true&bg_color=0c1527&title_color=38bdf8&icon_color=1d4ed8" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Disk-Scheduling-Visualizer&theme=github_dark&hide_border=true&bg_color=0c1527&title_color=38bdf8&icon_color=1d4ed8" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=RishvinReddy&repo=Smart-Dustbin-System&theme=github_dark&hide_border=true&bg_color=0c1527&title_color=38bdf8&icon_color=1d4ed8" />
 
 </div>
 
+-----
+
+## ✦ GitHub Metrics
+
+<div align="center">
+
+<img width="48%" src="https://github-readme-stats.vercel.app/api?username=RishvinReddy&show_icons=true&theme=github_dark&hide_border=true&bg_color=0c1527&title_color=38bdf8&icon_color=1d4ed8&text_color=94a3b8" />
+<img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=RishvinReddy&theme=dark&hide_border=true&background=0c1527&stroke=1d4ed8&ring=38bdf8&fire=38bdf8&currStreakLabel=94a3b8" />
+
 </div>
 
----
+<div align="center">
 
-<div style="background: linear-gradient(180deg, rgba(15,23,42,0.96) 0%, rgba(17,24,39,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+<img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RishvinReddy&layout=compact&theme=github_dark&hide_border=true&bg_color=0c1527&title_color=38bdf8&text_color=94a3b8&langs_count=8" />
+
+</div>
+
+<div align="center">
+
+<img width="90%" src="https://github-readme-activity-graph.vercel.app/graph?username=RishvinReddy&theme=react-dark&hide_border=true&bg_color=0c1527&color=38bdf8&line=1d4ed8&point=38bdf8" />
+
+</div>
+
+-----
 
 ## ✦ Current Focus
 
-<table>
-  <tr>
-    <td><b>Security</b></td>
-    <td>Secure communications, IDS, cryptography, network analysis</td>
-  </tr>
-  <tr>
-    <td><b>Development</b></td>
-    <td>Backend APIs, modular systems, clean architecture</td>
-  </tr>
-  <tr>
-    <td><b>Embedded</b></td>
-    <td>Sensor-driven IoT systems with practical automation</td>
-  </tr>
-  <tr>
-    <td><b>Growth</b></td>
-    <td>AI integration, scalable systems, better UI/UX, stronger deployment</td>
-  </tr>
-</table>
+|Area           |What I’m Working Toward                                            |
+|---------------|-------------------------------------------------------------------|
+|**Security**   |Secure comms, IDS pipelines, cryptography, network analysis        |
+|**Development**|Backend APIs, modular design, clean architecture                   |
+|**Embedded**   |Sensor-driven IoT systems with real-world automation               |
+|**Growth**     |AI integration, scalable systems, better UI/UX, stronger deployment|
 
-</div>
-
----
-
-<div style="background: linear-gradient(180deg, rgba(2,6,23,0.98) 0%, rgba(15,23,42,0.98) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+-----
 
 ## ✦ Engineering Philosophy
 
-<div align="center">
-
 ```text
 Code → System → Intelligence → Impact
+```
 
-</div>
+```
+┌─────────────────────────────────────────────────────┐
+│  I don't just write code    →  I design systems      │
+│  I don't just build features →  I build solutions    │
+│  I don't just connect devices →  I create intelligence│
+│  I don't just make projects →  I make them useful    │
+└─────────────────────────────────────────────────────┘
+```
 
+-----
 
-	•	I don’t just write code — I design systems
-	•	I don’t just build features — I build solutions
-	•	I don’t just connect devices — I create intelligence
-	•	I don’t just make projects — I make them useful
+## ✦ Milestones & Strengths
 
-</div>
+|Strength                |Detail                                                       |
+|------------------------|-------------------------------------------------------------|
+|**Problem Solving**     |Strong DSA foundation — Tries, KMP, scheduling algorithms    |
+|**Project Thinking**    |Builds real-world systems, not just coursework checkboxes    |
+|**Security Mindset**    |Defaults to secure design, not shortcuts                     |
+|**Full-Stack Awareness**|Spans hardware → backend → deployment                        |
+|**Learning Velocity**   |Rapidly advancing in AI, cybersecurity, and scalable software|
 
+-----
 
+<details>
+<summary><b>✦ Currently Studying @ Woxsen University</b></summary>
 
-⸻
+<br>
 
+|Subject                         |Focus                                                |
+|--------------------------------|-----------------------------------------------------|
+|**Computer Networks**           |Routing, switching, VLANs, network architecture      |
+|**Network Security**            |IDS/IPS, cryptography, threat modeling               |
+|**Operating Systems**           |Scheduling, memory management, process control       |
+|**IoT System Design**           |Sensor integration, embedded protocols, smart systems|
+|**Language & Critical Thinking**|Technical communication, rhetoric, analytical writing|
 
-<div style="background: linear-gradient(180deg, rgba(15,23,42,0.96) 0%, rgba(17,24,39,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
+</details>
 
+-----
 
-✦ Milestones & Strengths
-
-<table>
-  <tr>
-    <td><b>Problem Solving</b></td>
-    <td>Strong foundation in DSA and algorithm design</td>
-  </tr>
-  <tr>
-    <td><b>Project Thinking</b></td>
-    <td>Builds systems around real use cases</td>
-  </tr>
-  <tr>
-    <td><b>Security Mindset</b></td>
-    <td>Prefers secure design over shortcuts</td>
-  </tr>
-  <tr>
-    <td><b>Full-Stack Awareness</b></td>
-    <td>Understands hardware, backend logic, and deployment</td>
-  </tr>
-  <tr>
-    <td><b>Learning Curve</b></td>
-    <td>Continuously improving in AI, cybersecurity, and scalable software</td>
-  </tr>
-</table>
-
-
-</div>
-
-
-
-⸻
-
-
-<div style="background: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(15,23,42,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
-
-
-✦ GitHub Metrics
-
-<p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=RishvinReddy&show_icons=true&theme=transparent&hide_border=true" />
-  <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=RishvinReddy&theme=transparent&hide_border=true" />
-</p>
-
-
-<p align="center">
-  <img width="90%" src="https://github-readme-activity-graph.vercel.app/graph?username=RishvinReddy&theme=github-compact&hide_border=true" />
-</p>
-
-
-</div>
-
-
-
-⸻
-
-
-<div style="background: linear-gradient(180deg, rgba(15,23,42,0.96) 0%, rgba(17,24,39,0.96) 100%); border: 1px solid #334155; border-radius: 18px; padding: 22px; margin: 18px 0;">
-
-
-✦ Connect
-
-<p align="center">
-  <a href="https://linkedin.com/in/rishvin-reddy">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="mailto:rishvin18@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-  <a href="https://wa.me/message/J4P3MRT5HOAZH1">
-    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-  </a>
-  <a href="https://github.com/RishvinReddy">
-    <img src="https://img.shields.io/badge/GitHub-111827?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
-  <a href="https://rishvinreddy.github.io/Rishvin_Reddy_Portfolio/">
-    <img src="https://img.shields.io/badge/Portfolio-0f172a?style=for-the-badge&logo=vercel&logoColor=white" />
-  </a>
-</p>
-
-
-</div>
-
-
-
-⸻
-
+## ✦ Connect
 
 <div align="center">
 
-
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:38bdf8,50:2563eb,100:020617&height=150&section=footer" width="100%" />
-
-
-Secure systems. Smart code. Real impact.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/rishvin-reddy)
+[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rishvin18@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/message/J4P3MRT5HOAZH1)
+[![GitHub](https://img.shields.io/badge/GitHub-0c1527?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RishvinReddy)
+[![Portfolio](https://img.shields.io/badge/Portfolio-38bdf8?style=for-the-badge&logo=vercel&logoColor=0c1527)](https://rishvinreddy.github.io/Rishvin_Reddy_Portfolio/)
 
 </div>
-```
 
+-----
 
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:38bdf8,40:1d4ed8,80:0c1527,100:020617&height=160&section=footer&text=Secure+systems.+Smart+code.+Real+impact.&fontSize=18&fontColor=94a3b8&fontAlignY=65&animation=fadeIn" width="100%" />
+
+</div>
