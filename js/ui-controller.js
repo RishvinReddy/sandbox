@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       // --- 1.a Appending "Codebase Map" Global Tab ---
       const mapItem = document.createElement('div');
-      mapItem.className = 'text-[13px] text-slate-600 dark:text-slate-400 px-2 py-1.5 flex items-center gap-2 cursor-pointer hover:bg-purple-500/10 hover:text-purple-600 dark:hover:text-purple-400 rounded-md transition-colors group select-none file-item font-bold mb-2 border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 shadow-sm';
+      mapItem.className = 'text-[13px] text-slate-600  px-2 py-1.5 flex items-center gap-2 cursor-pointer hover:bg-purple-500/10 hover:text-purple-600  rounded-md transition-colors group select-none file-item font-bold mb-2 border border-slate-200  bg-white/50  shadow-sm';
       mapItem.dataset.repo = 'Codebase Map';
       mapItem.innerHTML = `
         <svg class="w-4 h-4 text-purple-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        <span class="truncate w-full text-purple-700 dark:text-purple-400">Codebase Map</span>
+        <span class="truncate w-full text-purple-700">Codebase Map</span>
       `;
       mapItem.addEventListener('click', () => openMapTab(repos));
       explorerTree.appendChild(mapItem);
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         wrapper.className = 'repo-wrapper mb-1';
 
         const item = document.createElement('div');
-        item.className = 'text-[13px] text-slate-600 dark:text-slate-400 px-2 py-1.5 flex items-center justify-between cursor-pointer hover:bg-primary/10 hover:text-primary dark:hover:text-primary rounded-md transition-colors group select-none file-item';
+        item.className = 'text-[13px] text-slate-600  px-2 py-1.5 flex items-center justify-between cursor-pointer hover:bg-primary/10 hover:text-primary  rounded-md transition-colors group select-none file-item';
         item.dataset.repo = repo.name;
         
         // Pick an icon based on primary language or classification
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         `;
         
         const treeContainer = document.createElement('div');
-        treeContainer.className = 'repo-tree-container hidden pl-3 ml-2.5 mt-1 border-l border-slate-200 dark:border-slate-800 flex-col gap-1 text-xs';
+        treeContainer.className = 'repo-tree-container hidden pl-3 ml-2.5 mt-1 border-l border-slate-200  flex-col gap-1 text-xs';
         treeContainer.id = `tree-${repo.name}`;
 
         item.addEventListener('click', async () => {
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 
                 importantFiles.forEach(f => {
                   const fItem = document.createElement('div');
-                  fItem.className = 'text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary py-1 px-2 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer rounded transition-colors truncate';
+                  fItem.className = 'text-slate-500 hover:text-primary   py-1 px-2 hover:bg-slate-100  cursor-pointer rounded transition-colors truncate';
                   fItem.textContent = f.path.split('/').pop();
                   fItem.addEventListener('click', (e) => {
                     e.stopPropagation(); // prevent toggling the repo
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   function renderTab(tabId, displayName = tabId, isFile = false) {
     const tab = document.createElement('div');
     tab.id = `tab-${tabId}`;
-    tab.className = `editor-tab group flex items-center gap-2 px-4 border-r border-slate-200 dark:border-slate-800 border-t-2 text-[13px] min-w-max cursor-pointer transition-colors`;
+    tab.className = `editor-tab group flex items-center gap-2 px-4 border-r border-slate-200  border-t-2 text-[13px] min-w-max cursor-pointer transition-colors`;
     
     const iconHtml = isFile 
       ? `<svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     tab.innerHTML = `
       ${iconHtml}
       ${displayName}
-      <button class="close-tab-btn w-5 h-5 rounded-md opacity-0 group-hover:opacity-100 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center ml-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-all">
+      <button class="close-tab-btn w-5 h-5 rounded-md opacity-0 group-hover:opacity-100 hover:bg-slate-200 flex items-center justify-center ml-1 text-slate-400 hover:text-slate-700 transition-all">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     `;
@@ -250,9 +250,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.logToTerminal && window.logToTerminal(`Opening file: ${repo.name}/${filePath}`, "info");
 
     editorContentArea.innerHTML = `
-      <div class="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTQ4LCAxNjMsIDE4NCLCAwLjE1KSIvPjwvc3ZnPg==')] opacity-60 dark:opacity-30 pointer-events-none z-0"></div>
+      <div class="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTQ4LCAxNjMsIDE4NCLCAwLjE1KSIvPjwvc3ZnPg==')] opacity-60 pointer-events-none z-0"></div>
       <div class="relative z-10 w-full h-[85vh] flex flex-col p-0">
-        <div class="px-6 pt-4 pb-2 border-b border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm flex justify-between items-center shrink-0">
+        <div class="px-6 pt-4 pb-2 border-b border-slate-200 bg-white/50 backdrop-blur-sm flex justify-between items-center shrink-0">
            <div class="flex items-center gap-2 text-sm text-slate-500 font-mono">
              <span class="text-primary">${repo.name}</span> / <span>${filePath}</span>
            </div>
@@ -318,11 +318,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelectorAll('.editor-tab').forEach(tab => {
       const repoName = tab.id.replace('tab-', '');
       if (repoName === activeTab) {
-        tab.classList.add('bg-slate-50', 'dark:bg-[#0f172a]', 'border-t-primary', 'text-slate-700', 'dark:text-slate-200');
-        tab.classList.remove('bg-white', 'dark:bg-slate-800', 'border-t-transparent', 'text-slate-500');
+        tab.classList.add('bg-slate-50', '', 'border-t-primary', 'text-slate-700', '');
+        tab.classList.remove('bg-white', '', 'border-t-transparent', 'text-slate-500');
       } else {
-        tab.classList.remove('bg-slate-50', 'dark:bg-[#0f172a]', 'border-t-primary', 'text-slate-700', 'dark:text-slate-200');
-        tab.classList.add('bg-white', 'dark:bg-slate-800', 'border-t-transparent', 'text-slate-500');
+        tab.classList.remove('bg-slate-50', '', 'border-t-primary', 'text-slate-700', '');
+        tab.classList.add('bg-white', '', 'border-t-transparent', 'text-slate-500');
       }
     });
 
@@ -330,11 +330,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const welcomeTab = editorTabs.firstElementChild;
     if (welcomeTab && welcomeTab.id !== 'tab-' + activeTab) {
       if (activeTab === null) {
-        welcomeTab.classList.add('bg-slate-50', 'dark:bg-[#0f172a]', 'border-t-primary', 'text-slate-700', 'dark:text-slate-200');
-        welcomeTab.classList.remove('bg-white', 'dark:bg-slate-800', 'border-t-transparent', 'text-slate-500');
+        welcomeTab.classList.add('bg-slate-50', '', 'border-t-primary', 'text-slate-700', '');
+        welcomeTab.classList.remove('bg-white', '', 'border-t-transparent', 'text-slate-500');
       } else {
-        welcomeTab.classList.remove('bg-slate-50', 'dark:bg-[#0f172a]', 'border-t-primary', 'text-slate-700', 'dark:text-slate-200');
-        welcomeTab.classList.add('bg-white', 'dark:bg-slate-800', 'border-t-transparent', 'text-slate-500');
+        welcomeTab.classList.remove('bg-slate-50', '', 'border-t-primary', 'text-slate-700', '');
+        welcomeTab.classList.add('bg-white', '', 'border-t-transparent', 'text-slate-500');
       }
     }
   }
@@ -343,14 +343,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelectorAll('.file-item').forEach(item => {
       if (item.dataset.repo === activeTab) {
         item.classList.add('bg-primary/10', 'text-primary');
-        item.classList.remove('text-slate-600', 'dark:text-slate-400');
+        item.classList.remove('text-slate-600', '');
         // If it's the map tab, re-add purple text explicitly
-        if(item.dataset.repo === 'Codebase Map') { item.classList.add('text-purple-600', 'dark:text-purple-400', 'bg-purple-500/10'); item.classList.remove('text-primary','bg-primary/10'); }
+        if(item.dataset.repo === 'Codebase Map') { item.classList.add('text-purple-600', '', 'bg-purple-500/10'); item.classList.remove('text-primary','bg-primary/10'); }
       } else {
-        item.classList.remove('bg-primary/10', 'text-primary', 'bg-purple-500/10', 'text-purple-600', 'dark:text-purple-400');
-        item.classList.add('text-slate-600', 'dark:text-slate-400');
+        item.classList.remove('bg-primary/10', 'text-primary', 'bg-purple-500/10', 'text-purple-600', '');
+        item.classList.add('text-slate-600', '');
         // If it's the map tab, restore original base
-        if(item.dataset.repo === 'Codebase Map') { item.classList.add('text-purple-700', 'dark:text-purple-400'); }
+        if(item.dataset.repo === 'Codebase Map') { item.classList.add('text-purple-700', ''); }
       }
     });
   }
@@ -372,12 +372,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   function renderMapTabHeader(repoName) {
     const tab = document.createElement('div');
     tab.id = `tab-${repoName.replace(/\s+/g, '-')}`;
-    tab.className = `editor-tab group flex items-center gap-2 px-4 border-r border-slate-200 dark:border-slate-800 border-t-2 text-[13px] min-w-max cursor-pointer transition-colors`;
+    tab.className = `editor-tab group flex items-center gap-2 px-4 border-r border-slate-200  border-t-2 text-[13px] min-w-max cursor-pointer transition-colors`;
     
     tab.innerHTML = `
       <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
       ${repoName}
-      <button class="close-tab-btn w-5 h-5 rounded-md opacity-0 group-hover:opacity-100 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center ml-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-all">
+      <button class="close-tab-btn w-5 h-5 rounded-md opacity-0 group-hover:opacity-100 hover:bg-slate-200 flex items-center justify-center ml-1 text-slate-400 hover:text-slate-700 transition-all">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     `;
@@ -406,17 +406,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.logToTerminal && window.logToTerminal("Generating Force-Directed Knowledge Graph...", "info");
     
     editorContentArea.innerHTML = `
-      <div class="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTQ4LCAxNjMsIDE4NCLCAwLjE1KSIvPjwvc3ZnPg==')] opacity-60 dark:opacity-30 pointer-events-none z-0"></div>
+      <div class="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTQ4LCAxNjMsIDE4NCLCAwLjE1KSIvPjwvc3ZnPg==')] opacity-60 pointer-events-none z-0"></div>
       <div class="relative z-10 w-full h-[85vh] flex flex-col p-4 lg:p-8">
         <div class="mb-4">
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
             <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             Interactive Codebase Map
           </h2>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Scroll to zoom, drag to move nodes. This graph connects my projects to their underlying languages, tools, and domains dynamically.</p>
+          <p class="text-sm text-slate-500 mt-1">Scroll to zoom, drag to move nodes. This graph connects my projects to their underlying languages, tools, and domains dynamically.</p>
         </div>
         
-        <div class="flex-1 bg-white/50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-inner relative overflow-hidden" id="viz-network-container">
+        <div class="flex-1 bg-white/50 rounded-2xl border border-slate-200 shadow-inner relative overflow-hidden" id="viz-network-container">
            <!-- Network renders here -->
         </div>
       </div>
@@ -498,7 +498,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Loading State
     editorContentArea.innerHTML = `
-      <div class="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTQ4LCAxNjMsIDE4NCLCAwLjE1KSIvPjwvc3ZnPg==')] opacity-60 dark:opacity-30 pointer-events-none z-0"></div>
+      <div class="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTQ4LCAxNjMsIDE4NCLCAwLjE1KSIvPjwvc3ZnPg==')] opacity-60 pointer-events-none z-0"></div>
       <div class="relative z-10 w-full max-w-4xl mx-auto p-6 lg:p-12 flex flex-col items-center justify-center min-h-[50vh]">
         <div class="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin mb-4"></div>
         <p class="text-slate-500 font-mono text-xs">Cloning repository data...</p>
@@ -516,23 +516,23 @@ document.addEventListener('DOMContentLoaded', async () => {
       
       // 3.1 Header / Overview
       htmlContent += `
-        <div class="mb-10 pb-6 border-b border-slate-200 dark:border-slate-800">
+        <div class="mb-10 pb-6 border-b border-slate-200">
           <div class="flex items-center gap-3 mb-4">
-            <h1 class="text-3xl font-bold font-sans text-slate-900 dark:text-white">${repo.name}</h1>
+            <h1 class="text-3xl font-bold font-sans text-slate-900">${repo.name}</h1>
             <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">${repo.language || 'Code'}</span>
           </div>
-          <p class="text-slate-600 dark:text-slate-400 max-w-3xl">${repo.description || 'No description provided.'}</p>
+          <p class="text-slate-600 max-w-3xl">${repo.description || 'No description provided.'}</p>
           
           <div class="flex gap-4 mt-6">
             <button onclick="if(window.simulateAIExplanation) window.simulateAIExplanation('${repo.name}')" class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white rounded-lg text-sm font-bold shadow-md hover:scale-105 transition-transform">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
               Explain Architecture
             </button>
-            <a href="${repo.html_url}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg text-sm font-bold shadow-md hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors">
+            <a href="${repo.html_url}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-bold shadow-md hover:bg-slate-800 transition-colors">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
               View on GitHub
             </a>
-            ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-bold shadow-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg> Live Demo</a>` : ''}
+            ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" class="flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-bold shadow-sm hover:bg-slate-200 transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg> Live Demo</a>` : ''}
           </div>
         </div>
       `;
@@ -563,7 +563,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         htmlContent += `
           <div class="mb-12">
             <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4 font-mono">System Architecture</h2>
-            <div class="glass-card dark:glass-card-dark p-6 rounded-2xl flex items-center justify-center overflow-x-auto">
+            <div class="glass-card p-6 rounded-2xl flex items-center justify-center overflow-x-auto">
               <pre class="mermaid bg-transparent mx-auto m-0 !font-mono">${mermaidSyntax}</pre>
             </div>
           </div>
@@ -581,14 +581,14 @@ document.addEventListener('DOMContentLoaded', async () => {
               <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> 
               README.md
             </h2>
-            <div class="prose dark:prose-invert prose-slate prose-a:text-primary hover:prose-a:text-rose-500 max-w-none bg-white/50 dark:bg-slate-900/50 p-6 sm:p-10 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm" id="markdown-body">
+            <div class="prose prose-slate prose-a:text-primary hover:prose-a:text-rose-500 max-w-none bg-white/50 p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-sm" id="markdown-body">
               ${parsedReadme}
             </div>
           </div>
         `;
       } else {
         htmlContent += `
-          <div class="p-8 text-center border border-dashed border-slate-300 dark:border-slate-700 rounded-2xl text-slate-500">
+          <div class="p-8 text-center border border-dashed border-slate-300 rounded-2xl text-slate-500">
             No README.md found in repository root.
           </div>
         `;
@@ -596,7 +596,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       // Final Assembly
       editorContentArea.innerHTML = `
-        <div class="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTQ4LCAxNjMsIDE4NCLCAwLjE1KSIvPjwvc3ZnPg==')] opacity-60 dark:opacity-30 pointer-events-none z-0"></div>
+        <div class="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTQ4LCAxNjMsIDE4NCLCAwLjE1KSIvPjwvc3ZnPg==')] opacity-60 pointer-events-none z-0"></div>
         <div class="relative z-10 w-full max-w-4xl mx-auto p-6 lg:p-12">
           ${htmlContent}
         </div>
@@ -622,7 +622,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.error(err);
       editorContentArea.innerHTML = `
         <div class="p-8">
-          <div class="bg-rose-50 dark:bg-rose-900/20 text-rose-600 dark:text-rose-400 p-4 rounded-xl border border-rose-200 dark:border-rose-800/50 flex flex-col gap-2">
+          <div class="bg-rose-50 text-rose-600 p-4 rounded-xl border border-rose-200 flex flex-col gap-2">
             <h3 class="font-bold flex items-center gap-2">
               <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg> 
               Failed to load repository data

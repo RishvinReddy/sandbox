@@ -2,7 +2,7 @@
 <html lang="en" class="dark">
 
 <head>
-  <link rel="icon" href="icon.jpeg" type="image/jpeg">
+  <link rel="icon" href="icon.png" type="image/png">
 
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -47,7 +47,7 @@
 </head>
 
 <body
-  class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-300 font-mono overflow-hidden transition-colors duration-300 h-screen w-screen flex flex-col relative z-0">
+  class="bg-slate-50 text-slate-800 font-mono overflow-hidden transition-colors duration-300 h-screen w-screen flex flex-col relative z-0">
 
   <!-- Neural BG Canvas -->
   <canvas id="neural-bg" class="fixed inset-0 w-full h-full z-[-1] opacity-30 pointer-events-none"></canvas>
@@ -56,22 +56,22 @@
   <div id="command-palette-overlay"
     class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden flex-col items-center pt-[15vh] transition-opacity duration-200 opacity-0">
     <div
-      class="bg-white dark:bg-slate-800 w-full max-w-2xl rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden flex flex-col transform transition-transform scale-95 duration-200"
+      class="bg-white w-full max-w-2xl rounded-xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col transform transition-transform scale-95 duration-200"
       id="command-palette">
-      <div class="flex items-center px-4 border-b border-slate-200 dark:border-slate-700">
+      <div class="flex items-center px-4 border-b border-slate-200">
         <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
         <input type="text" id="cmd-input"
-          class="w-full bg-transparent border-none py-4 px-3 text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-0 font-sans text-lg"
+          class="w-full bg-transparent border-none py-4 px-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-0 font-sans text-lg"
           placeholder="Type a command or search repos...">
       </div>
       <div class="max-h-[350px] overflow-y-auto p-2 font-sans" id="cmd-results">
         <div class="px-3 py-1.5 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Commands</div>
 
         <button
-          class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-between group cmd-action"
+          class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-slate-100 text-slate-700 flex items-center justify-between group cmd-action"
           data-action="theme">
           <span class="flex items-center gap-3"><svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor"
               viewBox="0 0 24 24">
@@ -83,7 +83,7 @@
         </button>
 
         <button
-          class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-between group cmd-action"
+          class="w-full text-left px-3 py-2.5 rounded-lg hover:bg-slate-100 text-slate-700 flex items-center justify-between group cmd-action"
           data-action="home">
           <span class="flex items-center gap-3"><svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor"
               viewBox="0 0 24 24">
@@ -101,13 +101,13 @@
         </div>
       </div>
       <div
-        class="px-4 py-2 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 flex items-center justify-between opacity-70">
+        class="px-4 py-2 border-t border-slate-200 bg-slate-50 flex items-center justify-between opacity-70">
         <span class="text-[10px] text-slate-500 flex items-center gap-1"><span
-            class="px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-600 font-mono">esc</span> to
+            class="px-1.5 py-0.5 rounded border border-slate-300 font-mono">esc</span> to
           close</span>
         <span class="text-[10px] text-slate-500 flex items-center gap-1"><span
-            class="px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-600 font-mono">↑</span><span
-            class="px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-600 font-mono">↓</span> to
+            class="px-1.5 py-0.5 rounded border border-slate-300 font-mono">↑</span><span
+            class="px-1.5 py-0.5 rounded border border-slate-300 font-mono">↓</span> to
           navigate</span>
       </div>
     </div>
@@ -115,7 +115,7 @@
 
   <!-- Top Navigation / Command Bar -->
   <header
-    class="h-10 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-4 shrink-0 transition-colors z-20 relative">
+    class="h-10 bg-white/90 backdrop-blur-md border-b border-slate-200 flex items-center justify-between px-4 shrink-0 transition-colors z-20 relative">
     <div class="flex items-center gap-4">
       <div class="flex gap-2">
         <div class="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 cursor-pointer shadow-sm relative group"><span
@@ -128,7 +128,7 @@
       </div>
     </div>
     <div
-      class="text-[11px] sm:text-xs font-semibold tracking-wider text-slate-500 dark:text-slate-400 font-sans flex items-center gap-2">
+      class="text-[11px] sm:text-xs font-semibold tracking-wider text-slate-500 font-sans flex items-center gap-2">
       <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -136,28 +136,17 @@
       Rishvin Reddy — AI Portfolio Engine v4.0
     </div>
     <div class="flex items-center gap-2">
-      <button id="themeToggle"
-        class="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary"
-        title="Toggle Theme">
-        <svg class="w-4 h-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-        </svg>
-        <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-      </button>
+      
     </div>
   </header>
 
   <div class="flex-1 flex overflow-hidden">
     <!-- Activity Bar -->
     <aside
-      class="w-12 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center py-3 gap-2 shrink-0 transition-colors z-10 select-none">
+      class="w-12 bg-white border-r border-slate-200 flex flex-col items-center py-3 gap-2 shrink-0 transition-colors z-10 select-none">
       <!-- Explorer Icon -->
       <button
-        class="w-10 h-10 flex items-center justify-center text-primary bg-primary/10 dark:bg-primary/20 rounded-xl transition-all relative group"
+        class="w-10 h-10 flex items-center justify-center text-primary bg-primary/10 rounded-xl transition-all relative group"
         title="Explorer">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -178,7 +167,7 @@
 
       <!-- GitHub Link Icon -->
       <a href="https://github.com/RishvinReddy" target="_blank"
-        class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all group"
+        class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-800 hover:bg-slate-100 rounded-xl transition-all group"
         title="My GitHub">
         <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
           <path
@@ -189,7 +178,7 @@
       <div class="flex-1"></div>
 
       <button
-        class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all"
+        class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition-all"
         title="Settings">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -202,7 +191,7 @@
 
     <!-- File Explorer (Sidebar) -->
     <aside
-      class="w-64 bg-slate-50/50 dark:bg-slate-900/50 border-r border-slate-200 dark:border-slate-800 shrink-0 flex flex-col transition-colors z-10">
+      class="w-64 bg-slate-50/50 border-r border-slate-200 shrink-0 flex flex-col transition-colors z-10">
       <div
         class="h-10 flex items-center px-4 text-xs font-bold uppercase tracking-widest text-slate-500 shrink-0 select-none">
         Explorer
@@ -210,26 +199,26 @@
 
       <!-- Primary Repo Section -->
       <div
-        class="flex-1 overflow-auto custom-scrollbar flex flex-col relative z-10 bg-slate-50/50 dark:bg-slate-900/50">
+        class="flex-1 overflow-auto custom-scrollbar flex flex-col relative z-10 bg-slate-50/50">
 
         <!-- Repo Search Bar -->
         <div
-          class="p-3 border-b border-slate-200 dark:border-slate-800 sticky top-0 bg-slate-50 dark:bg-slate-900 z-20">
+          class="p-3 border-b border-slate-200 sticky top-0 bg-slate-50 z-20">
           <div
-            class="relative flex items-center bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md overflow-hidden shadow-sm focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+            class="relative flex items-center bg-white border border-slate-200 rounded-md overflow-hidden shadow-sm focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
             <svg class="w-3.5 h-3.5 text-slate-400 absolute left-2" fill="none" stroke="currentColor"
               viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <input type="text" id="sidebar-repo-search"
-              class="w-full bg-transparent border-none py-1.5 pl-7 pr-2 text-xs focus:ring-0 text-slate-700 dark:text-slate-300 placeholder-slate-400"
+              class="w-full bg-transparent border-none py-1.5 pl-7 pr-2 text-xs focus:ring-0 text-slate-700 placeholder-slate-400"
               placeholder="Filter repositories...">
           </div>
         </div>
 
         <div
-          class="w-full flex items-center gap-1.5 px-3 py-1.5 bg-slate-200/50 dark:bg-slate-800/50 text-xs font-bold text-slate-700 dark:text-slate-300 cursor-pointer select-none sticky top-[45px] z-20 backdrop-blur-md">
+          class="w-full flex items-center gap-1.5 px-3 py-1.5 bg-slate-200/50 text-xs font-bold text-slate-700 cursor-pointer select-none sticky top-[45px] z-20 backdrop-blur-md">
           <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
@@ -249,20 +238,20 @@
     </aside>
 
     <!-- Main Editor Area -->
-    <main class="flex-1 flex flex-col bg-slate-50 dark:bg-slate-800 min-w-0 transition-colors z-0">
+    <main class="flex-1 flex flex-col bg-slate-50 min-w-0 transition-colors z-0">
       <!-- Editor Tabs -->
       <div
-        class="h-10 flex bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shrink-0 overflow-x-auto custom-scrollbar select-none"
+        class="h-10 flex bg-slate-100 border-b border-slate-200 shrink-0 overflow-x-auto custom-scrollbar select-none"
         id="editor-tabs">
         <div
-          class="group flex items-center gap-2 px-4 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 border-t-2 border-t-primary text-[13px] min-w-max cursor-pointer text-slate-700 dark:text-slate-200 transition-colors">
+          class="group flex items-center gap-2 px-4 border-r border-slate-200 bg-slate-50 border-t-2 border-t-primary text-[13px] min-w-max cursor-pointer text-slate-700 transition-colors">
           <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
               d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           Welcome.md
           <button
-            class="w-5 h-5 rounded-md opacity-0 group-hover:opacity-100 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center ml-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-all">
+            class="w-5 h-5 rounded-md opacity-0 group-hover:opacity-100 hover:bg-slate-200 flex items-center justify-center ml-1 text-slate-400 hover:text-slate-700 transition-all">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -271,28 +260,28 @@
       </div>
 
       <!-- Editor Content -->
-      <div class="flex-1 overflow-auto custom-scrollbar bg-slate-50 dark:bg-[#0f172a] relative"
+      <div class="flex-1 overflow-auto custom-scrollbar bg-slate-50 relative"
         id="editor-content-area">
         <div
-          class="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTQ4LCAxNjMsIDE4NCLCAwLjE1KSIvPjwvc3ZnPg==')] opacity-60 dark:opacity-30 pointer-events-none z-0">
+          class="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTQ4LCAxNjMsIDE4NCLCAwLjE1KSIvPjwvc3ZnPg==')] opacity-60 pointer-events-none z-0">
         </div>
 
         <div class="relative z-10 w-full max-w-5xl mx-auto p-6 lg:p-12">
           <!-- Welcome Screen Content -->
-          <div class="prose dark:prose-invert prose-slate max-w-none">
+          <div class="prose prose-slate max-w-none">
             <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 font-sans tracking-tight">
               <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-primary to-indigo-600 dark:from-white dark:via-rose-400 dark:to-indigo-400">Rishvin's
+                class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-primary to-indigo-600">Rishvin's
                 Developer Workspace</span>
             </h1>
-            <p class="text-lg text-slate-600 dark:text-slate-400 font-sans max-w-2xl leading-relaxed">
+            <p class="text-lg text-slate-600 font-sans max-w-2xl leading-relaxed">
               Welcome to my interactive portfolio. Powered by advanced static analysis and real-time GitHub integration,
               this interface lets you explore my code exactly as I wrote it.
             </p>
 
             <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5 not-prose font-sans">
               <!-- Getting Started Card -->
-              <div class="glass-card dark:glass-card-dark p-6 rounded-2xl relative overflow-hidden group hover-card-3d">
+              <div class="glass-card p-6 rounded-2xl relative overflow-hidden group hover-card-3d">
                 <div
                   class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-rose-500 flex items-center justify-center text-white shadow-lg shadow-primary/30 mb-4 z-10 relative">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -300,14 +289,14 @@
                       d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 </div>
-                <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2 z-10 relative">Explore Code</h3>
-                <p class="text-sm text-slate-500 dark:text-slate-400 z-10 relative">Expand the <span
+                <h3 class="text-lg font-bold text-slate-800 mb-2 z-10 relative">Explore Code</h3>
+                <p class="text-sm text-slate-500 z-10 relative">Expand the <span
                     class="text-primary font-semibold">Explorer</span> tab on the left to browse my repositories and
                   view source code.</p>
               </div>
 
               <!-- Architecture Card -->
-              <div class="glass-card dark:glass-card-dark p-6 rounded-2xl relative overflow-hidden group hover-card-3d">
+              <div class="glass-card p-6 rounded-2xl relative overflow-hidden group hover-card-3d">
                 <div
                   class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 mb-4 z-10 relative">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -315,14 +304,14 @@
                       d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                   </svg>
                 </div>
-                <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2 z-10 relative">System Architectures
+                <h3 class="text-lg font-bold text-slate-800 mb-2 z-10 relative">System Architectures
                 </h3>
-                <p class="text-sm text-slate-500 dark:text-slate-400 z-10 relative">The Engine automatically generates
+                <p class="text-sm text-slate-500 z-10 relative">The Engine automatically generates
                   Mermaid diagrams mapping system topologies.</p>
               </div>
 
               <!-- Terminal Card -->
-              <div class="glass-card dark:glass-card-dark p-6 rounded-2xl relative overflow-hidden group hover-card-3d">
+              <div class="glass-card p-6 rounded-2xl relative overflow-hidden group hover-card-3d">
                 <div
                   class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center text-white shadow-lg shadow-emerald-500/30 mb-4 z-10 relative">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -330,16 +319,16 @@
                       d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2 z-10 relative">Terminal Output Logs
+                <h3 class="text-lg font-bold text-slate-800 mb-2 z-10 relative">Terminal Output Logs
                 </h3>
-                <p class="text-sm text-slate-500 dark:text-slate-400 z-10 relative">Check the <span
+                <p class="text-sm text-slate-500 z-10 relative">Check the <span
                     class="font-mono text-emerald-500">Terminal</span> panel below to see background API calls
                   simulating dev environments.</p>
               </div>
 
               <!-- AI Assistant Card -->
               <div
-                class="glass-card dark:glass-card-dark p-6 rounded-2xl relative overflow-hidden group hover-card-3d col-span-1 md:col-span-1">
+                class="glass-card p-6 rounded-2xl relative overflow-hidden group hover-card-3d col-span-1 md:col-span-1">
                 <div
                   class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white shadow-lg shadow-amber-500/30 mb-4 z-10 relative">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -347,9 +336,9 @@
                       d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2 z-10 relative">AI Code Assistant
+                <h3 class="text-lg font-bold text-slate-800 mb-2 z-10 relative">AI Code Assistant
                 </h3>
-                <p class="text-sm text-slate-500 dark:text-slate-400 z-10 relative">Chat directly with my codebase. Ask
+                <p class="text-sm text-slate-500 z-10 relative">Chat directly with my codebase. Ask
                   questions like "How did he implement the Multi-Layer Cache?"</p>
               </div>
             </div>
@@ -357,10 +346,10 @@
             <!-- Enhanced Dashboard View -->
             <div class="mt-8 flex flex-col gap-5 not-prose font-sans">
               <!-- Codebase Graph Panel -->
-              <div class="glass-card dark:glass-card-dark rounded-2xl relative overflow-hidden flex flex-col h-[350px]">
+              <div class="glass-card rounded-2xl relative overflow-hidden flex flex-col h-[350px]">
                 <div
-                  class="px-5 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0 bg-white/50 dark:bg-slate-900/50">
-                  <h3 class="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                  class="px-5 py-4 border-b border-slate-200 flex items-center justify-between shrink-0 bg-white/50">
+                  <h3 class="font-bold text-slate-800 flex items-center gap-2">
                     <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
@@ -369,17 +358,17 @@
                   </h3>
                   <span class="text-[10px] uppercase tracking-widest text-slate-400 font-mono">Live</span>
                 </div>
-                <div id="codebase-graph" class="flex-1 w-full bg-slate-50/50 dark:bg-slate-900/50 relative">
+                <div id="codebase-graph" class="flex-1 w-full bg-slate-50/50 relative">
                   <div class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm animate-pulse"
                     id="graph-loading">Analyzing repositories...</div>
                 </div>
               </div>
 
               <!-- Activity Chart Panel -->
-              <div class="glass-card dark:glass-card-dark rounded-2xl relative overflow-hidden flex flex-col h-[350px]">
+              <div class="glass-card rounded-2xl relative overflow-hidden flex flex-col h-[350px]">
                 <div
-                  class="px-5 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0 bg-white/50 dark:bg-slate-900/50">
-                  <h3 class="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                  class="px-5 py-4 border-b border-slate-200 flex items-center justify-between shrink-0 bg-white/50">
+                  <h3 class="font-bold text-slate-800 flex items-center gap-2">
                     <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -388,11 +377,11 @@
                   </h3>
                   <span class="text-[10px] uppercase tracking-widest text-slate-400 font-mono">Recent Activity</span>
                 </div>
-                <div class="flex-1 w-full p-4 flex flex-col bg-slate-50/50 dark:bg-slate-900/50">
+                <div class="flex-1 w-full p-4 flex flex-col bg-slate-50/50">
                   <div class="flex items-center justify-between mb-4 px-2">
                     <div>
                       <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Total Repos Analyzed</p>
-                      <p class="text-2xl font-bold text-slate-800 dark:text-white font-mono" id="stat-total-repos">-</p>
+                      <p class="text-2xl font-bold text-slate-800 font-mono" id="stat-total-repos">-</p>
                     </div>
                     <div class="text-right">
                       <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Top Language</p>
@@ -406,10 +395,10 @@
               </div>
 
               <!-- Live GitHub Activity Feed (Full Width Row) -->
-              <div class="glass-card dark:glass-card-dark rounded-2xl relative overflow-hidden flex flex-col h-[350px]">
+              <div class="glass-card rounded-2xl relative overflow-hidden flex flex-col h-[350px]">
                 <div
-                  class="px-5 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0 bg-white/50 dark:bg-slate-900/50">
-                  <h3 class="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                  class="px-5 py-4 border-b border-slate-200 flex items-center justify-between shrink-0 bg-white/50">
+                  <h3 class="font-bold text-slate-800 flex items-center gap-2">
                     <span class="relative flex h-2 w-2 mr-1">
                       <span
                         class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -431,7 +420,7 @@
                     </button>
                   </div>
                 </div>
-                <div class="p-5 bg-slate-50/50 dark:bg-slate-900/50">
+                <div class="p-5 bg-slate-50/50">
                   <div id="live-activity-feed" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
                     <div class="col-span-full text-sm text-slate-400 text-center py-4 animate-pulse">Connecting to
                       GitHub events stream...</div>
@@ -446,21 +435,21 @@
 
       <!-- Terminal / Output Panel (Bottom) -->
       <div
-        class="h-44 border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur shrink-0 transition-colors flex flex-col z-10"
+        class="h-44 border-t border-slate-200 bg-white/80 backdrop-blur shrink-0 transition-colors flex flex-col z-10"
         id="terminal-panel">
         <div
-          class="flex items-center gap-1 px-4 h-9 border-b border-slate-200 dark:border-slate-800 text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-slate-500 select-none">
+          class="flex items-center gap-1 px-4 h-9 border-b border-slate-200 text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-slate-500 select-none">
           <span
-            class="px-3 py-1 hover:text-slate-800 dark:hover:text-slate-200 cursor-pointer transition-colors">Problems</span>
+            class="px-3 py-1 hover:text-slate-800 cursor-pointer transition-colors">Problems</span>
           <span
-            class="px-3 py-1 hover:text-slate-800 dark:hover:text-slate-200 cursor-pointer transition-colors">Output</span>
-          <span class="px-3 py-1 hover:text-slate-800 dark:hover:text-slate-200 cursor-pointer transition-colors">Debug
+            class="px-3 py-1 hover:text-slate-800 cursor-pointer transition-colors">Output</span>
+          <span class="px-3 py-1 hover:text-slate-800 cursor-pointer transition-colors">Debug
             Console</span>
           <span class="px-3 py-1 text-primary border-b-2 border-primary h-full flex items-center">Terminal</span>
         </div>
 
         <div
-          class="flex-1 overflow-auto custom-scrollbar p-3 text-[13px] text-slate-600 dark:text-slate-400 leading-relaxed"
+          class="flex-1 overflow-auto custom-scrollbar p-3 text-[13px] text-slate-600 leading-relaxed"
           id="terminal-output">
           <div class="mb-1"><span class="text-emerald-500">➜</span> <span
               class="text-blue-500 font-bold">portfolio</span> <span class="text-slate-400">git:(</span><span
@@ -471,13 +460,13 @@
               class="text-emerald-500">OK</span></div>
           <div class="mb-1 text-slate-500 opacity-80" id="term-log-3">Building Cache Layers... <span
               class="text-emerald-500">OK</span></div>
-          <div class="mb-3 text-emerald-600 dark:text-emerald-400 font-semibold" id="term-log-4">Engine ready. Waiting
+          <div class="mb-3 text-emerald-600 font-semibold" id="term-log-4">Engine ready. Waiting
             for events.</div>
 
           <div class="flex items-center gap-2 mt-2 group">
             <span class="text-emerald-500 font-bold">➜</span>
             <input type="text"
-              class="flex-1 bg-transparent outline-none border-none p-0 focus:ring-0 placeholder-slate-400 dark:placeholder-slate-600 caret-emerald-500 text-slate-800 dark:text-slate-200"
+              class="flex-1 bg-transparent outline-none border-none p-0 focus:ring-0 placeholder-slate-400 caret-emerald-500 text-slate-800"
               placeholder="Type 'help' to see commands..." spellcheck="false" autocomplete="off" id="terminal-input" />
           </div>
         </div>
@@ -486,13 +475,13 @@
 
     <!-- AI Assistant Panel (Right Sidebar) -->
     <aside
-      class="w-80 bg-slate-50/50 dark:bg-slate-900/50 border-l border-slate-200 dark:border-slate-800 shrink-0 transition-colors flex flex-col z-10 hidden lg:flex">
+      class="w-80 bg-slate-50/50 border-l border-slate-200 shrink-0 transition-colors flex flex-col z-10 hidden lg:flex">
       <div
-        class="h-10 flex items-center justify-between px-4 shrink-0 border-b border-slate-200 dark:border-slate-800 select-none">
+        class="h-10 flex items-center justify-between px-4 shrink-0 border-b border-slate-200 select-none">
         <span class="text-[11px] font-bold uppercase tracking-widest text-slate-500">AI Chatbot</span>
         <div class="flex items-center gap-1">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span class="text-[10px] text-emerald-600 dark:text-emerald-400">Online</span>
+          <span class="text-[10px] text-emerald-600">Online</span>
         </div>
       </div>
 
@@ -506,12 +495,12 @@
             </svg>
           </div>
           <div
-            class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-3 rounded-2xl rounded-tl-sm text-[13px] text-slate-700 dark:text-slate-300 shadow-sm font-sans">
+            class="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-sm text-[13px] text-slate-700 shadow-sm font-sans">
             <p class="mb-2 leading-relaxed">Hello! I'm an AI architect trained on Rishvin's profile. I can answer
               questions about repositories, architectures, or stats.</p>
             <div class="flex flex-col gap-2 mt-3">
               <button
-                class="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-primary/50 text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 rounded-lg text-left text-xs transition-colors ai-prompt-btn">What
+                class="bg-slate-50 border border-slate-200 hover:border-primary/50 text-slate-600 hover:text-primary px-3 py-2 rounded-lg text-left text-xs transition-colors ai-prompt-btn">What
                 is Rishvin's main tech stack?</button>
             </div>
             <span class="text-[9px] text-slate-400 absolute block -bottom-4 right-1 max-w-max">Engine v4</span>
@@ -521,11 +510,11 @@
 
       <!-- AI Input area -->
       <div
-        class="p-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-t border-slate-200 dark:border-slate-800 shrink-0">
+        class="p-3 bg-white/80 backdrop-blur border-t border-slate-200 shrink-0">
         <div
-          class="relative flex items-end border border-slate-300 dark:border-slate-700 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary mb-1 rounded-xl overflow-hidden transition-all shadow-sm bg-slate-50 dark:bg-slate-800">
+          class="relative flex items-end border border-slate-300 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary mb-1 rounded-xl overflow-hidden transition-all shadow-sm bg-slate-50">
           <textarea
-            class="w-full bg-transparent border-none py-3 px-4 pr-12 text-[13px] focus:outline-none focus:ring-0 resize-none font-sans text-slate-800 dark:text-slate-200 placeholder-slate-400 leading-normal"
+            class="w-full bg-transparent border-none py-3 px-4 pr-12 text-[13px] focus:outline-none focus:ring-0 resize-none font-sans text-slate-800 placeholder-slate-400 leading-normal"
             rows="1" placeholder="Ask about the code..." id="ai-chat-input"
             style="min-height: 48px; max-height: 120px;"></textarea>
           <button
@@ -543,7 +532,7 @@
 
   <!-- Status Bar -->
   <footer
-    class="h-6 tracking-wide bg-primary dark:bg-primary/95 text-white text-[10px] sm:text-[11px] font-sans flex items-center justify-between px-3 shrink-0 z-20">
+    class="h-6 tracking-wide bg-primary text-white text-[10px] sm:text-[11px] font-sans flex items-center justify-between px-3 shrink-0 z-20">
     <div class="flex items-center h-full gap-4">
       <div class="flex items-center h-full gap-1 px-1 hover:bg-white/20 cursor-pointer transition-colors"><svg
           class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

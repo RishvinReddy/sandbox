@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cmdRepoList = document.getElementById('cmd-repo-list');
     if (cmdRepoList) {
       cmdRepoList.innerHTML = originalRepos.map(r => `
-        <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 flex items-center gap-3 transition-colors text-sm cmd-repo-btn group" data-repo="${r.name}">
+        <button class="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-700 flex items-center gap-3 transition-colors text-sm cmd-repo-btn group" data-repo="${r.name}">
           <svg class="w-4 h-4 text-slate-400 group-hover:text-primary transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
           <span class="truncate w-full">${r.name}</span>
         </button>
@@ -313,10 +313,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="space-y-3">
         ${[1,2,3].map(() => `
           <div class="flex items-start gap-3 animate-pulse">
-            <div class="w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 shrink-0"></div>
+            <div class="w-7 h-7 rounded-full bg-slate-200 shrink-0"></div>
             <div class="flex-1 space-y-1.5">
-              <div class="h-3 bg-slate-200 dark:bg-slate-700 rounded w-3/4"></div>
-              <div class="h-2 bg-slate-100 dark:bg-slate-800 rounded w-1/2"></div>
+              <div class="h-3 bg-slate-200 rounded w-3/4"></div>
+              <div class="h-2 bg-slate-100 rounded w-1/2"></div>
             </div>
           </div>
         `).join('')}
@@ -338,10 +338,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const repo = ev.repo.name.replace('RishvinReddy/', '');
         const when = timeAgoFeed(new Date(ev.created_at));
         return `
-          <div class="flex items-start gap-3 group hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl p-2 -mx-2 transition-colors">
+          <div class="flex items-start gap-3 group hover:bg-slate-50 rounded-xl p-2 -mx-2 transition-colors">
             <div class="w-7 h-7 rounded-full flex items-center justify-center text-sm shrink-0 ${info.bgClass}">${info.icon}</div>
             <div class="flex-1 min-w-0">
-              <p class="text-[12px] text-slate-700 dark:text-slate-300 font-medium leading-tight truncate">
+              <p class="text-[12px] text-slate-700 font-medium leading-tight truncate">
                 ${info.verb} <span class="text-primary font-bold">${repo}</span>
               </p>
               <p class="text-[10px] text-slate-400 mt-0.5">${when}</p>
@@ -358,18 +358,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getEventDisplay(ev) {
     const types = {
-      PushEvent:         { icon: '↑', bgClass: 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600',   verb: 'Pushed to' },
-      PullRequestEvent:  { icon: '⑃', bgClass: 'bg-purple-100 dark:bg-purple-500/20 text-purple-600',     verb: 'Opened PR in' },
-      CreateEvent:       { icon: '+', bgClass: 'bg-sky-100 dark:bg-sky-500/20 text-sky-500',               verb: `Created ${ev.payload?.ref_type || 'branch'} in` },
-      DeleteEvent:       { icon: '−', bgClass: 'bg-rose-100 dark:bg-rose-500/20 text-rose-500',            verb: 'Deleted from' },
-      WatchEvent:        { icon: '★', bgClass: 'bg-yellow-100 dark:bg-yellow-500/20 text-yellow-500',      verb: 'Starred' },
-      ForkEvent:         { icon: '⑂', bgClass: 'bg-indigo-100 dark:bg-indigo-500/20 text-indigo-500',     verb: 'Forked' },
-      IssuesEvent:       { icon: '!', bgClass: 'bg-orange-100 dark:bg-orange-500/20 text-orange-500',     verb: 'Opened issue in' },
-      IssueCommentEvent: { icon: '…', bgClass: 'bg-slate-100 dark:bg-slate-700 text-slate-500',           verb: 'Commented in' },
-      ReleaseEvent:      { icon: '🚀', bgClass: 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600', verb: 'Released in' },
-      PublicEvent:       { icon: '🌐', bgClass: 'bg-sky-100 dark:bg-sky-500/20 text-sky-500',             verb: 'Made public' },
+      PushEvent:         { icon: '↑', bgClass: 'bg-emerald-100  text-emerald-600',   verb: 'Pushed to' },
+      PullRequestEvent:  { icon: '⑃', bgClass: 'bg-purple-100  text-purple-600',     verb: 'Opened PR in' },
+      CreateEvent:       { icon: '+', bgClass: 'bg-sky-100  text-sky-500',               verb: `Created ${ev.payload?.ref_type || 'branch'} in` },
+      DeleteEvent:       { icon: '−', bgClass: 'bg-rose-100  text-rose-500',            verb: 'Deleted from' },
+      WatchEvent:        { icon: '★', bgClass: 'bg-yellow-100  text-yellow-500',      verb: 'Starred' },
+      ForkEvent:         { icon: '⑂', bgClass: 'bg-indigo-100  text-indigo-500',     verb: 'Forked' },
+      IssuesEvent:       { icon: '!', bgClass: 'bg-orange-100  text-orange-500',     verb: 'Opened issue in' },
+      IssueCommentEvent: { icon: '…', bgClass: 'bg-slate-100  text-slate-500',           verb: 'Commented in' },
+      ReleaseEvent:      { icon: '🚀', bgClass: 'bg-emerald-100  text-emerald-600', verb: 'Released in' },
+      PublicEvent:       { icon: '🌐', bgClass: 'bg-sky-100  text-sky-500',             verb: 'Made public' },
     };
-    return types[ev.type] || { icon: '•', bgClass: 'bg-slate-100 dark:bg-slate-700 text-slate-400', verb: ev.type.replace('Event','') + ' in' };
+    return types[ev.type] || { icon: '•', bgClass: 'bg-slate-100  text-slate-400', verb: ev.type.replace('Event','') + ' in' };
   }
 
   function timeAgoFeed(date) {
@@ -380,80 +380,27 @@ document.addEventListener('DOMContentLoaded', () => {
     return `${Math.floor(diff/86400)}d ago`;
   }
 
-  // 5. AI Explainer UI Simulation
+  // 5. AI Explainer UI Simulation -> Upgraded to REAL Vector Brain
   window.simulateAIExplanation = function(repoName) {
     if (window.logToTerminal) {
-      window.logToTerminal(`Initiated AI Code Analysis for architecture of ${repoName}...`, 'info');
+      window.logToTerminal(`Initiated Deep AI Context Analysis for ${repoName}...`, 'system');
     }
     
-    // Check if the AI AI chat panel exists
-    const chatPanel = document.getElementById('ai-chat-history');
-    if (!chatPanel) return;
-
     // Open chat sidebar if it's hidden on mobile
-    const aiSidebar = chatPanel.closest('aside');
-    if (aiSidebar) {
-      aiSidebar.classList.remove('hidden');
-      aiSidebar.classList.add('flex'); // Ensure it's showing if they manually toggle it normally
+    const chatPanel = document.getElementById('ai-chat-history');
+    if (chatPanel) {
+      const aiSidebar = chatPanel.closest('aside');
+      if (aiSidebar) {
+        aiSidebar.classList.remove('hidden');
+        aiSidebar.classList.add('flex'); // Ensure it's showing if they manually toggle it normally
+      }
     }
     
-    // Add User Message
-    const userMsg = document.createElement('div');
-    userMsg.className = "flex gap-3 items-start justify-end group animate-fadeIn";
-    userMsg.innerHTML = `
-      <div class="bg-primary text-white border border-primary/20 p-3 rounded-2xl rounded-tr-sm text-[13px] shadow-sm font-sans max-w-[85%]">
-        <p class="leading-relaxed">Please explain the architecture for <strong>${repoName}</strong>.</p>
-      </div>
-      <div class="w-7 h-7 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center shrink-0 shadow-sm">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-      </div>
-    `;
-    chatPanel.appendChild(userMsg);
-    chatPanel.scrollTop = chatPanel.scrollHeight;
-
-    // Add Thinking Bubble
-    const aiMsgId = 'ai-msg-' + Date.now();
-    const aiThinking = document.createElement('div');
-    aiThinking.id = aiMsgId;
-    aiThinking.className = "flex gap-3 items-start group mt-4";
-    aiThinking.innerHTML = `
-      <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary to-rose-500 text-white flex items-center justify-center shrink-0 shadow-md">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-      </div>
-      <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-3 rounded-2xl rounded-tl-sm text-[13px] text-slate-700 dark:text-slate-300 shadow-sm font-sans flex items-center gap-2">
-        <span class="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce"></span>
-        <span class="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce" style="animation-delay: 150ms;"></span>
-        <span class="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce" style="animation-delay: 300ms;"></span>
-      </div>
-    `;
-    chatPanel.appendChild(aiThinking);
-    chatPanel.scrollTop = chatPanel.scrollHeight;
-
-    // Simulate Network/Thinking delay
-    setTimeout(() => {
-      const el = document.getElementById(aiMsgId);
-      if (el) {
-        el.innerHTML = `
-          <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-primary to-rose-500 text-white flex items-center justify-center shrink-0 shadow-md">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-          </div>
-          <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-3 rounded-2xl rounded-tl-sm text-[13px] text-slate-700 dark:text-slate-300 shadow-sm font-sans flex flex-col gap-2 w-[85%]">
-            <p>Based on static analysis of <strong>${repoName}</strong>, the repository is structured into distinct modular components. It uses automated CI/CD pipelines, separates the business logic from presentation, and implements strong typing schemas.</p>
-            <div class="p-2 mt-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-md">
-               <pre class="text-[10px] text-emerald-600 dark:text-emerald-400 m-0 font-mono overflow-x-auto">
-// Analysis Complete
-status: 200 OK
-language: auto-detected
-architecture: modular-monolith
-confidence: 0.94</pre>
-            </div>
-          </div>
-        `;
-        chatPanel.scrollTop = chatPanel.scrollHeight;
-        if (window.logToTerminal) {
-          window.logToTerminal(`AI Analysis returned for ${repoName}.`, 'success');
-        }
-      }
-    }, 1800);
+    // Call the actual AI Chat RAG Brain
+    if (window.sendAIChatMessage) {
+        window.sendAIChatMessage(`Explain the architectural design and system logic behind ${repoName}.`);
+    } else {
+        if (window.logToTerminal) window.logToTerminal(`Error: AI Brain offline.`, 'error');
+    }
   };
 });

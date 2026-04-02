@@ -10,7 +10,7 @@ window.logToTerminal = function(message, type = "info") {
 
   const timestamp = new Date().toLocaleTimeString('en-US', { hour12: false });
   
-  let colorClass = "text-slate-500 dark:text-slate-400";
+  let colorClass = "text-slate-500 ";
   if (type === "success") colorClass = "text-emerald-500";
   if (type === "error") colorClass = "text-rose-500";
   if (type === "warning") colorClass = "text-yellow-500";
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Echo command with prompt styling
       const cmdEl = document.createElement('div');
-      cmdEl.className = 'mb-1 text-slate-800 dark:text-slate-200';
+      cmdEl.className = 'mb-1 text-slate-800 ';
       cmdEl.innerHTML = `<span class="text-emerald-500">➜</span> <span class="text-blue-400 font-bold">portfolio</span> <span class="text-slate-400">git:(</span><span class="text-rose-400 font-bold">main</span><span class="text-slate-400">)</span> ${command}`;
       terminalOutput.insertBefore(cmdEl, terminalOutput.lastElementChild);
 
