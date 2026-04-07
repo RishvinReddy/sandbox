@@ -45,6 +45,17 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
   <link rel="stylesheet" href="animations.css">
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      if(typeof emailjs !== "undefined") {
+        emailjs.init("mUWYYaTiZhAWgB0TH"); 
+      }
+    })();
+  </script>
+
 </head>
 
 <body class="overflow-x-hidden">
@@ -52,7 +63,7 @@
   <div class="ambient-orb-center" aria-hidden="true"></div>
   <div class="ambient-orb-tl" aria-hidden="true"></div>
 
-  <div id="network-background"></div>
+  
 
   <!-- Ambient Background -->
   <div
@@ -1851,21 +1862,56 @@
   setInterval(updateClock, 1000);
 
   /* Newsletter form */
-  var nlForm = document.getElementById('footerNewsletter');
-  var nlBtn = document.getElementById('newsletterBtn');
-  var nlMsg = document.getElementById('newsletterMsg');
-  var nlInput = document.getElementById('newsletterEmail');
-  if (nlBtn && nlInput) {
-    nlBtn.addEventListener('click', function() {
-      if (!nlInput.value || !nlInput.value.includes('@')) {
-        nlInput.style.animation = 'shake 0.4s ease';
-        nlInput.addEventListener('animationend', function() { nlInput.style.animation = ''; }, { once: true });
-        return;
-      }
-      if (nlMsg) { nlMsg.classList.remove('hidden'); }
-      nlInput.value = '';
-    });
-  }
+    var nlForm = document.getElementById('footerNewsletter');
+    var nlBtn = document.getElementById('newsletterBtn');
+    var nlMsg = document.getElementById('newsletterMsg');
+    var nlInput = document.getElementById('newsletterEmail');
+    if (nlBtn && nlInput) {
+      if(nlForm) { nlForm.addEventListener('submit', function(e) { e.preventDefault(); }); }
+      nlBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (!nlInput.value || !nlInput.value.includes('@')) {
+          nlInput.style.animation = 'shake 0.4s ease';
+          nlInput.addEventListener('animationend', function () { nlInput.style.animation = ''; }, { once: true });
+          return;
+        }
+        
+        // Show loading state
+        var originalBtnContent = nlBtn.innerHTML;
+        nlBtn.innerHTML = '<span class="relative z-10 block w-4 h-4 rounded-full border-2 border-white/20 border-t-white animate-spin"></span>';
+        
+        if (typeof emailjs !== 'undefined') {
+          emailjs.send("service_vap0e7b", "template_0d7egxw", {
+            from_name: "Newsletter Subscriber",
+            from_email: nlInput.value,
+            message: "A new user wants to subscribe to your newsletter/project updates!"
+          }).then(function() {
+            if (nlMsg) { 
+              nlMsg.classList.remove('hidden'); 
+              nlMsg.classList.remove('text-red-400');
+              nlMsg.classList.add('text-emerald-400');
+              nlMsg.textContent = "✓ You're in — thanks!";
+            }
+            nlInput.value = '';
+            nlBtn.innerHTML = originalBtnContent;
+          }).catch(function(err) {
+            console.error("Newsletter Error:", err);
+            if (nlMsg) { 
+              nlMsg.classList.remove('hidden'); 
+              nlMsg.classList.remove('text-emerald-400');
+              nlMsg.classList.add('text-red-400');
+              nlMsg.textContent = "❌ Failed to subscribe.";
+            }
+            nlBtn.innerHTML = originalBtnContent;
+          });
+        } else {
+          // Fallback if emailjs fails to load
+          if (nlMsg) { nlMsg.classList.remove('hidden'); }
+          nlInput.value = '';
+          nlBtn.innerHTML = originalBtnContent;
+        }
+      });
+    }
 
   /* Marquee clone for infinite scroll */
   var marqueeTpl = document.getElementById('marqueeTpl');
@@ -1931,10 +1977,9 @@
 </script>
 
 
-  <script src="js/portfolio-engine.js"></script>
+  <script defer src="js/portfolio-engine.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="animations.js"></script>
+  <script defer src="animations.js"></script>
 
   <!-- HTML2PDF Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -2508,8 +2553,6 @@
   })();
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script src="js/background-network.js"></script>
 
   <script src="js/cursor-spotlight.js"></script>
 

@@ -307,21 +307,56 @@
   setInterval(updateClock, 1000);
 
   /* Newsletter form */
-  var nlForm = document.getElementById('footerNewsletter');
-  var nlBtn = document.getElementById('newsletterBtn');
-  var nlMsg = document.getElementById('newsletterMsg');
-  var nlInput = document.getElementById('newsletterEmail');
-  if (nlBtn && nlInput) {
-    nlBtn.addEventListener('click', function() {
-      if (!nlInput.value || !nlInput.value.includes('@')) {
-        nlInput.style.animation = 'shake 0.4s ease';
-        nlInput.addEventListener('animationend', function() { nlInput.style.animation = ''; }, { once: true });
-        return;
-      }
-      if (nlMsg) { nlMsg.classList.remove('hidden'); }
-      nlInput.value = '';
-    });
-  }
+    var nlForm = document.getElementById('footerNewsletter');
+    var nlBtn = document.getElementById('newsletterBtn');
+    var nlMsg = document.getElementById('newsletterMsg');
+    var nlInput = document.getElementById('newsletterEmail');
+    if (nlBtn && nlInput) {
+      if(nlForm) { nlForm.addEventListener('submit', function(e) { e.preventDefault(); }); }
+      nlBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (!nlInput.value || !nlInput.value.includes('@')) {
+          nlInput.style.animation = 'shake 0.4s ease';
+          nlInput.addEventListener('animationend', function () { nlInput.style.animation = ''; }, { once: true });
+          return;
+        }
+        
+        // Show loading state
+        var originalBtnContent = nlBtn.innerHTML;
+        nlBtn.innerHTML = '<span class="relative z-10 block w-4 h-4 rounded-full border-2 border-white/20 border-t-white animate-spin"></span>';
+        
+        if (typeof emailjs !== 'undefined') {
+          emailjs.send("service_vap0e7b", "template_0d7egxw", {
+            from_name: "Newsletter Subscriber",
+            from_email: nlInput.value,
+            message: "A new user wants to subscribe to your newsletter/project updates!"
+          }).then(function() {
+            if (nlMsg) { 
+              nlMsg.classList.remove('hidden'); 
+              nlMsg.classList.remove('text-red-400');
+              nlMsg.classList.add('text-emerald-400');
+              nlMsg.textContent = "✓ You're in — thanks!";
+            }
+            nlInput.value = '';
+            nlBtn.innerHTML = originalBtnContent;
+          }).catch(function(err) {
+            console.error("Newsletter Error:", err);
+            if (nlMsg) { 
+              nlMsg.classList.remove('hidden'); 
+              nlMsg.classList.remove('text-emerald-400');
+              nlMsg.classList.add('text-red-400');
+              nlMsg.textContent = "❌ Failed to subscribe.";
+            }
+            nlBtn.innerHTML = originalBtnContent;
+          });
+        } else {
+          // Fallback if emailjs fails to load
+          if (nlMsg) { nlMsg.classList.remove('hidden'); }
+          nlInput.value = '';
+          nlBtn.innerHTML = originalBtnContent;
+        }
+      });
+    }
 
   /* Marquee clone for infinite scroll */
   var marqueeTpl = document.getElementById('marqueeTpl');

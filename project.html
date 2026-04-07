@@ -136,11 +136,22 @@
       color: #fca5a5;
     }
   </style>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      if(typeof emailjs !== "undefined") {
+        emailjs.init("mUWYYaTiZhAWgB0TH"); 
+      }
+    })();
+  </script>
+
 </head>
 
 <body
   class="bg-background-light text-slate-800 antialiased transition-colors duration-300">
-  <div id="network-background"></div>
+  
 
   <!-- Navbar -->
   <nav
@@ -348,8 +359,6 @@
     }
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script src="js/background-network.js"></script>
 
   <script src="js/cursor-spotlight.js"></script>
 </body>

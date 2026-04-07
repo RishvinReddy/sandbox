@@ -28,6 +28,7 @@
 
   <!-- Structured Data -->
   <script type="application/ld+json">
+  <div class="section-divider" aria-hidden="true"><span class="divider-gem"></span></div>
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -153,7 +154,18 @@
   </script>
   <link rel="stylesheet" href="animations.css">
   <!-- Markdown Parser for GitHub READMEs -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      if(typeof emailjs !== "undefined") {
+        emailjs.init("mUWYYaTiZhAWgB0TH"); 
+      }
+    })();
+  </script>
+
 </head>
 
 <body class="bg-background-light font-serif text-gray-800">
@@ -168,7 +180,7 @@
     He is a co-inventor of a Government of India registered design patent for an IoT Connectivity Device.
   </div>
 
-  <div id="network-background"></div>
+
   <div class="relative min-h-screen pt-12">
     <!-- Top Utility Bar (Premium Dark) -->
     <!-- ============================================================
@@ -1192,8 +1204,9 @@
                 <div
                   class="float-icon-fast bg-white/80 backdrop-blur-md p-2.5 rounded-xl shadow-md border border-white/30 hover:scale-110 transition-transform cursor-default"
                   title="Docker">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                    class="w-7 h-7" alt="Docker">
+                  <img loading="lazy"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-7 h-7"
+                    alt="Docker">
                 </div>
               </div>
 
@@ -1228,7 +1241,7 @@
                 <!-- Layer 4: Photo -->
                 <div class="absolute inset-[3px] bg-white rounded-full overflow-hidden group cursor-pointer z-10"
                   id="profileThumb" data-src="icon.png">
-                  <img src="icon.png"
+                  <img loading="lazy" src="icon.png"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     alt="Rishvin Reddy">
                   <div
@@ -1299,7 +1312,8 @@
         </div>
 
         <div class="p-6 flex items-center justify-center">
-          <img id="modalImg" src="" alt="Profile full view" class="max-w-full max-h-[80vh] rounded-md object-contain" />
+          <img loading="lazy" id="modalImg" src="" alt="Profile full view"
+            class="max-w-full max-h-[80vh] rounded-md object-contain" />
         </div>
       </div>
     </div>
@@ -1481,90 +1495,1134 @@
 
   <!-- End of upgraded header / hero / modal -->
 
+  <div class="section-divider" aria-hidden="true"><span class="divider-gem"></span></div>
+
   <!-- ===========================
-     ABOUT — Spacious, Attractive & Modern
-     Replace your existing #about with this block.
-     Assumes Tailwind + your animation utilities are available.
+     ABOUT — Cinematic Premium Redesign v3
      =========================== -->
-  <!-- ===========================
-     ABOUT SUMMARY — Narrative & Arsenal (Premium Glass Upgrade)
-     =========================== -->
-  <section id="about" class="relative py-24 sm:py-32 overflow-hidden section-surface">
-    <!-- Background Elements -->
-    <div class="absolute inset-0 bg-slate-50/50"></div>
-    <div
-      class="absolute top-1/4 -left-64 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] mix-blend-multiply pointer-events-none">
-    </div>
-    <div
-      class="absolute bottom-1/4 -right-64 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[100px] mix-blend-multiply pointer-events-none">
-    </div>
+  <style>
+    /* ── About Section v3 ── */
+    #about-v3 {
+      position: relative;
+      overflow: hidden;
+    }
 
-    <div class="container mx-auto px-6 lg:px-20 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    /* Soft background mesh */
+    #about-v3::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 0% 0%, rgba(99, 102, 241, 0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(20, 184, 166, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 35% at 50% 50%, rgba(242, 13, 70, 0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-        <!-- Left: The Narrative Card -->
-        <div class="scroll-reveal">
-          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-8">The Engineer's Story
-          </h2>
+    /* Stat card premium */
+    .about-stat-card {
+      position: relative;
+      background: #fff;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 20px;
+      padding: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 15px -5px rgba(0, 0, 0, 0.06);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    }
 
-          <div
-            class="bg-white/80 backdrop-blur-xl border border-white/50 p-8 sm:p-10 rounded-[2.5rem] premium-layered-shadow transition-all duration-500 hover:-translate-y-1 relative overflow-hidden group">
-            <!-- Decorative gradient overlay -->
-            <div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none"></div>
+    .about-stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: 20px 20px 0 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-            <div class="relative z-10">
-              <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                Technology is a bridge. My journey started with <strong class="text-slate-900">hardware
-                  mechanics</strong>—understanding the pulse of machines. It evolved into <strong
-                  class="text-slate-900">software logic</strong>, building brains for those machines.
-              </p>
-              <p class="text-lg text-slate-600 leading-relaxed mb-8">
-                Today, I secure that bridge. Integrating <strong class="text-primary">IoT sensors</strong> with
-                <strong class="text-indigo-600">Blockchain ledgers</strong> to create systems that are not just smart,
-                but verifiable and impenetrable.
-              </p>
+    .about-stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.12);
+    }
 
-              <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
-                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
-                  <img src="icon.png" alt="Rishvin" class="w-full h-full object-cover">
-                </div>
-                <div>
-                  <div class="font-bold text-slate-900">Rishvin Reddy</div>
-                  <div class="text-xs text-slate-500 font-medium tracking-wide uppercase">
-                    Full-Stack Engineer</div>
-                </div>
-                <a href="About_page.html"
-                  class="ml-auto flex items-center gap-2 text-sm font-bold text-primary hover:underline decoration-2 underline-offset-4 group-hover:translate-x-1 transition-transform">
-                  Read Full Story <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
+    .about-stat-card:hover::before {
+      opacity: 1;
+    }
+
+    .stat-indigo::before {
+      background: linear-gradient(90deg, #6366f1, #818cf8);
+    }
+
+    .stat-violet::before {
+      background: linear-gradient(90deg, #7c3aed, #a78bfa);
+    }
+
+    .stat-amber::before {
+      background: linear-gradient(90deg, #f59e0b, #fcd34d);
+    }
+
+    .stat-teal::before {
+      background: linear-gradient(90deg, #14b8a6, #5eead4);
+    }
+
+    .stat-primary::before {
+      background: linear-gradient(90deg, #f20d46, #fb7185);
+    }
+
+    .about-stat-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .about-stat-num {
+      font-size: 2.25rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: #0f172a;
+      margin-bottom: 0.35rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Narrative card */
+    .about-narrative-card {
+      position: relative;
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.35s ease, transform 0.35s ease;
+    }
+
+    .about-narrative-card:hover {
+      box-shadow: 0 20px 50px -15px rgba(99, 102, 241, 0.15), 0 8px 20px -8px rgba(0, 0, 0, 0.07);
+    }
+
+    /* Accent bar shimmer */
+    .about-accent-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: 28px 0 0 28px;
+      background: linear-gradient(to bottom, #6366f1, #7c3aed, #14b8a6);
+      background-size: 100% 200%;
+      animation: barSlide 4s ease-in-out infinite;
+    }
+
+    @keyframes barSlide {
+
+      0%,
+      100% {
+        background-position: 0% 0%;
+      }
+
+      50% {
+        background-position: 0% 100%;
+      }
+    }
+
+    /* Skill pills */
+    .about-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+    }
+
+    .about-pill:hover {
+      transform: translateY(-2px) scale(1.04);
+    }
+
+    /* Skills panel */
+    .about-skills-card {
+      background: #fff;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.35s ease, transform 0.35s ease;
+    }
+
+    .about-skills-card:hover {
+      box-shadow: 0 20px 50px -15px rgba(20, 184, 166, 0.12), 0 8px 20px -8px rgba(0, 0, 0, 0.07);
+    }
+
+    /* Skill bar rows */
+    .skill-bar-track {
+      height: 7px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      width: 0;
+      transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Journey timeline inside narrative */
+    .about-timeline-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .about-timeline-dot::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 2px solid currentColor;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: scale(0.7);
+    }
+
+    .about-timeline-row:hover .about-timeline-dot::after {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+
+    /* Tech-stack row */
+    .tech-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      background: #fff;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      color: #475569;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .tech-chip:hover {
+      border-color: rgba(99, 102, 241, 0.35);
+      color: #6366f1;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.12);
+    }
+
+    /* Animated badge */
+    @keyframes aboutBadgePop {
+      0% {
+        opacity: 0;
+        transform: scale(0.85) translateY(6px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .about-badge {
+      animation: aboutBadgePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    /* Floating code decoration */
+    .about-code-deco {
+      position: absolute;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      opacity: 0.06;
+      user-select: none;
+      pointer-events: none;
+      color: #6366f1;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+  </style>
+
+  <section id="about-v3" class="py-24 sm:py-32 relative z-0">
+    <div class="mx-auto max-w-screen-xl px-6 lg:px-10 relative z-10">
+
+      <!-- ──────────────────────────────────────────
+           HEADER
+      ────────────────────────────────────────── -->
+      <div class="max-w-4xl mb-20 scroll-reveal">
+
+        <!-- Badge -->
+        <div class="mb-6 flex items-center gap-3">
+          <span
+            class="about-badge inline-flex items-center gap-2 px-4 py-2 text-[11px] font-black uppercase tracking-widest text-indigo-600 bg-indigo-50 border border-indigo-200/70 rounded-full shadow-sm">
+            <span class="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse"></span>
+            About Me
+          </span>
+          <!-- Horizontal rule extension -->
+          <div class="flex-1 h-px bg-gradient-to-r from-indigo-200/60 to-transparent max-w-[160px]"></div>
         </div>
 
-        <!-- Right: Technical Arsenal Grid -->
-        <div class="scroll-reveal delay-200">
-          <div class="flex items-center justify-between mb-8">
-            <h3 class="text-2xl font-bold text-slate-900">Technical Arsenal</h3>
-            <a href="Resume_page.html"
-              class="text-sm font-semibold text-slate-500 hover:text-primary transition-colors">View
-              Resume →</a>
-          </div>
+        <!-- Headline -->
+        <h2 class="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 tracking-tight leading-[1.02] mb-6">
+          Engineering the<br>
+          <span class="relative inline-block">
+            <span class="text-transparent bg-clip-text"
+              style="background-image: linear-gradient(120deg, #6366f1 0%, #7c3aed 40%, #14b8a6 100%);">
+              full stack
+            </span>
+            <!-- Underline accent -->
+            <span class="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full opacity-40"
+              style="background: linear-gradient(90deg, #6366f1, #14b8a6);"></span>
+          </span>
+          &nbsp;of trust.
+        </h2>
 
-          <div
-            class="bg-white/60 backdrop-blur-md border border-white/40 p-5 rounded-3xl premium-layered-shadow flex items-center justify-center">
-            <div class="relative w-full max-w-sm aspect-square">
-              <canvas id="skillsChart"></canvas>
-            </div>
+        <p class="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl">
+          From silicon to smart contracts — I build systems that are fast, secure, and production-ready.
+          Co-inventor of a <strong class="text-slate-700 font-extrabold">Government of India IoT Patent</strong>.
+        </p>
+      </div>
+
+      <!-- ──────────────────────────────────────────
+           STATS STRIP — 5 cards
+      ────────────────────────────────────────── -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-20 scroll-reveal">
+
+        <!-- Projects -->
+        <div class="about-stat-card stat-indigo">
+          <div class="about-stat-icon bg-indigo-50">
+            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </div>
+          <div class="about-stat-num">15<span class="text-indigo-500 text-2xl">+</span></div>
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Projects Built</div>
+        </div>
+
+        <!-- Experience -->
+        <div class="about-stat-card stat-violet">
+          <div class="about-stat-icon bg-violet-50">
+            <svg class="w-5 h-5 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="about-stat-num">3<span class="text-violet-500 text-2xl">+</span></div>
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Years Engineering</div>
+        </div>
+
+        <!-- Patent -->
+        <div class="about-stat-card stat-amber">
+          <div class="about-stat-icon bg-amber-50">
+            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="about-stat-num">1<span class="text-amber-500 text-2xl">×</span></div>
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Govt. Patent</div>
+        </div>
+
+        <!-- Technologies -->
+        <div class="about-stat-card stat-teal">
+          <div class="about-stat-icon bg-teal-50">
+            <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="about-stat-num">8<span class="text-teal-500 text-2xl">+</span></div>
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Technologies</div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="about-stat-card stat-primary sm:col-span-1 col-span-2">
+          <div class="about-stat-icon" style="background: rgba(242,13,70,0.08);">
+            <svg class="w-5 h-5" style="color: #f20d46;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="about-stat-num" style="color: #f20d46;">5<span class="text-2xl">+</span></div>
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Certifications</div>
         </div>
 
       </div>
-    </div>
+
+      <!-- ──────────────────────────────────────────
+           MAIN GRID — Narrative + Skills panel
+      ────────────────────────────────────────── -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+
+        <!-- ════════════════════════════════
+             LEFT: Narrative Card (7 cols)
+        ════════════════════════════════ -->
+        <div class="lg:col-span-7 scroll-reveal h-full">
+          <div class="about-narrative-card group h-full">
+
+            <!-- Animated accent bar -->
+            <div class="about-accent-bar"></div>
+
+            <!-- Floating code decoration -->
+            <div class="about-code-deco" style="top: 28px; right: 28px; font-size: 13px;">
+              { IoT ∩ Blockchain ∩ Security }
+            </div>
+
+            <div class="relative z-10 p-8 sm:p-10 pl-10 sm:pl-12">
+
+              <!-- Micro label -->
+              <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.25em] mb-6 flex items-center gap-2">
+                <span class="w-3 h-px bg-slate-300 inline-block"></span>
+                Engineer's Narrative
+              </p>
+
+              <!-- Journey timeline -->
+              <div class="space-y-5 mb-8">
+
+                <div class="about-timeline-row flex items-start gap-4 group/row cursor-default">
+                  <div class="mt-1.5 flex flex-col items-center gap-1">
+                    <div class="about-timeline-dot bg-indigo-500" style="color: #6366f1;"></div>
+                    <div class="w-px flex-1 min-h-[36px] bg-gradient-to-b from-indigo-200 to-violet-200 mt-1"></div>
+                  </div>
+                  <div class="pb-2">
+                    <div class="text-xs font-black text-indigo-500 uppercase tracking-widest mb-1">Phase 01 — Hardware
+                    </div>
+                    <p class="text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
+                      My journey started with <span class="text-slate-900 font-extrabold">hardware mechanics</span> —
+                      understanding the pulse of machines, programming microcontrollers and building IoT connectivity
+                      devices from scratch.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="about-timeline-row flex items-start gap-4 group/row cursor-default">
+                  <div class="mt-1.5 flex flex-col items-center gap-1">
+                    <div class="about-timeline-dot bg-violet-500" style="color: #7c3aed;"></div>
+                    <div class="w-px flex-1 min-h-[36px] bg-gradient-to-b from-violet-200 to-teal-200 mt-1"></div>
+                  </div>
+                  <div class="pb-2">
+                    <div class="text-xs font-black text-violet-500 uppercase tracking-widest mb-1">Phase 02 — Software
+                      Logic</div>
+                    <p class="text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
+                      It evolved into <span class="text-slate-900 font-extrabold">full-stack engineering</span> — React,
+                      Node, Python, REST APIs — building smart interfaces that communicate with the physical world.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="about-timeline-row flex items-start gap-4 group/row cursor-default">
+                  <div class="mt-1.5">
+                    <div class="about-timeline-dot" style="background: #14b8a6; color: #14b8a6;"></div>
+                  </div>
+                  <div>
+                    <div class="text-xs font-black text-teal-500 uppercase tracking-widest mb-1">Phase 03 — Security
+                      Layer</div>
+                    <p class="text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
+                      Today I secure that bridge. Integrating
+                      <strong
+                        class="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent font-black">IoT
+                        sensors</strong> with
+                      <strong
+                        class="bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent font-black">Blockchain
+                        ledgers</strong>
+                      to create systems that are verifiable, impenetrable, and production-grade.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Animated skill pills -->
+              <div class="flex flex-wrap gap-2 mb-8">
+                <span class="about-pill text-indigo-700 bg-indigo-50 border-indigo-200/70">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5" />
+                    <path d="M12 2v2m0 16v2M2 12h2m16 0h2" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                  IoT Systems
+                </span>
+                <span class="about-pill text-violet-700 bg-violet-50 border-violet-200/70">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101" stroke-width="2"
+                      stroke-linecap="round" />
+                    <path d="M14.828 10.828a4 4 0 015.656 0l1 1a4 4 0 010 5.656l-2.5 2.5a4 4 0 01-5.656 0"
+                      stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                  Blockchain
+                </span>
+                <span class="about-pill text-teal-700 bg-teal-50 border-teal-200/70">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <path d="M8 21h8M12 17v4" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                  Full-Stack
+                </span>
+                <span class="about-pill text-slate-600 bg-slate-50 border-slate-200/80">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-5M9 21H5a2 2 0 01-2-2v-5m0 0h18"
+                      stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                  Embedded C
+                </span>
+                <span class="about-pill text-slate-600 bg-slate-50 border-slate-200/80">
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-.5 14.5v-9l7 4.5-7 4.5z"
+                      opacity=".3" />
+                    <path
+                      d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 13.93V8.07L17 12l-6 3.93z" />
+                  </svg>
+                  Python
+                </span>
+                <span class="about-pill text-rose-600 bg-rose-50 border-rose-200/70">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                  Cybersecurity
+                </span>
+              </div>
+
+              <!-- Footer: avatar + CTA -->
+              <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between gap-5 pt-6 border-t border-slate-100/80">
+                <div class="flex items-center gap-3.5">
+                  <div class="relative shrink-0">
+                    <div class="w-12 h-12 rounded-full overflow-hidden shadow-md"
+                      style="border: 2.5px solid rgba(99,102,241,0.25);">
+                      <img loading="lazy" src="icon.png" alt="Rishvin Reddy" class="w-full h-full object-cover">
+                    </div>
+                    <span
+                      class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 border-2 border-white rounded-full shadow-sm"></span>
+                  </div>
+                  <div>
+                    <div class="font-black text-slate-900 text-[15px]">Rishvin Reddy</div>
+                    <div class="text-[10px] text-slate-400 font-bold tracking-widest uppercase">IoT · Blockchain ·
+                      Full-Stack</div>
+                  </div>
+                </div>
+
+                <a href="About_page.html"
+                  class="group/btn inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-white text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg active:scale-95 relative overflow-hidden"
+                  style="background: linear-gradient(135deg, #1e293b 0%, #6366f1 100%);">
+                  <!-- Shimmer sweep -->
+                  <span
+                    class="absolute inset-0 -translate-x-full skew-x-12 bg-white/15 group-hover/btn:translate-x-full transition-transform duration-600 pointer-events-none"></span>
+                  <span class="relative z-10 flex items-center gap-2">
+                    Read Full Story
+                    <svg class="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-0.5" fill="none"
+                      stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════
+             RIGHT: GitHub Live Panel (5 cols)
+        ════════════════════════════════ -->
+        <div class="lg:col-span-5 scroll-reveal delay-200 h-full flex flex-col">
+
+          <!-- Header row -->
+          <div class="flex items-center justify-between mb-5 px-1">
+            <div>
+              <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.25em] mb-1 flex items-center gap-2">
+                <span class="w-3 h-px bg-slate-300 inline-block"></span>
+                Live from GitHub
+              </p>
+              <h3 class="text-2xl font-black text-slate-900 tracking-tight">Technical Arsenal</h3>
+            </div>
+            <a href="https://github.com/RishvinReddy" target="_blank" rel="noopener noreferrer"
+              class="group/link inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors duration-200">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+              @RishvinReddy
+              <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Live badge -->
+          <div id="gh-live-badge" class="flex items-center gap-2 px-1 mb-4 hidden">
+            <span
+              class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200/70 text-[10px] font-black text-emerald-600 uppercase tracking-widest">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse inline-block"></span>
+              Live Data
+            </span>
+            <span id="gh-updated-at" class="text-[10px] text-slate-400 font-medium"></span>
+          </div>
+
+          <!-- Fallback badge -->
+          <div id="gh-fallback-badge" class="flex items-center gap-2 px-1 mb-4 hidden">
+            <span
+              class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200/70 text-[10px] font-black text-amber-600 uppercase tracking-widest">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              Cached Data
+            </span>
+            <span class="text-[10px] text-slate-400 font-medium">GitHub API rate-limited</span>
+          </div>
+
+          <!-- Main card -->
+          <div class="about-skills-card p-6 sm:p-8 flex-1">
+
+            <!-- GitHub Stats Strip -->
+            <div id="gh-stats-strip" class="grid grid-cols-4 gap-2 mb-6">
+              <div class="text-center p-2 rounded-xl bg-slate-50 animate-pulse">
+                <div class="h-5 bg-slate-200 rounded w-8 mx-auto mb-1"></div>
+                <div class="h-2.5 bg-slate-100 rounded w-12 mx-auto"></div>
+              </div>
+              <div class="text-center p-2 rounded-xl bg-slate-50 animate-pulse">
+                <div class="h-5 bg-slate-200 rounded w-8 mx-auto mb-1"></div>
+                <div class="h-2.5 bg-slate-100 rounded w-12 mx-auto"></div>
+              </div>
+              <div class="text-center p-2 rounded-xl bg-slate-50 animate-pulse">
+                <div class="h-5 bg-slate-200 rounded w-8 mx-auto mb-1"></div>
+                <div class="h-2.5 bg-slate-100 rounded w-12 mx-auto"></div>
+              </div>
+              <div class="text-center p-2 rounded-xl bg-slate-50 animate-pulse">
+                <div class="h-5 bg-slate-200 rounded w-8 mx-auto mb-1"></div>
+                <div class="h-2.5 bg-slate-100 rounded w-12 mx-auto"></div>
+              </div>
+            </div>
+
+            <!-- Language bars label -->
+            <div class="mb-2 flex items-center justify-between">
+              <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.25em]">Language Distribution</p>
+              <span id="gh-lang-source" class="text-[10px] text-slate-400 font-medium hidden"></span>
+            </div>
+
+            <!-- Bars container with skeleton -->
+            <div class="space-y-4 mt-3" id="about-skill-bars">
+              <div class="skill-row-skeleton animate-pulse">
+                <div class="flex items-center justify-between mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-slate-200"></div>
+                    <div class="h-3 bg-slate-200 rounded w-32"></div>
+                  </div>
+                  <div class="h-3 bg-slate-200 rounded w-8"></div>
+                </div>
+                <div class="h-[7px] rounded-full bg-slate-100 w-full"></div>
+              </div>
+              <div class="skill-row-skeleton animate-pulse">
+                <div class="flex items-center justify-between mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-slate-200"></div>
+                    <div class="h-3 bg-slate-200 rounded w-24"></div>
+                  </div>
+                  <div class="h-3 bg-slate-200 rounded w-8"></div>
+                </div>
+                <div class="h-[7px] rounded-full bg-slate-100 w-full"></div>
+              </div>
+              <div class="skill-row-skeleton animate-pulse">
+                <div class="flex items-center justify-between mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-slate-200"></div>
+                    <div class="h-3 bg-slate-200 rounded w-28"></div>
+                  </div>
+                  <div class="h-3 bg-slate-200 rounded w-8"></div>
+                </div>
+                <div class="h-[7px] rounded-full bg-slate-100 w-full"></div>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="mt-7 mb-5 h-px bg-gradient-to-r from-slate-100 via-indigo-100/60 to-slate-100"></div>
+
+            <!-- Top Repos -->
+            <div>
+              <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.25em] mb-3">Top Repositories</p>
+              <div id="gh-top-repos" class="space-y-2">
+                <div class="animate-pulse flex items-center gap-3 p-3 rounded-xl bg-slate-50">
+                  <div class="w-3 h-3 rounded-full bg-slate-200 shrink-0"></div>
+                  <div class="flex-1">
+                    <div class="h-3 bg-slate-200 rounded w-3/4 mb-1"></div>
+                    <div class="h-2.5 bg-slate-100 rounded w-1/2"></div>
+                  </div>
+                  <div class="h-3 bg-slate-100 rounded w-8"></div>
+                </div>
+                <div class="animate-pulse flex items-center gap-3 p-3 rounded-xl bg-slate-50">
+                  <div class="w-3 h-3 rounded-full bg-slate-200 shrink-0"></div>
+                  <div class="flex-1">
+                    <div class="h-3 bg-slate-200 rounded w-2/3 mb-1"></div>
+                    <div class="h-2.5 bg-slate-100 rounded w-1/3"></div>
+                  </div>
+                  <div class="h-3 bg-slate-100 rounded w-8"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hint -->
+          <p class="text-center text-[11px] text-slate-400 mt-4 font-medium">
+            Live · <a href="https://github.com/RishvinReddy" target="_blank" rel="noopener"
+              class="text-indigo-500 hover:underline font-bold">GitHub API ↗</a>
+          </p>
+
+        </div>
+
+        <!-- GitHub Live Data Engine -->
+        <script>
+          (function () {
+            var GH_USER = 'RishvinReddy';
+            var LANG_COLORS = {
+              'JavaScript': { dot: '#f7df1e', grad: 'linear-gradient(90deg,#f7df1e,#fef08a)', text: '#b45309' },
+              'TypeScript': { dot: '#3178c6', grad: 'linear-gradient(90deg,#3178c6,#60a5fa)', text: '#1d4ed8' },
+              'Python': { dot: '#3572A5', grad: 'linear-gradient(90deg,#3572A5,#60a5fa)', text: '#1d4ed8' },
+              'HTML': { dot: '#e34c26', grad: 'linear-gradient(90deg,#e34c26,#fb923c)', text: '#c2410c' },
+              'CSS': { dot: '#563d7c', grad: 'linear-gradient(90deg,#563d7c,#a78bfa)', text: '#6d28d9' },
+              'C': { dot: '#555555', grad: 'linear-gradient(90deg,#555555,#94a3b8)', text: '#475569' },
+              'C++': { dot: '#f34b7d', grad: 'linear-gradient(90deg,#f34b7d,#fb7185)', text: '#be123c' },
+              'Java': { dot: '#b07219', grad: 'linear-gradient(90deg,#b07219,#fcd34d)', text: '#92400e' },
+              'Solidity': { dot: '#AA6746', grad: 'linear-gradient(90deg,#AA6746,#d97706)', text: '#92400e' },
+              'Shell': { dot: '#89e051', grad: 'linear-gradient(90deg,#89e051,#86efac)', text: '#15803d' },
+              'default': { dot: '#6366f1', grad: 'linear-gradient(90deg,#6366f1,#818cf8)', text: '#4338ca' }
+            };
+            var FB_LANGS = [
+              { name: 'Python', pct: 30 }, { name: 'JavaScript', pct: 25 }, { name: 'C++', pct: 18 },
+              { name: 'HTML', pct: 12 }, { name: 'Solidity', pct: 8 }, { name: 'CSS', pct: 7 }
+            ];
+            var FB_REPOS = [
+              { name: 'SecureComm', desc: 'Encrypted P2P communication system', stars: 3, lang: 'Python' },
+              { name: 'IoT-Patent', desc: 'Govt. registered IoT device — Patent #470097-001', stars: 5, lang: 'C++' },
+              { name: 'Gov-Payroll', desc: 'Blockchain-based payroll ledger', stars: 2, lang: 'Solidity' }
+            ];
+            var FB_STATS = { repos: 15, stars: 12, followers: 8, forks: 5 };
+
+            function el(id) { return document.getElementById(id); }
+
+            function renderStats(repos, user) {
+              var totalStars = repos.reduce(function (a, r) { return a + r.stargazers_count; }, 0);
+              var totalForks = repos.reduce(function (a, r) { return a + r.forks_count; }, 0);
+              var s = [
+                { label: 'Repos', val: user.public_repos, color: '#6366f1' },
+                { label: 'Stars', val: totalStars, color: '#f59e0b' },
+                { label: 'Forks', val: totalForks, color: '#14b8a6' },
+                { label: 'Followers', val: user.followers, color: '#f20d46' }
+              ];
+              el('gh-stats-strip').innerHTML = s.map(function (i) {
+                return '<div class="text-center p-2 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors cursor-default">'
+                  + '<div class="text-lg font-black tabular-nums" style="color:' + i.color + '">' + i.val + '</div>'
+                  + '<div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">' + i.label + '</div>'
+                  + '</div>';
+              }).join('');
+            }
+
+            function renderStatsFallback(s) {
+              var items = [
+                { label: 'Repos', val: s.repos, color: '#6366f1' }, { label: 'Stars', val: s.stars, color: '#f59e0b' },
+                { label: 'Forks', val: s.forks, color: '#14b8a6' }, { label: 'Followers', val: s.followers, color: '#f20d46' }
+              ];
+              el('gh-stats-strip').innerHTML = items.map(function (i) {
+                return '<div class="text-center p-2 rounded-xl bg-slate-50 border border-slate-100">'
+                  + '<div class="text-lg font-black tabular-nums" style="color:' + i.color + '">' + i.val + '</div>'
+                  + '<div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">' + i.label + '</div>'
+                  + '</div>';
+              }).join('');
+            }
+
+            function computeLangs(repos) {
+              var map = {};
+              repos.forEach(function (r) { if (r.language) { map[r.language] = (map[r.language] || 0) + 1; } });
+              var total = Object.keys(map).reduce(function (a, k) { return a + map[k]; }, 0);
+              if (!total) return null;
+              var arr = Object.keys(map).map(function (k) { return { name: k, count: map[k] }; });
+              arr.sort(function (a, b) { return b.count - a.count; });
+              return arr.slice(0, 6).map(function (e) { return { name: e.name, pct: Math.round(e.count / total * 100) }; });
+            }
+
+            function renderLangBars(langs, fromAPI) {
+              var cont = el('about-skill-bars');
+              cont.querySelectorAll('.skill-row-skeleton').forEach(function (e) { e.remove(); });
+              if (fromAPI) {
+                var src = el('gh-lang-source');
+                if (src) { src.textContent = 'from ' + langs.length + ' languages'; src.classList.remove('hidden'); }
+              }
+              langs.forEach(function (lang, idx) {
+                var c = LANG_COLORS[lang.name] || LANG_COLORS['default'];
+                var row = document.createElement('div');
+                row.className = 'skill-row'; row.setAttribute('data-pct', lang.pct);
+                row.innerHTML = '<div class="flex items-center justify-between mb-2">'
+                  + '<div class="flex items-center gap-2">'
+                  + '<span class="w-2 h-2 rounded-full shrink-0" style="background:' + c.dot + '"></span>'
+                  + '<span class="text-sm font-bold text-slate-700">' + lang.name + '</span>'
+                  + '</div>'
+                  + '<span class="text-xs font-black tabular-nums" style="color:' + c.text + '">' + lang.pct + '%</span>'
+                  + '</div>'
+                  + '<div class="skill-bar-track">'
+                  + '<div class="skill-bar-fill" style="background:' + c.grad + ';transition-delay:' + (idx * 120) + 'ms"></div>'
+                  + '</div>';
+                cont.appendChild(row);
+              });
+              var rows = cont.querySelectorAll('.skill-row');
+              var obs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                  if (e.isIntersecting) {
+                    var f = e.target.querySelector('.skill-bar-fill');
+                    if (f) f.style.width = e.target.getAttribute('data-pct') + '%';
+                    obs.unobserve(e.target);
+                  }
+                });
+              }, { threshold: 0.2 });
+              rows.forEach(function (r) { obs.observe(r); });
+            }
+
+            function renderRepos(repos) {
+              var sorted = repos.filter(function (r) { return !r.fork; });
+              sorted.sort(function (a, b) { return b.stargazers_count - a.stargazers_count; });
+              sorted = sorted.slice(0, 4);
+              el('gh-top-repos').innerHTML = sorted.map(function (r) {
+                var c = LANG_COLORS[r.language] || LANG_COLORS['default'];
+                return '<a href="' + r.html_url + '" target="_blank" rel="noopener noreferrer"'
+                  + ' class="group flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-transparent hover:border-indigo-200 hover:bg-indigo-50/40 transition-all duration-200">'
+                  + '<span class="w-2.5 h-2.5 rounded-full shrink-0" style="background:' + c.dot + '"></span>'
+                  + '<div class="flex-1 min-w-0">'
+                  + '<div class="text-sm font-bold text-slate-700 group-hover:text-indigo-600 transition-colors truncate">' + r.name + '</div>'
+                  + '<div class="text-[11px] text-slate-400 font-medium truncate">' + (r.description || (r.language || '')) + '</div>'
+                  + '</div>'
+                  + '<div class="flex items-center gap-1 shrink-0 text-[11px] font-bold text-slate-400">'
+                  + '<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'
+                  + r.stargazers_count
+                  + '</div>'
+                  + '</a>';
+              }).join('');
+            }
+
+            function renderReposFallback(repos) {
+              el('gh-top-repos').innerHTML = repos.map(function (r) {
+                var c = LANG_COLORS[r.lang] || LANG_COLORS['default'];
+                return '<div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">'
+                  + '<span class="w-2.5 h-2.5 rounded-full shrink-0" style="background:' + c.dot + '"></span>'
+                  + '<div class="flex-1 min-w-0">'
+                  + '<div class="text-sm font-bold text-slate-700 truncate">' + r.name + '</div>'
+                  + '<div class="text-[11px] text-slate-400 font-medium truncate">' + r.desc + '</div>'
+                  + '</div>'
+                  + '<div class="flex items-center gap-1 shrink-0 text-[11px] font-bold text-slate-400">'
+                  + '<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'
+                  + r.stars
+                  + '</div>'
+                  + '</div>';
+              }).join('');
+            }
+
+            function showFallback() {
+              var fb = el('gh-fallback-badge'); if (fb) fb.classList.remove('hidden');
+              renderStatsFallback(FB_STATS);
+              renderLangBars(FB_LANGS, false);
+              renderReposFallback(FB_REPOS);
+            }
+
+            function loadGitHub() {
+              var API = 'https://api.github.com';
+              var headers = { 'Accept': 'application/vnd.github.v3+json' };
+              Promise.all([
+                fetch(API + '/users/' + GH_USER, { headers: headers }).then(function (r) { return r.json(); }),
+                fetch(API + '/users/' + GH_USER + '/repos?per_page=100&sort=updated', { headers: headers }).then(function (r) { return r.json(); })
+              ]).then(function (results) {
+                var user = results[0], repos = results[1];
+                if (user.message || !Array.isArray(repos)) { showFallback(); return; }
+                renderStats(repos, user);
+                var langs = computeLangs(repos);
+                renderLangBars(langs && langs.length ? langs : FB_LANGS, !!(langs && langs.length));
+                renderRepos(repos);
+                var lb = el('gh-live-badge'); if (lb) lb.classList.remove('hidden');
+                var ua = el('gh-updated-at'); if (ua) ua.textContent = 'Updated ' + new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+              }).catch(function () { showFallback(); });
+            }
+
+            var section = document.getElementById('about-v3');
+            if (section && 'IntersectionObserver' in window) {
+              var trig = new IntersectionObserver(function (entries) {
+                if (entries[0].isIntersecting) { loadGitHub(); trig.disconnect(); }
+              }, { threshold: 0.05 });
+              trig.observe(section);
+            } else {
+              loadGitHub();
+            }
+          })();
+        </script>
+
+      </div>
   </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       TECH STACK MARQUEE — full-bleed, truly centered
+  ══════════════════════════════════════════════════════ -->
+  <div class="relative py-8 scroll-reveal" style="overflow:hidden;">
+
+    <!-- Top + bottom border lines -->
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent">
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent">
+    </div>
+
+    <!-- Label — centered above the track -->
+    <div class="flex flex-col items-center gap-2 mb-6">
+      <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em]">Technology Stack</p>
+      <div class="flex items-center gap-2.5">
+        <div class="w-12 h-px bg-gradient-to-r from-transparent to-indigo-200"></div>
+        <div class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></div>
+        <div class="w-12 h-px bg-gradient-to-l from-transparent to-indigo-200"></div>
+      </div>
+    </div>
+
+    <!-- Marquee track: edge-faded, full width -->
+    <div
+      style="overflow:hidden; mask-image:linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%); -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%);">
+      <div id="tech-marquee-v2"
+        style="display:flex; gap:10px; width:max-content; animation:techScrollV2 32s linear infinite; padding: 4px 0;">
+
+        <!-- Set 1 -->
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#6366f1;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 2v2m0 16v2M2 12h2m16 0h2" stroke-width="2" stroke-linecap="round" />
+          </svg>ESP32 / Arduino
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#7c3aed;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M14.828 10.828a4 4 0 015.656 0l1 1a4 4 0 010 5.656l-2.5 2.5a4 4 0 01-5.656 0"
+              stroke-width="2" stroke-linecap="round" />
+          </svg>Solidity / Web3
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#3b82f6;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <path d="M8 21h8M12 17v4" stroke-width="2" stroke-linecap="round" />
+          </svg>React / Next.js
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#10b981;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M5 3l14 9-14 9V3z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>Node.js / Express
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#eab308;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-width="2" stroke-linecap="round" />
+          </svg>Python / ML
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#f43f5e;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="2" stroke-linecap="round" />
+          </svg>Network Security
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#06b6d4;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z" stroke-width="2" />
+            <path d="M9 12h6M12 9v6" stroke-width="2" stroke-linecap="round" />
+          </svg>MongoDB / SQL
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#f97316;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-5M9 21H5a2 2 0 01-2-2v-5m0 0h18"
+              stroke-width="2" stroke-linecap="round" />
+          </svg>Embedded C / C++
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#64748b;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              stroke-width="2" stroke-linecap="round" />
+          </svg>Linux / CLI
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#f59e0b;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>IoT Patent
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#a855f7;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-width="2" stroke-linecap="round" />
+          </svg>DSA / Algorithms
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#f20d46;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>Smart Contracts
+        </span>
+
+        <!-- Set 2 — identical duplicate for seamless loop -->
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#6366f1;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 2v2m0 16v2M2 12h2m16 0h2" stroke-width="2" stroke-linecap="round" />
+          </svg>ESP32 / Arduino
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#7c3aed;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101M14.828 10.828a4 4 0 015.656 0l1 1a4 4 0 010 5.656l-2.5 2.5a4 4 0 01-5.656 0"
+              stroke-width="2" stroke-linecap="round" />
+          </svg>Solidity / Web3
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#3b82f6;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <path d="M8 21h8M12 17v4" stroke-width="2" stroke-linecap="round" />
+          </svg>React / Next.js
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#10b981;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M5 3l14 9-14 9V3z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>Node.js / Express
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#eab308;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-width="2" stroke-linecap="round" />
+          </svg>Python / ML
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#f43f5e;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="2" stroke-linecap="round" />
+          </svg>Network Security
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#06b6d4;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z" stroke-width="2" />
+            <path d="M9 12h6M12 9v6" stroke-width="2" stroke-linecap="round" />
+          </svg>MongoDB / SQL
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#f97316;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-5M9 21H5a2 2 0 01-2-2v-5m0 0h18"
+              stroke-width="2" stroke-linecap="round" />
+          </svg>Embedded C / C++
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#64748b;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              stroke-width="2" stroke-linecap="round" />
+          </svg>Linux / CLI
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#f59e0b;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>IoT Patent
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#a855f7;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-width="2" stroke-linecap="round" />
+          </svg>DSA / Algorithms
+        </span>
+        <span class="tech-chip" style="flex-shrink:0; white-space:nowrap; padding:7px 16px; font-size:12px;">
+          <svg style="width:14px;height:14px;color:#f20d46;flex-shrink:0;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>Smart Contracts
+        </span>
+
+      </div>
+    </div>
+
+    <style>
+      @keyframes techScrollV2 {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      #tech-marquee-v2:hover {
+        animation-play-state: paused;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #tech-marquee-v2 {
+          animation: none;
+        }
+      }
+    </style>
+  </div>
+
+  <!-- Skill bar animation script -->
+  <script>
+    (function () {
+      var bars = document.querySelectorAll('#about-skill-bars .skill-row');
+      if (!bars.length) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var row = entry.target;
+            var pct = row.getAttribute('data-pct');
+            var fill = row.querySelector('.skill-bar-fill');
+            if (fill) fill.style.width = pct + '%';
+            observer.unobserve(row);
+          }
+        });
+      }, { threshold: 0.3 });
+      bars.forEach(function (b) { observer.observe(b); });
+    })();
+  </script>
 
   <!-- ─ Section Divider ─ -->
   <div class="section-divider" aria-hidden="true"><span class="divider-gem"></span></div>
@@ -1574,94 +2632,268 @@
   <!-- ===========================
      PATENT HIGHLIGHT SECTION
      =========================== -->
-  <section id="patent-section" class="max-w-7xl mx-auto px-6 lg:px-8 mt-10 mb-10 relative z-20 scroll-mt-32">
+  <!-- ===========================
+     PATENT HIGHLIGHT SECTION — Elite Certificate Edition
+     =========================== -->
+  <!-- ===========================
+     PATENT HIGHLIGHT SECTION — Elite Full-Width Certificate
+     =========================== -->
+  <section id="patent-section"
+    class="w-full max-w-screen-2xl mx-auto px-6 lg:px-12 mt-16 mb-28 relative z-20 scroll-mt-32">
 
-    <h2 class="text-3xl font-extrabold text-slate-900 mb-8 font-display flex items-center gap-3">
-      <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
-        </path>
-      </svg>
-      Patent & Innovation
-    </h2>
-
-    <div
-      class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-3xl p-8 premium-layered-shadow transition-all duration-300 hover:-translate-y-1 relative group overflow-hidden">
-      <!-- Decorative background glow -->
-      <div
-        class="absolute -right-20 -bottom-20 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl group-hover:bg-yellow-400/20 transition-all duration-500 pointer-events-none">
+    <!-- Section Label + Heading -->
+    <div class="scroll-reveal mb-14 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+      <div>
+        <!-- Badge -->
+        <div class="mb-5 flex items-center gap-3">
+          <span
+            class="inline-flex items-center gap-2 px-4 py-2 text-[11px] font-black uppercase tracking-widest text-amber-600 bg-amber-50 border border-amber-200/70 rounded-full shadow-sm">
+            <span class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse"></span>
+            Original Innovation
+          </span>
+          <div class="flex-1 h-px bg-gradient-to-r from-amber-200/60 to-transparent max-w-[160px]"></div>
+        </div>
+        <!-- Headline -->
+        <h2
+          class="text-5xl md:text-6xl xl:text-7xl font-black text-slate-900 tracking-tight font-display leading-[1.02]">
+          Patent &amp;<br>
+          <span class="relative inline-block">
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-400 to-yellow-500">Innovation</span>
+            <!-- Underline accent -->
+            <span class="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full opacity-40"
+              style="background: linear-gradient(90deg, #f59e0b, #fbbf24);"></span>
+          </span>
+        </h2>
       </div>
+      <p class="text-slate-500 text-base font-medium max-w-xs leading-relaxed text-right hidden sm:block">
+        One of the few undergrads with a <strong class="text-slate-900 font-extrabold">government-registered</strong>
+        hardware patent.
+      </p>
+    </div>
 
-      <!-- Header -->
-      <div class="flex flex-col sm:flex-row sm:items-start justify-between mb-8 gap-4 relative z-10">
-        <div>
-          <h3 class="text-2xl font-bold text-slate-800 mb-2 group-hover:text-primary transition-colors">
-            IoT Connectivity Device
-          </h3>
-          <p class="text-slate-500 font-medium">
-            Government of India – Registered Design Patent
-          </p>
+    <!-- Main Patent Card — Wide Split Layout -->
+    <div class="scroll-reveal delay-200">
+      <div class="relative rounded-[3rem] overflow-hidden group transition-all duration-700 hover:-translate-y-2"
+        style="box-shadow: 0 0 0 1px rgba(251,191,36,0.15), 0 20px 60px -10px rgba(0,0,0,0.07), 0 8px 20px -5px rgba(245,158,11,0.08);">
+
+        <!-- Gold Accent Top Strip -->
+        <div
+          class="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-yellow-400 via-amber-400 via-orange-400 to-yellow-500 z-30">
         </div>
 
-        <span
-          class="text-sm font-bold bg-emerald-50 text-emerald-600 px-4 py-1.5 rounded-full border border-emerald-200 inline-flex items-center gap-1.5 self-start">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          Registered
-        </span>
+        <!-- Rich layered background -->
+        <div class="absolute inset-0 bg-white"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-amber-50/60 via-white/0 to-orange-50/40 pointer-events-none">
+        </div>
+
+        <!-- Large ambient glow blobs -->
+        <div
+          class="absolute -right-48 -bottom-48 w-[700px] h-[700px] bg-gradient-to-tl from-amber-200/25 to-orange-200/15 rounded-full blur-[120px] pointer-events-none transition-all duration-[1500ms] group-hover:scale-110 group-hover:-right-32 group-hover:-bottom-32">
+        </div>
+        <div
+          class="absolute -left-32 -top-32 w-80 h-80 bg-gradient-to-br from-yellow-100/50 to-amber-100/30 rounded-full blur-[70px] pointer-events-none transition-all duration-1000 group-hover:scale-115">
+        </div>
+
+        <!-- SPLIT GRID: Left content + Right visual panel -->
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-5">
+
+          <!-- LEFT: Main Patent Info (3 cols) -->
+          <div class="lg:col-span-3 p-8 md:p-12 xl:p-16 border-r border-amber-100/0 lg:border-amber-100/60">
+
+            <!-- Header -->
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-6 mb-10">
+              <div class="flex-1">
+                <div
+                  class="text-[10px] font-black text-amber-500/80 uppercase tracking-[0.22em] mb-4 flex items-center gap-3">
+                  <div class="h-px w-8 bg-gradient-to-r from-amber-400 to-transparent"></div>
+                  Government of India · Design Patent Office
+                </div>
+                <h3
+                  class="text-3xl md:text-4xl xl:text-5xl font-black text-slate-900 mb-4 tracking-tight leading-tight group-hover:text-amber-700 transition-colors duration-500">
+                  IoT Connectivity<br>Device
+                </h3>
+                <p class="text-base text-slate-500 font-medium leading-relaxed max-w-sm">
+                  A novel design for an intelligent IoT hardware interface enabling <strong
+                    class="text-slate-700">secure, authenticated</strong> device-to-cloud connectivity with real-time
+                  telemetry.
+                </p>
+              </div>
+
+              <!-- Live status badge -->
+              <div class="flex-shrink-0">
+                <div
+                  class="flex flex-col items-center gap-2.5 px-5 py-5 rounded-2xl bg-gradient-to-b from-emerald-50 to-teal-50/80 border border-emerald-200/70 shadow-md shadow-emerald-100/50">
+                  <span class="relative flex h-3.5 w-3.5">
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
+                    <span
+                      class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 shadow-[0_0_8px_2px_rgba(52,211,153,0.4)]"></span>
+                  </span>
+                  <div class="text-[11px] font-black text-emerald-700 uppercase tracking-[0.14em] text-center">
+                    Registered</div>
+                  <div class="text-[9px] font-bold text-emerald-500/60 uppercase tracking-widest">Active</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Elegant divider -->
+            <div class="flex items-center gap-4 mb-10">
+              <div class="h-px flex-1 bg-gradient-to-r from-amber-200/80 to-transparent"></div>
+              <div class="w-1.5 h-1.5 rounded-full bg-amber-300"></div>
+              <div class="h-px flex-1 bg-gradient-to-l from-amber-200/80 to-transparent"></div>
+            </div>
+
+            <!-- Meta Tiles -->
+            <div class="grid grid-cols-2 xl:grid-cols-4 gap-3 mb-10">
+              <div
+                class="group/tile relative flex flex-col gap-2 p-5 rounded-2xl bg-white border border-slate-100/80 shadow-sm hover:shadow-lg hover:border-amber-200/80 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden cursor-default">
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-amber-50/0 to-amber-50/80 opacity-0 group-hover/tile:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none">
+                </div>
+                <div class="text-[8.5px] font-black text-slate-400 uppercase tracking-[0.2em] relative z-10">Design No.
+                </div>
+                <div class="font-black text-slate-800 text-lg relative z-10 tabular-nums leading-tight">470097<span
+                    class="text-amber-500">-001</span></div>
+              </div>
+
+              <div
+                class="group/tile relative flex flex-col gap-2 p-5 rounded-2xl bg-white border border-slate-100/80 shadow-sm hover:shadow-lg hover:border-amber-200/80 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden cursor-default">
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-amber-50/0 to-amber-50/80 opacity-0 group-hover/tile:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none">
+                </div>
+                <div class="text-[8.5px] font-black text-slate-400 uppercase tracking-[0.2em] relative z-10">Category
+                </div>
+                <div class="font-black text-slate-800 text-lg relative z-10 leading-tight">IoT System</div>
+              </div>
+
+              <div
+                class="group/tile relative flex flex-col gap-2 p-5 rounded-2xl bg-white border border-slate-100/80 shadow-sm hover:shadow-lg hover:border-amber-200/80 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden cursor-default">
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-amber-50/0 to-amber-50/80 opacity-0 group-hover/tile:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none">
+                </div>
+                <div class="text-[8.5px] font-black text-slate-400 uppercase tracking-[0.2em] relative z-10">Registered
+                </div>
+                <div class="font-black text-slate-800 text-lg relative z-10 leading-tight">Aug 2025</div>
+              </div>
+
+              <div
+                class="group/tile relative flex flex-col gap-2 p-5 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50/80 border border-amber-200/60 shadow-sm hover:shadow-lg hover:border-amber-300 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden cursor-default">
+                <div
+                  class="absolute bottom-0 right-0 w-16 h-16 bg-amber-300/15 rounded-full blur-lg pointer-events-none">
+                </div>
+                <div class="text-[8.5px] font-black text-amber-600/60 uppercase tracking-[0.2em] relative z-10">My Role
+                </div>
+                <div class="font-black text-amber-600 text-lg relative z-10 leading-tight">Co-Inventor</div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex flex-wrap items-center gap-3">
+              <button onclick="openPatent()"
+                class="group/btn relative inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl text-sm font-black text-white overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-500/30 active:scale-95 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2">
+                <div class="absolute inset-0 bg-gradient-to-r from-amber-500 to-orange-500"></div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-amber-400 to-yellow-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
+                </div>
+                <svg class="w-4 h-4 relative z-10 transition-transform duration-300 group-hover/btn:scale-110"
+                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                  </path>
+                </svg>
+                <span class="relative z-10">View Patent</span>
+              </button>
+
+              <a href="assets/certificates/CERTIFICATE.pdf" target="_blank"
+                class="group/pdf inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl text-sm font-black text-slate-600 bg-white border-2 border-slate-200 hover:border-amber-300/80 hover:bg-amber-50/60 hover:text-amber-700 hover:shadow-lg hover:shadow-amber-100 hover:-translate-y-1 transition-all duration-300 active:scale-95 focus:outline-none focus:ring-2 focus:ring-amber-200 focus:ring-offset-2">
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover/pdf:-translate-y-0.5" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                Download PDF
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT: Visual Certificate Panel (2 cols) -->
+          <div
+            class="lg:col-span-2 relative flex flex-col items-center justify-center p-8 xl:p-12 bg-gradient-to-br from-amber-50/80 via-orange-50/50 to-white overflow-hidden min-h-[400px] lg:min-h-0">
+
+            <!-- Concentric decorative rings behind seal -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+              <div
+                class="w-80 h-80 rounded-full border border-amber-200/30 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:scale-105 transition-transform duration-700">
+              </div>
+              <div
+                class="w-64 h-64 rounded-full border border-amber-300/25 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform duration-700 delay-75">
+              </div>
+              <div
+                class="w-48 h-48 rounded-full border border-amber-400/20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:scale-115 transition-transform duration-700 delay-150">
+              </div>
+            </div>
+
+            <!-- Central Seal -->
+            <div
+              class="relative z-10 flex flex-col items-center gap-5 group-hover:scale-[1.03] transition-transform duration-700 ease-out">
+              <!-- Seal ring + icon -->
+              <div
+                class="w-36 h-36 rounded-full border-[3px] border-amber-300/60 flex items-center justify-center bg-gradient-to-br from-white to-amber-50/80 shadow-xl shadow-amber-200/30 group-hover:border-amber-400/80 group-hover:shadow-amber-300/40 transition-all duration-700">
+                <div
+                  class="w-28 h-28 rounded-full border-2 border-dashed border-amber-300/50 flex items-center justify-center group-hover:border-amber-400/70 transition-colors duration-700">
+                  <svg class="w-14 h-14 text-amber-400/90 group-hover:text-amber-500 transition-colors duration-500"
+                    fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Certificate text -->
+              <div class="text-center">
+                <div class="text-[9px] font-black text-amber-500/70 uppercase tracking-[0.25em] mb-2">Certificate of
+                  Registration</div>
+                <div class="text-2xl font-black text-slate-800 tracking-tight mb-1">470097-001</div>
+                <div class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Design Patent</div>
+              </div>
+
+              <!-- Mini stat strip -->
+              <div
+                class="flex items-stretch gap-px bg-amber-200/40 rounded-2xl overflow-hidden border border-amber-200/50 shadow-sm">
+                <div class="flex flex-col items-center px-5 py-3 bg-white/90 gap-0.5">
+                  <div class="text-[9px] font-black text-amber-500/70 uppercase tracking-widest">Filed</div>
+                  <div class="text-base font-black text-slate-800">2025</div>
+                </div>
+                <div class="flex flex-col items-center px-5 py-3 bg-white/90 gap-0.5 border-x border-amber-200/40">
+                  <div class="text-[9px] font-black text-amber-500/70 uppercase tracking-widest">Class</div>
+                  <div class="text-base font-black text-slate-800">IoT</div>
+                </div>
+                <div class="flex flex-col items-center px-5 py-3 bg-white/90 gap-0.5">
+                  <div class="text-[9px] font-black text-amber-500/70 uppercase tracking-widest">Status</div>
+                  <div class="text-base font-black text-emerald-500">Live</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom attribution -->
+            <div class="absolute bottom-5 inset-x-0 flex justify-center">
+              <div class="flex items-center gap-2 text-[9px] font-black text-slate-400 uppercase tracking-[0.15em]">
+                <div class="w-1 h-1 rounded-full bg-amber-400/60"></div>
+                Govt. of India · Patent Office
+                <div class="w-1 h-1 rounded-full bg-amber-400/60"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
-
-      <!-- Meta Info -->
-      <div
-        class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-sm mb-8 bg-slate-50/50 p-6 rounded-2xl border border-slate-100 relative z-10">
-
-        <div class="flex flex-col gap-1">
-          <div class="text-slate-400 uppercase tracking-wider font-semibold text-xs">Design No.</div>
-          <div class="font-bold text-slate-800 text-base">470097-001</div>
-        </div>
-
-        <div class="flex flex-col gap-1">
-          <div class="text-slate-400 uppercase tracking-wider font-semibold text-xs">Category</div>
-          <div class="font-bold text-slate-800 text-base">IoT System Design</div>
-        </div>
-
-        <div class="flex flex-col gap-1">
-          <div class="text-slate-400 uppercase tracking-wider font-semibold text-xs">Registered</div>
-          <div class="font-bold text-slate-800 text-base">Aug 2025</div>
-        </div>
-
-        <div class="flex flex-col gap-1">
-          <div class="text-slate-400 uppercase tracking-wider font-semibold text-xs">Role</div>
-          <div class="font-bold text-slate-800 text-base text-primary">Co-Inventor</div>
-        </div>
-
-      </div>
-
-      <!-- Actions -->
-      <div class="flex flex-wrap gap-4 relative z-10 p-2">
-        <button onclick="openPatent()"
-          class="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white bg-primary rounded-xl shadow-lg shadow-primary/30 hover:-translate-y-0.5 hover:shadow-primary/40 transition-all duration-300 gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z">
-            </path>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-            </path>
-          </svg>
-          View Patent
-        </button>
-
-        <a href="assets/certificates/CERTIFICATE.pdf" target="_blank"
-          class="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-slate-700 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-          </svg>
-          Download PDF
-        </a>
-      </div>
-
     </div>
   </section>
+
 
   <!-- ─ Section Divider ─ -->
   <div class="section-divider" aria-hidden="true"><span class="divider-gem"></span></div>
@@ -1669,56 +2901,76 @@
 
 
   <!-- Featured Projects (Premium UI Upgrade) -->
-  <section class="py-24 sm:py-32 bg-slate-50 relative overflow-hidden" id="projects">
+  <section class="py-24 sm:py-32 bg-[#F8FAFC] relative overflow-hidden" id="projects">
     <!-- Dynamic Background Elements -->
     <div class="absolute inset-0 pointer-events-none">
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl">
         <div
-          class="absolute top-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse mix-blend-multiply">
+          class="absolute top-0 left-0 w-[800px] h-[800px] bg-slate-200/50 rounded-full blur-[120px] mix-blend-multiply opacity-50">
         </div>
         <div
-          class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-3xl animate-pulse delay-700 mix-blend-multiply">
+          class="absolute bottom-20 right-10 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[100px] animate-pulse delay-700 mix-blend-multiply">
         </div>
       </div>
     </div>
 
     <div class="relative z-10 mx-auto max-w-screen-2xl px-6 lg:px-12">
       <!-- Section Header -->
-      <div class="mx-auto max-w-2xl text-center mb-16 scroll-reveal">
-        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-6 font-display">
-          Featured Projects
+      <div class="mx-auto max-w-3xl flex flex-col items-center text-center mb-16 scroll-reveal">
+        <!-- Badge -->
+        <div class="mb-6 flex items-center justify-center gap-3 w-full">
+          <div class="flex-1 h-px bg-gradient-to-l from-slate-300/60 to-transparent max-w-[120px]"></div>
+          <span
+            class="inline-flex items-center gap-2 px-4 py-2 text-[11px] font-black uppercase tracking-widest text-slate-700 bg-slate-100 border border-slate-200/70 rounded-full shadow-sm">
+            <span class="w-1.5 h-1.5 bg-slate-500 rounded-full animate-pulse"></span>
+            Selected Works
+          </span>
+          <div class="flex-1 h-px bg-gradient-to-r from-slate-300/60 to-transparent max-w-[120px]"></div>
+        </div>
+        <!-- Headline -->
+        <h2 class="text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-6 font-display leading-[1.05]">
+          Featured<br class="sm:hidden">
+          <span class="relative inline-block mt-2 sm:mt-0">
+            <span class="text-transparent bg-clip-text"
+              style="background-image: linear-gradient(120deg, #334155 0%, #0f172a 100%);">
+              Projects
+            </span>
+            <!-- Underline accent -->
+            <span class="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full opacity-30"
+              style="background: linear-gradient(90deg, #64748b, #334155);"></span>
+          </span>
         </h2>
-        <p class="text-lg text-slate-600 leading-relaxed">
+        <p class="text-lg md:text-xl text-slate-500 leading-relaxed font-medium max-w-2xl">
           A selection of engineering challenges solved with
-          <span class="font-semibold text-primary">IoT</span>,
-          <span class="font-semibold text-indigo-600">Blockchain</span>, and
-          <span class="font-semibold text-slate-900">Secure Systems</span>.
+          <strong class="text-teal-600 font-black">IoT</strong>,
+          <strong class="text-indigo-600 font-black">Blockchain</strong>, and
+          <strong class="text-slate-800 font-black">Secure Systems</strong>.
         </p>
       </div>
 
       <!-- Filter Buttons (Premium Pill Design) -->
-      <div class="flex flex-wrap justify-center gap-3 mb-16 delay-100" id="projectFilters">
+      <div class="flex flex-wrap justify-center gap-4 mb-20 delay-100 scroll-reveal" id="projectFilters">
         <button
-          class="filter-btn active px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border border-transparent shadow-sm"
+          class="filter-btn active px-7 py-3 rounded-2xl text-[13px] font-black tracking-wide uppercase transition-all duration-300 border border-transparent shadow-sm"
           data-filter="all">All Projects</button>
         <button
-          class="filter-btn px-6 py-2.5 rounded-full bg-white text-slate-600 border border-slate-200 text-sm font-medium transition-all duration-300 hover:border-slate-300 hover:shadow-md"
+          class="filter-btn px-7 py-3 rounded-2xl bg-white/80 backdrop-blur text-slate-500 border border-slate-200 text-[13px] font-black tracking-wide uppercase transition-all duration-300 hover:border-slate-300 hover:shadow-md hover:-translate-y-0.5"
           data-filter="iot">IoT & Embedded</button>
         <button
-          class="filter-btn px-6 py-2.5 rounded-full bg-white text-slate-600 border border-slate-200 text-sm font-medium transition-all duration-300 hover:border-slate-300 hover:shadow-md"
+          class="filter-btn px-7 py-3 rounded-2xl bg-white/80 backdrop-blur text-slate-500 border border-slate-200 text-[13px] font-black tracking-wide uppercase transition-all duration-300 hover:border-slate-300 hover:shadow-md hover:-translate-y-0.5"
           data-filter="security">Security</button>
         <button
-          class="filter-btn px-6 py-2.5 rounded-full bg-white text-slate-600 border border-slate-200 text-sm font-medium transition-all duration-300 hover:border-slate-300 hover:shadow-md"
+          class="filter-btn px-7 py-3 rounded-2xl bg-white/80 backdrop-blur text-slate-500 border border-slate-200 text-[13px] font-black tracking-wide uppercase transition-all duration-300 hover:border-slate-300 hover:shadow-md hover:-translate-y-0.5"
           data-filter="web">Web & AI</button>
 
         <style>
           /* Custom active state for filters */
           .filter-btn.active {
-            background-color: #0f172a;
-            /* slate-900 */
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             color: white;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
-            transform: translateY(-1px);
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3), 0 8px 10px -6px rgba(15, 23, 42, 0.2);
+            transform: translateY(-2px);
+            border-bottom: 2px solid #334155;
           }
         </style>
       </div>
@@ -1739,80 +2991,127 @@
   <!-- Open Source Projects Section -->
   <section class="py-24 bg-slate-50 relative overflow-hidden border-t border-slate-200" id="open-source">
     <div class="container mx-auto px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl mx-auto text-center mb-16 scroll-reveal">
-        <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 font-semibold text-sm mb-6 border border-slate-200 shadow-sm">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          Live GitHub Sync
+      <!-- Section Header -->
+      <div class="mx-auto max-w-3xl flex flex-col items-center text-center mb-16 scroll-reveal">
+        <!-- Badge -->
+        <div class="mb-6 flex items-center justify-center gap-3 w-full">
+          <div class="flex-1 h-px bg-gradient-to-l from-emerald-200/60 to-transparent max-w-[120px]"></div>
+          <span
+            class="inline-flex items-center gap-2 px-4 py-2 text-[11px] font-black uppercase tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200/70 rounded-full shadow-sm">
+            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
+            Live GitHub Sync
+          </span>
+          <div class="flex-1 h-px bg-gradient-to-r from-emerald-200/60 to-transparent max-w-[120px]"></div>
         </div>
-        <h2 class="text-4xl md:text-5xl font-black mb-6 text-slate-900 tracking-tight font-display">
-          Open Source <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-500">Contributions</span>
+        <!-- Headline -->
+        <h2 class="text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-6 font-display leading-[1.05]">
+          Open Source<br class="sm:hidden">
+          <span class="relative inline-block mt-2 sm:mt-0">
+            <span class="text-transparent bg-clip-text"
+              style="background-image: linear-gradient(120deg, #10b981 0%, #3b82f6 100%);">
+              Contributions
+            </span>
+            <!-- Underline accent -->
+            <span class="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full opacity-30"
+              style="background: linear-gradient(90deg, #10b981, #3b82f6);"></span>
+          </span>
         </h2>
-        <p class="text-lg text-slate-600">
-          Exploring new technologies and contributing to the open-source community. Data is pulled live from GitHub
-          API.
+        <p class="text-lg md:text-xl text-slate-500 leading-relaxed font-medium max-w-2xl">
+          Exploring new technologies and contributing to the open-source community. Data is pulled <strong
+            class="text-slate-700 font-extrabold">live from GitHub API</strong>.
         </p>
       </div>
       <div id="githubProjects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Projects will be injected here by JS -->
       </div>
 
-      <div class="mt-16 mb-16 text-center max-w-7xl mx-auto scroll-reveal">
-        <h3 class="text-3xl font-bold text-slate-900 mb-8">Developer Analytics</h3>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="card-premium p-6 text-center">
-            <h3 id="repoCount" class="text-4xl font-bold text-primary mb-2">0</h3>
-            <p class="text-sm text-slate-600 font-medium">Repositories</p>
-          </div>
-          <div class="card-premium p-6 text-center">
-            <h3 id="starCount" class="text-4xl font-bold text-indigo-500 mb-2">0</h3>
-            <p class="text-sm text-slate-600 font-medium">Total Stars</p>
-          </div>
-          <div class="card-premium p-6 text-center">
-            <h3 id="forkCount" class="text-4xl font-bold text-emerald-500 mb-2">0</h3>
-            <p class="text-sm text-slate-600 font-medium">Total Forks</p>
-          </div>
-          <div class="card-premium p-6 text-center">
-            <h3 id="languageCount" class="text-4xl font-bold text-amber-500 mb-2">0</h3>
-            <p class="text-sm text-slate-600 font-medium">Languages Used</p>
-          </div>
-          <div class="card-premium p-6 text-center">
-            <h3 class="text-4xl font-bold text-yellow-500 mb-2">1</h3>
-            <p class="text-sm text-slate-600 font-medium">Patents</p>
-          </div>
+      <div class="section-divider" aria-hidden="true"><span class="divider-gem"></span></div>
+
+      <!-- Developer Analytics Header -->
+      <div class="mt-16 mb-12 flex flex-col items-center text-center max-w-3xl mx-auto scroll-reveal">
+        <!-- Badge -->
+        <div class="mb-5 flex items-center justify-center gap-3 w-full">
+          <div class="flex-1 h-px bg-gradient-to-l from-cyan-200/60 to-transparent max-w-[100px]"></div>
+          <span
+            class="inline-flex items-center gap-2 px-3 py-1.5 text-[10px] font-black uppercase tracking-widest text-cyan-700 bg-cyan-50 border border-cyan-200/70 rounded-full shadow-sm">
+            <span class="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse"></span>
+            Live Metrics
+          </span>
+          <div class="flex-1 h-px bg-gradient-to-r from-cyan-200/60 to-transparent max-w-[100px]"></div>
+        </div>
+        <!-- Headline -->
+        <h3 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 font-display leading-[1.05]">
+          Developer<br class="sm:hidden">
+          <span class="relative inline-block mt-1 sm:mt-0">
+            <span class="text-transparent bg-clip-text"
+              style="background-image: linear-gradient(120deg, #06b6d4 0%, #3b82f6 100%);">
+              Analytics
+            </span>
+            <!-- Underline accent -->
+            <span class="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full opacity-30"
+              style="background: linear-gradient(90deg, #06b6d4, #3b82f6);"></span>
+          </span>
+        </h3>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="card-premium p-6 text-center">
+          <h3 id="repoCount" class="text-4xl font-bold text-primary mb-2">0</h3>
+          <p class="text-sm text-slate-600 font-medium">Repositories</p>
+        </div>
+        <div class="card-premium p-6 text-center">
+          <h3 id="starCount" class="text-4xl font-bold text-indigo-500 mb-2">0</h3>
+          <p class="text-sm text-slate-600 font-medium">Total Stars</p>
+        </div>
+        <div class="card-premium p-6 text-center">
+          <h3 id="forkCount" class="text-4xl font-bold text-emerald-500 mb-2">0</h3>
+          <p class="text-sm text-slate-600 font-medium">Total Forks</p>
+        </div>
+        <div class="card-premium p-6 text-center">
+          <h3 id="languageCount" class="text-4xl font-bold text-amber-500 mb-2">0</h3>
+          <p class="text-sm text-slate-600 font-medium">Languages Used</p>
+        </div>
+        <div class="card-premium p-6 text-center">
+          <h3 class="text-4xl font-bold text-yellow-500 mb-2">1</h3>
+          <p class="text-sm text-slate-600 font-medium">Patents</p>
         </div>
       </div>
+    </div>
 
-      <!-- ── AI Insights Panel (Phase 3B) ── -->
-      <div class="mt-16 mb-8 max-w-7xl mx-auto scroll-reveal">
-        <div id="aiInsightsPanel" class="card-premium p-6">
-          <!-- Loading skeleton -->
-          <div class="animate-pulse space-y-4">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-slate-200 rounded-xl"></div>
-              <div class="flex-1 space-y-2">
-                <div class="h-4 bg-slate-200 rounded w-1/3"></div>
-                <div class="h-3 bg-slate-100 rounded w-1/4"></div>
+    <!-- ── AI Insights Panel (Phase 3B) ── -->
+    <div class="mt-20 mb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-reveal">
+      <div
+        class="relative overflow-hidden rounded-3xl bg-white/80 backdrop-blur-3xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-8 hover-card-3d">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-transparent to-violet-50/50 pointer-events-none">
+        </div>
+        <div id="aiInsightsPanel" class="relative z-10 w-full">
+          <!-- Sleek Loading Skeleton -->
+          <div class="animate-pulse space-y-8">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-violet-100 to-indigo-100 rounded-2xl flex-shrink-0"></div>
+              <div class="flex-1 space-y-3">
+                <div class="h-5 bg-slate-200 rounded-lg w-1/4"></div>
+                <div class="h-3 bg-slate-100 rounded-lg w-1/3"></div>
               </div>
             </div>
-            <div class="grid grid-cols-4 gap-3">
-              <div class="h-20 bg-slate-100 rounded-xl"></div>
-              <div class="h-20 bg-slate-100 rounded-xl"></div>
-              <div class="h-20 bg-slate-100 rounded-xl"></div>
-              <div class="h-20 bg-slate-100 rounded-xl"></div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="h-32 bg-slate-50 rounded-2xl"></div>
+              <div class="h-32 bg-slate-50 rounded-2xl"></div>
+              <div class="h-32 bg-slate-50 rounded-2xl"></div>
+              <div class="h-32 bg-slate-50 rounded-2xl"></div>
             </div>
-            <div class="h-16 bg-violet-50 rounded-xl"></div>
+            <div class="h-24 bg-violet-50/50 rounded-2xl"></div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- ── Activity Graph (Phase 3C) ── -->
-      <div class="mt-8 mb-16 text-center max-w-7xl mx-auto scroll-reveal">
-        <div id="activityGraphWrap" class="card-premium p-6 overflow-x-auto text-left">
-          <!-- Loading state injected by JS -->
-        </div>
+    <!-- ── Activity Graph (Phase 3C) ── -->
+    <div class="mt-8 mb-16 text-center max-w-7xl mx-auto scroll-reveal">
+      <div id="activityGraphWrap" class="card-premium p-6 overflow-x-auto text-left">
+        <!-- Loading state injected by JS -->
       </div>
+    </div>
     </div>
   </section>
 
@@ -1834,20 +3133,32 @@
     </div>
 
     <div class="container mx-auto px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl mx-auto text-center mb-16 scroll-reveal">
-        <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 font-semibold text-sm mb-6 border border-slate-200 shadow-sm">
-          <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-          Developer Journey
+      <!-- Section Header -->
+      <div class="mx-auto max-w-3xl flex flex-col items-center text-center mb-16 scroll-reveal">
+        <!-- Badge -->
+        <div class="mb-6 flex items-center justify-center gap-3 w-full">
+          <div class="flex-1 h-px bg-gradient-to-l from-violet-200/60 to-transparent max-w-[120px]"></div>
+          <span
+            class="inline-flex items-center gap-2 px-4 py-2 text-[11px] font-black uppercase tracking-widest text-violet-700 bg-violet-50 border border-violet-200/70 rounded-full shadow-sm">
+            <span class="w-1.5 h-1.5 bg-violet-500 rounded-full animate-pulse"></span>
+            Developer Journey
+          </span>
+          <div class="flex-1 h-px bg-gradient-to-r from-violet-200/60 to-transparent max-w-[120px]"></div>
         </div>
-        <h2 class="text-4xl md:text-5xl font-black mb-6 text-slate-900 tracking-tight font-display">
-          GitHub Activity <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-500">Timeline</span>
+        <!-- Headline -->
+        <h2 class="text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-6 font-display leading-[1.05]">
+          GitHub Activity<br class="sm:hidden">
+          <span class="relative inline-block mt-2 sm:mt-0">
+            <span class="text-transparent bg-clip-text"
+              style="background-image: linear-gradient(120deg, #8b5cf6 0%, #6366f1 100%);">
+              Timeline
+            </span>
+            <!-- Underline accent -->
+            <span class="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full opacity-30"
+              style="background: linear-gradient(90deg, #8b5cf6, #6366f1);"></span>
+          </span>
         </h2>
-        <p class="text-lg text-slate-600">
+        <p class="text-lg md:text-xl text-slate-500 leading-relaxed font-medium max-w-2xl">
           A visual overview of my projects and open-source contributions over the years.
         </p>
       </div>
@@ -1895,21 +3206,31 @@
 
     <div class="container mx-auto px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
-      <div class="max-w-3xl mx-auto text-center mb-12 scroll-reveal">
-        <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 text-indigo-600 font-semibold text-sm mb-6 border border-indigo-100 shadow-sm">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.101 1.1">
-            </path>
-          </svg>
-          Live Ecosystem Map
+      <div class="mx-auto max-w-3xl flex flex-col items-center text-center mb-12 scroll-reveal">
+        <!-- Badge -->
+        <div class="mb-6 flex items-center justify-center gap-3 w-full">
+          <div class="flex-1 h-px bg-gradient-to-l from-purple-200/60 to-transparent max-w-[120px]"></div>
+          <span
+            class="inline-flex items-center gap-2 px-4 py-2 text-[11px] font-black uppercase tracking-widest text-purple-700 bg-purple-50 border border-purple-200/70 rounded-full shadow-sm">
+            <span class="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse"></span>
+            Live Ecosystem Map
+          </span>
+          <div class="flex-1 h-px bg-gradient-to-r from-purple-200/60 to-transparent max-w-[120px]"></div>
         </div>
-        <h2 class="text-4xl md:text-5xl font-black mb-4 text-slate-900 tracking-tight font-display">
-          Developer Knowledge <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Graph</span>
+        <!-- Headline -->
+        <h2 class="text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-6 font-display leading-[1.05]">
+          Developer<br class="sm:hidden">
+          <span class="relative inline-block mt-2 sm:mt-0">
+            <span class="text-transparent bg-clip-text"
+              style="background-image: linear-gradient(120deg, #6366f1 0%, #a855f7 100%);">
+              Knowledge Graph
+            </span>
+            <!-- Underline accent -->
+            <span class="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full opacity-30"
+              style="background: linear-gradient(90deg, #6366f1, #a855f7);"></span>
+          </span>
         </h2>
-        <p class="text-lg text-slate-600 leading-relaxed">
+        <p class="text-lg md:text-xl text-slate-500 leading-relaxed font-medium max-w-2xl">
           An interactive network visualization of my engineering ecosystem — repositories, technologies, and domains
           connected in real-time.
         </p>
@@ -2389,7 +3710,8 @@
 
       <!-- Modal Hero Banner -->
       <div id="modalBanner" class="relative flex-shrink-0 overflow-hidden rounded-t-2xl" style="height:140px;">
-        <img id="modalBannerImg" src="" alt="" class="w-full h-full object-cover" onerror="this.style.opacity='0'">
+        <img loading="lazy" id="modalBannerImg" src="" alt="" class="w-full h-full object-cover"
+          onerror="this.style.opacity='0'">
         <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/85"></div>
         <div class="absolute bottom-0 left-0 right-0 px-5 pb-3 flex items-end justify-between">
           <div class="flex-1 min-w-0 pr-4">
@@ -2475,12 +3797,34 @@
 
     <div class="container mx-auto px-6 lg:px-20 relative z-10">
       <!-- Header -->
-      <div class="text-center max-w-3xl mx-auto mb-20">
-        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6">Why Choose
-          Me?</h2>
-        <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
-          Bridging the gap between hardware, software, and security. I bring a holistic, product-first mindset to
-          every engineering challenge.
+      <!-- Section Header -->
+      <div class="mx-auto max-w-3xl flex flex-col items-center text-center mb-20 scroll-reveal">
+        <!-- Badge -->
+        <div class="mb-6 flex items-center justify-center gap-3 w-full">
+          <div class="flex-1 h-px bg-gradient-to-l from-indigo-500/40 to-transparent max-w-[120px]"></div>
+          <span
+            class="inline-flex items-center gap-2 px-4 py-2 text-[11px] font-black uppercase tracking-widest text-indigo-300 bg-indigo-500/10 border border-indigo-500/30 rounded-full shadow-sm">
+            <span class="w-1.5 h-1.5 bg-indigo-400 rounded-full animate-pulse"></span>
+            Engineering Philosophy
+          </span>
+          <div class="flex-1 h-px bg-gradient-to-r from-indigo-500/40 to-transparent max-w-[120px]"></div>
+        </div>
+        <!-- Headline -->
+        <h2 class="text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-6 font-display leading-[1.05]">
+          Why Choose<br class="sm:hidden">
+          <span class="relative inline-block mt-2 sm:mt-0">
+            <span class="text-transparent bg-clip-text"
+              style="background-image: linear-gradient(120deg, #818cf8 0%, #38bdf8 100%);">
+              Me?
+            </span>
+            <!-- Underline accent -->
+            <span class="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full opacity-40"
+              style="background: linear-gradient(90deg, #818cf8, #38bdf8);"></span>
+          </span>
+        </h2>
+        <p class="text-lg md:text-xl text-slate-400 leading-relaxed font-medium max-w-2xl">
+          Bridging the gap between hardware, software, and security. I bring a holistic, product-first mindset to every
+          engineering challenge.
         </p>
       </div>
 
@@ -2663,12 +4007,30 @@
 
       <!-- Main Call to Action -->
       <div class="max-w-4xl mx-auto mb-20">
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-8">
-          Ready to build something <br />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-400">secure, scalable &
-            future-proof?</span>
+        <!-- Badge -->
+        <div class="mb-6 flex items-center justify-center gap-3 w-full">
+          <div class="flex-1 h-px bg-gradient-to-l from-emerald-500/40 to-transparent max-w-[120px]"></div>
+          <span
+            class="inline-flex items-center gap-2 px-4 py-2 text-[11px] font-black uppercase tracking-widest text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 rounded-full shadow-sm">
+            <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
+            Let's Collaborate
+          </span>
+          <div class="flex-1 h-px bg-gradient-to-r from-emerald-500/40 to-transparent max-w-[120px]"></div>
+        </div>
+        <!-- Headline -->
+        <h2 class="text-5xl lg:text-7xl font-black tracking-tight text-white mb-8 font-display leading-[1.05]">
+          Ready to build something<br class="hidden sm:block">
+          <span class="relative inline-block mt-2 sm:mt-1">
+            <span class="text-transparent bg-clip-text"
+              style="background-image: linear-gradient(120deg, #10b981 0%, #3b82f6 100%);">
+              secure &amp; scalable?
+            </span>
+            <!-- Underline accent -->
+            <span class="absolute -bottom-1 left-0 right-0 h-[4px] rounded-full opacity-40"
+              style="background: linear-gradient(90deg, #10b981, #3b82f6);"></span>
+          </span>
         </h2>
-        <p class="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto mb-10">
+        <p class="text-lg sm:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto mb-10 font-medium">
           From rapid prototyping to production-grade deployment, I help turn complex engineering challenges into
           polished, robust solutions.
         </p>
@@ -2919,7 +4281,7 @@
           <a href="index.html" class="flex items-center gap-3 group w-fit">
             <div
               class="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-slate-800 group-hover:ring-primary/60 transition-all duration-300">
-              <img src="icon.png" alt="Rishvin Reddy" class="w-full h-full object-cover">
+              <img loading="lazy" src="icon.png" alt="Rishvin Reddy" class="w-full h-full object-cover">
             </div>
             <span
               class="text-lg font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 group-hover:from-primary group-hover:to-rose-400 transition-all duration-300">Rishvin</span>
@@ -3224,14 +4586,49 @@
     var nlMsg = document.getElementById('newsletterMsg');
     var nlInput = document.getElementById('newsletterEmail');
     if (nlBtn && nlInput) {
-      nlBtn.addEventListener('click', function () {
+      if(nlForm) { nlForm.addEventListener('submit', function(e) { e.preventDefault(); }); }
+      nlBtn.addEventListener('click', function (e) {
+        e.preventDefault();
         if (!nlInput.value || !nlInput.value.includes('@')) {
           nlInput.style.animation = 'shake 0.4s ease';
           nlInput.addEventListener('animationend', function () { nlInput.style.animation = ''; }, { once: true });
           return;
         }
-        if (nlMsg) { nlMsg.classList.remove('hidden'); }
-        nlInput.value = '';
+        
+        // Show loading state
+        var originalBtnContent = nlBtn.innerHTML;
+        nlBtn.innerHTML = '<span class="relative z-10 block w-4 h-4 rounded-full border-2 border-white/20 border-t-white animate-spin"></span>';
+        
+        if (typeof emailjs !== 'undefined') {
+          emailjs.send("service_vap0e7b", "template_0d7egxw", {
+            from_name: "Newsletter Subscriber",
+            from_email: nlInput.value,
+            message: "A new user wants to subscribe to your newsletter/project updates!"
+          }).then(function() {
+            if (nlMsg) { 
+              nlMsg.classList.remove('hidden'); 
+              nlMsg.classList.remove('text-red-400');
+              nlMsg.classList.add('text-emerald-400');
+              nlMsg.textContent = "✓ You're in — thanks!";
+            }
+            nlInput.value = '';
+            nlBtn.innerHTML = originalBtnContent;
+          }).catch(function(err) {
+            console.error("Newsletter Error:", err);
+            if (nlMsg) { 
+              nlMsg.classList.remove('hidden'); 
+              nlMsg.classList.remove('text-emerald-400');
+              nlMsg.classList.add('text-red-400');
+              nlMsg.textContent = "❌ Failed to subscribe.";
+            }
+            nlBtn.innerHTML = originalBtnContent;
+          });
+        } else {
+          // Fallback if emailjs fails to load
+          if (nlMsg) { nlMsg.classList.remove('hidden'); }
+          nlInput.value = '';
+          nlBtn.innerHTML = originalBtnContent;
+        }
       });
     }
 
@@ -3321,14 +4718,12 @@
   <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 
   <!-- GSAP Core & ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
-  <script src="animations.js"></script>
+  <script defer src="animations.js"></script>
   <!-- Central Portfolio Data Engine -->
-  <script src="js/portfolio-engine.js"></script>
+  <script defer src="js/portfolio-engine.js"></script>
 
   <!-- FAANG Features Script -->
   <script>
@@ -3820,19 +5215,24 @@
             <p class="text-sm text-slate-500 leading-relaxed line-clamp-3 mb-5">${repo.description || 'No description provided.'}</p>
 
             <!-- Stats row -->
-            <div class="flex items-center gap-4 text-xs text-slate-400 mb-4">
+            <div class="flex items-center gap-4 text-xs text-slate-400 mb-5">
               <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>${repo.stargazers_count}</span>
               <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12M8 12h12M8 17h12"/></svg>${repo.forks_count} forks</span>
-              <span class="ml-auto text-[10px]">${new Date(repo.updated_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
+              <span class="ml-auto text-[10px] uppercase font-bold tracking-wider" style="color: ${palette.accent}">${type.name}</span>
             </div>
 
             <!-- Action row -->
-            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-xs font-semibold text-primary flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
-                Explore
-                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
+              <span class="text-[13px] font-bold text-slate-500 group-hover:text-primary flex items-center gap-1 transition-all flex-1">
+                Case Study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
               </span>
-              <span class="text-[10px] font-medium px-2 py-1 rounded-lg" style="background:${palette.accent}15;color:${palette.accent}">${type.name}</span>
+              <button 
+                onclick="event.stopPropagation(); window.open('https://rishvinreddy.github.io/${repo.name}/', '_blank')"
+                class="px-3.5 py-1.5 rounded-lg text-xs font-bold text-white flex items-center gap-1.5 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5" 
+                style="background-color: ${palette.accent}">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                Launch App
+              </button>
             </div>
           </div>
         `;
@@ -4044,30 +5444,53 @@
             }
 
             const cardHTML = `
-              <div class="card-premium group cursor-pointer flex flex-col overflow-hidden w-full transition-all duration-500 hover:-translate-y-1 bg-white border border-slate-200"
+              <div class="card-premium group cursor-pointer flex flex-col w-full transition-all duration-500 hover:-translate-y-2 bg-white rounded-2xl border border-slate-100 relative"
+                   style="box-shadow: 0 4px 25px -5px rgba(0,0,0,0.05);"
+                   onmouseenter="this.style.boxShadow = '0 20px 40px -10px ${palette.accent}45'; this.style.borderColor = '${palette.accent}50'"
+                   onmouseleave="this.style.boxShadow = '0 4px 25px -5px rgba(0,0,0,0.05)'; this.style.borderColor = '#f1f5f9'"
                    onclick="window.open('${repo.html_url}','_blank')">
-                <div class="relative h-32 overflow-hidden bg-slate-50">
-                  <div class="absolute inset-0 flex items-center justify-center opacity-80" style="background:linear-gradient(135deg,${palette.accent}15,${palette.accent}30)">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="${palette.accent}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform duration-500"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                
+                <!-- Glowing gradient background effect on hover -->
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none rounded-2xl z-0" style="background: linear-gradient(to bottom right, transparent, ${palette.accent});"></div>
+
+                <div class="relative h-36 overflow-hidden bg-slate-50 z-10 border-b border-slate-100 rounded-t-2xl">
+                  <div class="absolute inset-0 flex items-center justify-center opacity-80 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2" style="background:linear-gradient(135deg,${palette.accent}10,${palette.accent}30)">
+                    <div class="absolute inset-0 opacity-[0.15]" style="background-image: radial-gradient(${palette.accent} 1.5px, transparent 1.5px); background-size: 16px 16px;"></div>
+                    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="${palette.accent}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="drop-shadow-lg transition-transform duration-500 group-hover:scale-110"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                   </div>
-                  <div class="absolute top-3 left-3 z-10">
-                    <span class="flex items-center gap-1.5 px-2.5 py-1 ${palette.badge} rounded-full text-[10px] uppercase tracking-widest font-bold border border-white/50 shadow-sm backdrop-blur-sm">
+                  
+                  <div class="absolute top-3 left-3 z-20">
+                    <span class="flex items-center gap-1.5 px-3 py-1.5 ${palette.badge} rounded-full text-[10px] uppercase tracking-widest font-extrabold border border-white/60 shadow-sm backdrop-blur-md">
+                      <span class="w-1.5 h-1.5 rounded-full bg-current animate-pulse"></span>
                       ${type.name}
                     </span>
                   </div>
-                  <div class="absolute top-3 right-3 z-10">
-                    <span class="px-2 py-1 rounded-md text-[10px] font-mono font-bold bg-white/80 text-slate-700 border border-slate-200 shadow-sm backdrop-blur-sm">${repo.language || 'Code'}</span>
-                  </div>
-                  ${highlight ? `<div class="absolute bottom-3 right-3 z-10 px-2.5 py-1 rounded-full text-[10px] font-bold bg-gradient-to-r from-amber-500 to-orange-500 text-white flex items-center gap-1.5 shadow-md border border-amber-400/50"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>Featured</div>` : ''}
-                </div>
-                <div class="flex flex-col flex-1 p-4">
-                  <h3 class="text-sm font-bold text-slate-900 mb-1.5 group-hover:text-primary transition-colors line-clamp-1 font-display">${repo.name.replace(/-/g, ' ').replace(/_/g, ' ')}</h3>
-                  <p class="text-xs text-slate-500 leading-relaxed line-clamp-2 mb-3">${repo.description || 'No description provided.'}</p>
                   
-                  <div class="flex items-center gap-3 text-xs text-slate-500 mb-3 font-medium border-t border-slate-100 pt-3">
-                    <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>${repo.stargazers_count}</span>
-                    <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12M8 12h12M8 17h12"></path></svg>${repo.forks_count}</span>
-                    <span class="flex items-center gap-1 font-bold text-primary ml-auto"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>${score}</span>
+                  <div class="absolute top-3 right-3 z-20">
+                    <span class="px-2.5 py-1.5 rounded-md text-[10px] font-mono font-bold bg-white/90 text-slate-700 border border-slate-200/50 shadow-sm backdrop-blur-md transition-all duration-300 group-hover:bg-slate-800 group-hover:text-white group-hover:border-slate-700">
+                      ${repo.language || 'Code'}
+                    </span>
+                  </div>
+                  
+                  ${highlight ? `<div class="absolute bottom-3 right-3 z-20 px-3 py-1.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-amber-400 to-orange-500 text-white flex items-center gap-1.5 shadow-lg border border-white/20"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>Star Project</div>` : ''}
+                </div>
+                
+                <div class="flex flex-col flex-1 p-5 z-10 bg-white rounded-b-2xl">
+                  <h3 class="text-[15px] font-extrabold text-slate-900 mb-2 transition-colors line-clamp-1 font-display tracking-tight"
+                      onmouseenter="this.style.color='${palette.accent}'"
+                      onmouseleave="this.style.color=''">
+                    ${repo.name.replace(/-/g, ' ').replace(/_/g, ' ')}
+                  </h3>
+                  <p class="text-[13px] text-slate-500 leading-relaxed line-clamp-2 mb-4 font-medium">${repo.description || 'No detailed description available for this repository.'}</p>
+                  
+                  <div class="flex items-center gap-4 text-xs text-slate-600 mb-1 font-bold border-t border-slate-100 pt-4 mt-auto">
+                    <span class="flex items-center gap-1.5 hover:text-amber-500 transition-colors"><svg class="w-4 h-4 text-amber-500 drop-shadow-sm" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>${repo.stargazers_count}</span>
+                    <span class="flex items-center gap-1.5 hover:text-indigo-500 transition-colors"><svg class="w-4 h-4 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12M8 12h12M8 17h12"></path></svg>${repo.forks_count}</span>
+                    
+                    <span class="flex items-center gap-1.5 ml-auto tracking-wide" style="color: ${palette.accent}">
+                      <span class="opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 font-extrabold flex items-center gap-1">Explore</span >
+                      <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </span>
                   </div>
                 </div>
               </div>`;
@@ -4322,71 +5745,98 @@
       }
     }
 
-    // Call the function
-    loadGithubProjects();
-
     // ───────────────────────────────────────────────────────────────────────────
     // PHASE 3B: AI DEVELOPER INSIGHTS PANEL
     // ───────────────────────────────────────────────────────────────────────────
-    (async function initAIInsights() {
+    async function initAIInsights() {
       const container = document.getElementById('aiInsightsPanel');
-      if (!container || typeof ENGINE === 'undefined') return;
+      if (!container || typeof window.ENGINE === 'undefined') return;
 
       try {
-        const repos = await ENGINE.getRepos();
-        const insights = ENGINE.generateInsights(repos);
-        const stats = ENGINE.calculateStats(repos);
-        const skills = ENGINE.detectSkills(repos);
-        const tools = ENGINE.detectTools(repos);
+        const repos = await window.ENGINE.getRepos();
+        const insights = window.ENGINE.generateInsights(repos);
+        const stats = window.ENGINE.calculateStats(repos);
+        const skills = window.ENGINE.detectSkills(repos);
+        const tools = window.ENGINE.detectTools(repos);
 
-        const topLangs = skills.slice(0, 5).map(s => `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/8 border border-primary/15 text-primary text-[11px] font-bold">${s.lang}</span>`).join('');
-        const topTools = tools.slice(0, 5).map(t => `<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-600 text-[11px] font-bold">${t.display}</span>`).join('');
+        const topLangs = skills.slice(0, 5).map(s => `
+          <div class="group relative px-3 pl-3.5 py-1.5 rounded-full border border-slate-200/50 bg-white shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-default">
+            <div class="absolute left-1.5 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-violet-500"></div>
+            <span class="text-[11px] font-bold text-slate-700 tracking-wide">${s.lang}</span>
+          </div>`).join('');
+
+        const topTools = tools.slice(0, 5).map(t => `
+          <div class="px-3 py-1.5 rounded-full border border-indigo-100 bg-indigo-50/50 text-indigo-700 text-[11px] font-bold tracking-wide shadow-sm hover:bg-indigo-100 transition-colors">
+            ${t.display}
+          </div>`).join('');
 
         container.innerHTML = `
-          <div class="flex items-start gap-4 mb-6">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-violet-500/25">
-              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          <!-- Header -->
+          <div class="flex items-start gap-5 mb-8">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center flex-shrink-0 shadow-[0_8px_16px_rgba(124,58,237,0.3)] ring-4 ring-violet-50">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
             </div>
-            <div>
-              <h3 class="font-bold text-slate-900 text-base">AI Developer Snapshot</h3>
-              <p class="text-xs text-slate-400 mt-0.5">Auto-generated from ${stats.totalRepos} public repositories</p>
+            <div class="pt-1.5">
+              <h3 class="text-xl font-black text-slate-900 tracking-tight flex items-center gap-2">AI Developer Snapshot <span class="bg-violet-100 text-violet-700 text-[10px] uppercase font-bold px-2 py-0.5 rounded flex items-center gap-1"><span class="w-1.5 h-1.5 bg-violet-500 rounded-full animate-pulse"></span> LIVE</span></h3>
+              <p class="text-sm text-slate-500 font-medium mt-1">Metrics dynamically compiled from ${stats.totalRepos} public GitHub repositories.</p>
             </div>
           </div>
 
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-            ${[{ v: stats.totalRepos, l: 'Repos', icon: '📦' }, { v: stats.totalStars, l: 'Stars', icon: '⭐' }, { v: stats.totalForks, l: 'Forks', icon: '🍴' }, { v: stats.languageCount, l: 'Languages', icon: '💻' }].map(m => `
-              <div class="text-center p-3 rounded-xl bg-slate-50 border border-slate-100">
-                <div class="text-xl mb-1">${m.icon}</div>
-                <div class="text-2xl font-black text-slate-800">${m.v}</div>
-                <div class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">${m.l}</div>
+          <!-- Quick Stats Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            ${[{ v: stats.totalRepos, l: 'Total Repositories', icon: 'M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4' },
+          { v: stats.totalStars, l: 'Global Stars', icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z' },
+          { v: stats.totalForks, l: 'Network Forks', icon: 'M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z' },
+          { v: stats.languageCount, l: 'Code Languages', icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4' }].map(m => `
+              <div class="relative bg-white/60 p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all overflow-hidden group">
+                <div class="absolute -right-4 -top-4 w-16 h-16 bg-slate-50 rounded-full group-hover:scale-150 transition-transform duration-500 ease-out z-0"></div>
+                <div class="relative z-10 flex flex-col justify-between h-full">
+                  <svg class="w-6 h-6 text-indigo-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${m.icon}"/></svg>
+                  <div>
+                    <div class="text-3xl font-black text-slate-800 tracking-tight">${m.v}</div>
+                    <div class="text-[10px] text-slate-500 uppercase tracking-widest font-bold mt-1">${m.l}</div>
+                  </div>
+                </div>
               </div>`).join('')}
           </div>
 
-          <div class="space-y-4 mb-5">
-            <div>
-              <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Top Languages</p>
-              <div class="flex flex-wrap gap-2">${topLangs}</div>
+          <!-- Tech Stack -->
+          <div class="flex flex-col md:flex-row gap-6 mb-8 bg-slate-50/50 p-6 rounded-2xl border border-slate-100/80">
+            <div class="flex-1">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg> Dominant Languages</p>
+              <div class="flex flex-wrap gap-2.5">${topLangs}</div>
             </div>
-            <div>
-              <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Key Tools & Frameworks</p>
-              <div class="flex flex-wrap gap-2">${topTools || '<span class="text-xs text-slate-400">Scanning repos...</span>'}</div>
+            <div class="w-px bg-slate-200/60 hidden md:block"></div>
+            <div class="flex-1">
+              <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 00-1-1H4a1 1 0 01-1-1V4a1 1 0 011-1h3a1 1 0 001-1v1z"></path></svg> Tooling & Frameworks</p>
+              <div class="flex flex-wrap gap-2.5">${topTools || '<span class="text-xs text-slate-400 italic">Compiling data...</span>'}</div>
             </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-gradient-to-br from-violet-50 to-indigo-50 border border-violet-100">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-violet-500 mb-2">🤖 AI Summary</p>
-            <p class="text-sm text-slate-700 leading-relaxed">${insights.summary}</p>
+          <!-- AI Executive Summary -->
+          <div class="relative overflow-hidden p-6 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-700 text-white shadow-lg shadow-indigo-500/20">
+            <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+              <svg class="w-32 h-32 transform rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            </div>
+            <div class="relative z-10">
+              <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 border-b border-white/20 pb-3">
+                <p class="text-[10px] font-black uppercase tracking-widest text-indigo-200 flex items-center gap-1.5"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg> AI Executive Summary</p>
+                <div class="bg-indigo-900/50 text-indigo-100 px-2 py-1 rounded text-[9px] font-bold tracking-wider mt-2 sm:mt-0">CONFIDENCE: HIGH</div>
+              </div>
+              <p class="text-[15px] text-white/90 leading-relaxed font-medium">"${insights.summary}"</p>
+            </div>
           </div>
         `;
       } catch (e) {
-        container.innerHTML = '<p class="text-sm text-slate-400 text-center py-4">Could not load insights.</p>';
+        console.error("Insights Error:", e);
+        container.innerHTML = '<div class="text-sm text-slate-500 bg-slate-50 p-4 rounded-xl text-center border border-slate-100">AI compilation temporarily unavailable. Please reload the dashboard.</div>';
       }
-    })();
+    }
 
     // ───────────────────────────────────────────────────────────────────────────
     // PHASE 3C: GITHUB ACTIVITY GRAPH (contribution heatmap)
     // ───────────────────────────────────────────────────────────────────────────
-    (async function initActivityGraph() {
+    async function initActivityGraph() {
       const wrap = document.getElementById('activityGraphWrap');
       if (!wrap) return;
 
@@ -4501,14 +5951,24 @@
 
       // Re-render on theme change
       document.addEventListener('themeChanged', () => initActivityGraph());
-    })();
+    }
+
+    // ───────────────────────────────────────────────────────────────────────────
+    // INITIALIZATION ROOT: WAIT FOR SCRIPTS TO LOAD BEFORE EXECUTING
+    // ───────────────────────────────────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', () => {
+      // Defer slightly to ensure portfolio-engine.js completes execution
+      setTimeout(() => {
+        if (typeof loadGithubProjects === 'function') loadGithubProjects();
+        if (typeof initAIInsights === 'function') initAIInsights();
+        if (typeof initActivityGraph === 'function') initActivityGraph();
+      }, 50);
+    });
   </script>
 
-  <!-- tsParticles Interaction Network Background -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script src="js/background-network.js"></script>
 
-  <script src="js/cursor-spotlight.js"></script>
+
+  <script defer src="js/cursor-spotlight.js"></script>
 
   <!-- 2. FULLSCREEN PATENT VIEWER (IMPRESSIVE) -->
   <div id="patentModal"
@@ -4536,9 +5996,8 @@
         </button>
       </div>
 
-      <div class="w-full h-full pt-14 bg-slate-200/50">
-        <iframe id="patentIframe" src="" class="w-full h-full border-0">
-        </iframe>
+      <div class="w-full h-full pt-14 bg-slate-900 flex items-center justify-center overflow-auto" oncontextmenu="return false;">
+        <img id="patentImage" src="assets/certificates/CERTIFICATE.png" class="max-w-full h-auto object-contain shadow-2xl pointer-events-none select-none" oncontextmenu="return false;" draggable="false" alt="Patent Certificate">
       </div>
     </div>
   </div>
@@ -4547,14 +6006,9 @@
     // 3. JS CONTROLLER
     const patentModal = document.getElementById("patentModal");
     const patentModalInner = document.getElementById("patentModalInner");
-    const patentIframe = document.getElementById("patentIframe");
+    const patentImage = document.getElementById("patentImage");
 
     function openPatent() {
-      // Set src only when opening to save load time and prevent flashing
-      if (!patentIframe.src || patentIframe.src === window.location.href) {
-        patentIframe.src = "assets/certificates/CERTIFICATE.pdf";
-      }
-
       patentModal.classList.remove("hidden");
       patentModal.classList.add("flex");
 

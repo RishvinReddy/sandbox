@@ -56,6 +56,17 @@
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      if(typeof emailjs !== "undefined") {
+        emailjs.init("mUWYYaTiZhAWgB0TH"); 
+      }
+    })();
+  </script>
+
 </head>
 
 <body class="bg-slate-50 selection:bg-primary/20 font-serif text-slate-800 relative overflow-x-hidden">
@@ -63,7 +74,7 @@
   <div class="ambient-orb-center" aria-hidden="true"></div>
   <div class="ambient-orb-tl" aria-hidden="true"></div>
 
-  <div id="network-background"></div>
+  
   <!-- Ambient Background -->
   <div
     class="fixed inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-100/40 via-slate-50 to-emerald-50/40 opacity-70">
@@ -1112,43 +1123,10 @@
 
         <!-- Short Projects / Evidence -->
         <section class="mb-12">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Selected Evidence</h2>
-          <p class="text-sm text-gray-600 mb-6">Short pointers to projects that demonstrate these skills — click to
-            open case study pages.</p>
-
-          <div class="scroll-reveal grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-stagger-list>
-            <a href="case-study-biometric-voting.html"
-              class="group rounded-3xl overflow-hidden bg-white hover-float scroll-reveal">
-              <div class="h-44 bg-cover bg-center"
-                style="background-image:url('https://i.postimg.cc/XYg9c3Z6/biometric-thumbnail.jpg')"></div>
-              <div class="p-4">
-                <h4 class="font-semibold text-gray-900">Fingerprint Biometric Voting</h4>
-                <p class="text-sm text-gray-600 mt-1">Embedded integration, R307 sensor, automated counting &
-                  validation code.</p>
-              </div>
-            </a>
-
-            <a href="case-study-smart-cart.html"
-              class="group rounded-3xl overflow-hidden bg-white hover-float scroll-reveal">
-              <div class="h-44 bg-cover bg-center"
-                style="background-image:url('https://i.postimg.cc/6p0wHk2m/smartcart-thumb.jpg')"></div>
-              <div class="p-4">
-                <h4 class="font-semibold text-gray-900">Smart Cart — Automated Checkout</h4>
-                <p class="text-sm text-gray-600 mt-1">RFID + load cell prototype, NodeMCU telemetry & Firebase
-                  integration.</p>
-              </div>
-            </a>
-
-            <a href="case-study-agrohub.html"
-              class="group rounded-3xl overflow-hidden bg-white hover-float scroll-reveal">
-              <div class="h-44 bg-cover bg-center"
-                style="background-image:url('https://i.postimg.cc/4dSg1rT7/agrohub-thumb.jpg')"></div>
-              <div class="p-4">
-                <h4 class="font-semibold text-gray-900">AgroHub — AI · IoT · Blockchain</h4>
-                <p class="text-sm text-gray-600 mt-1">Crop monitoring, edge inference & secure farmer transactions.
-                </p>
-              </div>
-            </a>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+          <p class="text-sm text-gray-600 mb-6">Top algorithms, architectures, and systems built from scratch — click to explore on GitHub.</p>
+          <div id="selectedEvidenceContainer" class="scroll-reveal grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-stagger-list>
+            <!-- Dynamically populated by JS (initSkillsPage) -->
           </div>
         </section>
 
@@ -1776,21 +1754,56 @@
       setInterval(updateClock, 1000);
 
       /* Newsletter form */
-      var nlForm = document.getElementById('footerNewsletter');
-      var nlBtn = document.getElementById('newsletterBtn');
-      var nlMsg = document.getElementById('newsletterMsg');
-      var nlInput = document.getElementById('newsletterEmail');
-      if (nlBtn && nlInput) {
-        nlBtn.addEventListener('click', function () {
-          if (!nlInput.value || !nlInput.value.includes('@')) {
-            nlInput.style.animation = 'shake 0.4s ease';
-            nlInput.addEventListener('animationend', function () { nlInput.style.animation = ''; }, { once: true });
-            return;
-          }
+    var nlForm = document.getElementById('footerNewsletter');
+    var nlBtn = document.getElementById('newsletterBtn');
+    var nlMsg = document.getElementById('newsletterMsg');
+    var nlInput = document.getElementById('newsletterEmail');
+    if (nlBtn && nlInput) {
+      if(nlForm) { nlForm.addEventListener('submit', function(e) { e.preventDefault(); }); }
+      nlBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (!nlInput.value || !nlInput.value.includes('@')) {
+          nlInput.style.animation = 'shake 0.4s ease';
+          nlInput.addEventListener('animationend', function () { nlInput.style.animation = ''; }, { once: true });
+          return;
+        }
+        
+        // Show loading state
+        var originalBtnContent = nlBtn.innerHTML;
+        nlBtn.innerHTML = '<span class="relative z-10 block w-4 h-4 rounded-full border-2 border-white/20 border-t-white animate-spin"></span>';
+        
+        if (typeof emailjs !== 'undefined') {
+          emailjs.send("service_vap0e7b", "template_0d7egxw", {
+            from_name: "Newsletter Subscriber",
+            from_email: nlInput.value,
+            message: "A new user wants to subscribe to your newsletter/project updates!"
+          }).then(function() {
+            if (nlMsg) { 
+              nlMsg.classList.remove('hidden'); 
+              nlMsg.classList.remove('text-red-400');
+              nlMsg.classList.add('text-emerald-400');
+              nlMsg.textContent = "✓ You're in — thanks!";
+            }
+            nlInput.value = '';
+            nlBtn.innerHTML = originalBtnContent;
+          }).catch(function(err) {
+            console.error("Newsletter Error:", err);
+            if (nlMsg) { 
+              nlMsg.classList.remove('hidden'); 
+              nlMsg.classList.remove('text-emerald-400');
+              nlMsg.classList.add('text-red-400');
+              nlMsg.textContent = "❌ Failed to subscribe.";
+            }
+            nlBtn.innerHTML = originalBtnContent;
+          });
+        } else {
+          // Fallback if emailjs fails to load
           if (nlMsg) { nlMsg.classList.remove('hidden'); }
           nlInput.value = '';
-        });
-      }
+          nlBtn.innerHTML = originalBtnContent;
+        }
+      });
+    }
 
       /* Marquee clone for infinite scroll */
       var marqueeTpl = document.getElementById('marqueeTpl');
@@ -1874,11 +1887,10 @@
   </div>
   <!-- GSAP Core & ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <!-- Lenis for Smooth Scrolling -->
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
   <!-- Central Portfolio Data Engine -->
-  <script src="js/portfolio-engine.js"></script>
+  <script defer src="js/portfolio-engine.js"></script>
 
   <script>
     // ─── Skills Page — powered by ENGINE ─────────────────────────
@@ -1932,15 +1944,15 @@
 
     async function loadCertifications() {
       try {
-        const res = await fetch("data/certifications.json");
+        const res = await fetch("data/certifications.json?t=" + new Date().getTime());
         if (!res.ok) throw new Error("certifications.json not found");
         const certs = await res.json();
         const el = document.getElementById("certificationsContainer");
         if (!el) return;
         el.innerHTML = certs.map((cert, i) => `
-          <a ${cert.pdf ? 'href="' + cert.pdf + '" target="_blank" rel="noopener noreferrer"' : ''} class="block min-w-[320px] sm:min-w-[360px] snap-center rounded-3xl bg-white/70 backdrop-blur-xl p-6 shadow-xl shadow-slate-200/30 border border-white/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 group cursor-pointer">
+          <a href="${cert.pdf || `data/Data for the certificates/${cert.title}.pdf`}" target="_blank" rel="noopener noreferrer" class="block min-w-[320px] sm:min-w-[360px] snap-center rounded-3xl bg-white/70 backdrop-blur-xl p-6 shadow-xl shadow-slate-200/30 border border-white/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 group cursor-pointer">
             <div class="relative aspect-video rounded-xl bg-slate-100/50 mb-5 overflow-hidden border border-slate-100 flex items-center justify-center p-6">
-              <img src="${cert.image}" alt="${cert.title}" class="w-20 h-20 object-contain drop-shadow-sm transition-transform duration-500 group-hover:scale-110">
+              <img src="${cert.image || `data/Data for the certificates/${cert.title}.png`}" alt="${cert.title}" class="w-20 h-20 object-contain drop-shadow-sm transition-transform duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <h3 class="font-bold text-lg text-slate-900 group-hover:text-primary transition-colors">${cert.title}</h3>
@@ -1957,6 +1969,42 @@
       }
     }
 
+    function renderSelectedEvidence(repos) {
+      const el = document.getElementById("selectedEvidenceContainer");
+      if (!el) return;
+      
+      let topRepos = [...repos].filter(r => !r.fork).sort((a, b) => {
+        let scoreA = (a.stargazers_count * 5) + (a.forks_count * 3) + (a.size / 50);
+        let scoreB = (b.stargazers_count * 5) + (b.forks_count * 3) + (b.size / 50);
+        return scoreB - scoreA;
+      }).slice(0, 3);
+      
+      el.innerHTML = topRepos.map((repo, i) => {
+          const coverUrl = `https://opengraph.githubassets.com/1/RishvinReddy/${repo.name}`;
+          return `
+            <a href="${repo.html_url}" target="_blank"
+              class="group rounded-3xl overflow-hidden bg-white/70 backdrop-blur-xl border border-white/50 shadow-xl shadow-slate-200/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 scroll-reveal cursor-pointer flex flex-col" style="animation-delay: ${i * 100}ms">
+              <div class="h-44 bg-slate-100 bg-cover bg-center border-b border-slate-100 relative overflow-hidden flex-shrink-0">
+                <img src="${coverUrl}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="${repo.name}" onerror="this.style.display='none'">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                ${repo.language ? `<span class="absolute top-3 right-3 px-2 py-1 bg-black/50 backdrop-blur-md rounded-md text-[10px] text-white font-mono font-bold border border-white/20">${repo.language}</span>` : ''}
+              </div>
+              <div class="p-5 flex flex-col flex-1 h-full">
+                <h4 class="font-bold text-lg text-slate-900 group-hover:text-primary transition-colors line-clamp-1">${repo.name.replace(/-/g, ' ').replace(/_/g, ' ')}</h4>
+                <p class="text-sm text-slate-500 mt-2 line-clamp-2">${repo.description || "No description available."}</p>
+                <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-medium w-full">
+                   <div class="flex gap-3">
+                     <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>${repo.stargazers_count}</span>
+                     <span class="flex items-center gap-1"><svg class="w-3.5 h-3.5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12M8 12h12M8 17h12"/></svg>${repo.forks_count}</span>
+                   </div>
+                   <span class="text-primary group-hover:underline">Explore &rarr;</span>
+                </div>
+              </div>
+            </a>
+          `;
+      }).join("");
+    }
+
     async function initSkillsPage() {
       try {
         const repos = await ENGINE.getRepos();
@@ -1965,6 +2013,7 @@
         renderLanguages(skills);
         renderChart(skills);
         renderTools(tools);
+        renderSelectedEvidence(repos);
       } catch (e) {
         console.error("Skills page init failed:", e);
         const l = document.getElementById("languagesList");
@@ -1981,8 +2030,6 @@
   </script>
 
   <script src="animations.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script src="js/background-network.js"></script>
 
   <script src="js/cursor-spotlight.js"></script>
 

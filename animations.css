@@ -164,9 +164,17 @@ body {
   animation: pageFadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* 2. Scroll Reveal (Handled by GSAP) */
-.scroll-reveal {
+/* 2. Scroll Reveal (Native CSS) */
+.scroll-reveal, .scroll-reveal-native {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
   will-change: opacity, transform;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.is-visible, .scroll-reveal-native.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 /* --- PREMIUM SHADOW EFFECTS --- */
@@ -186,11 +194,6 @@ body {
     0 20px 25px -5px rgba(0, 0, 0, 0.15),
     0 25px 50px -12px rgba(0, 0, 0, 0.2),
     0 40px 60px -15px rgba(8, 112, 184, 0.35);
-}
-
-.scroll-reveal.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
 }
 
 /* Stagger delays for groups */
@@ -404,48 +407,6 @@ body {
   transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* --- PRO UPGRADE: Custom Cursor --- */
-@media (pointer: fine) {
-  body {
-    cursor: none; /* Hide default cursor on desktop */
-  }
-}
-
-.cursor-dot,
-.cursor-outline {
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  z-index: 10000;
-  pointer-events: none;
-  mix-blend-mode: difference;
-}
-
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background-color: white;
-  transform: translate(-50%, -50%);
-}
-
-.cursor-outline {
-  width: 40px;
-  height: 40px;
-  border: 1px solid white;
-  transform: translate(-50%, -50%);
-}
-
-body.hovering .cursor-dot {
-  transform: translate(-50%, -50%) scale(0.5);
-}
-
-body.hovering .cursor-outline {
-  width: 60px;
-  height: 60px;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
 /* --- PRO UPGRADE: Marquee --- */
 .marquee-container {
   display: flex;
@@ -505,10 +466,10 @@ body.hovering .cursor-outline {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 18px;
-  border: 1px solid transparent; 
+  border: 1px solid rgba(226, 232, 240, 0.9); /* explicit outline */
   box-shadow:
-    0 10px 25px -5px rgba(0, 0, 0, 0.05),
-    0 4px 10px -2px rgba(0, 0, 0, 0.02);
+    0 10px 30px -10px rgba(0, 0, 0, 0.08),
+    0 4px 6px -2px rgba(0, 0, 0, 0.04);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
 }
@@ -567,6 +528,7 @@ body.hovering .cursor-outline {
 /* Light / Dark Mode Handling for .card-premium */
 .dark .card-premium {
   background: rgba(15, 23, 42, 0.65); /* deep slate */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* explicit outline */
   box-shadow:
     0 15px 35px -5px rgba(0, 0, 0, 0.4),
     0 5px 15px rgba(0, 0, 0, 0.2);
@@ -751,10 +713,6 @@ body {
 }
 
 /* ── 8. Subtle edge vignette to make orbs pop ── */
-body::after {
-  /* We override the cool orb to also add a small top-left primary tint */
-}
-
 /* Top-left warm secondary orb via extra bg layer (no extra element needed) */
 .ambient-orb-tl {
   position: fixed;
@@ -1167,129 +1125,269 @@ section::before {
 }
 
 /* ==========================================================
-   SECTION DIVIDERS — Classic · Minimal · Premium
+   SECTION DIVIDERS v2 — Cinematic · Animated · Premium
    Usage: <div class="section-divider" aria-hidden="true"><span class="divider-gem"></span></div>
    Variants: add  data-divider="plain" | "double" | "dots"
    ========================================================== */
 
+/* ── Divider keyframes ── */
+@keyframes dividerShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes gemPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0px  2px rgba(242, 13, 70, 0.00),
+      0 0 12px 0px rgba(242, 13, 70, 0.30),
+      0 0  6px 0px rgba(99, 102, 241, 0.20);
+  }
+  50% {
+    box-shadow:
+      0 0 0px  6px rgba(242, 13, 70, 0.08),
+      0 0 22px 2px rgba(242, 13, 70, 0.55),
+      0 0 12px 2px rgba(99, 102, 241, 0.40);
+  }
+}
+
+@keyframes gemSpin {
+  from { transform: rotate(45deg);  }
+  to   { transform: rotate(405deg); }
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: rotate(0deg)   translateX(14px) rotate(0deg);   opacity: 0.70; }
+  50%       { transform: rotate(180deg) translateX(14px) rotate(-180deg); opacity: 1;    }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: rotate(90deg)  translateX(18px) rotate(-90deg);  opacity: 0.55; }
+  50%       { transform: rotate(270deg) translateX(18px) rotate(-270deg); opacity: 0.85; }
+}
+
+/* ── Base layout ── */
 .section-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 2.5rem 0;
+  gap: 1.25rem;
+  padding: 3rem 0;
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 56rem;   /* max-w-4xl */
+  max-width: 60rem;
   margin-inline: auto;
+  overflow: visible;
 }
 
-/* ── The two gradient lines either side ── */
+/* ── Shimmer gradient lines ── */
 .section-divider::before,
 .section-divider::after {
   content: '';
   flex: 1;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent                       0%,
-    rgba(var(--amb-warm),  0.25)    25%,
-    rgba(var(--amb-cool),  0.30)    75%,
-    transparent                     100%
-  );
+  height: 1.5px;
+  border-radius: 999px;
+  background-size: 200% auto;
+  animation: dividerShimmer 4s linear infinite;
 }
 
 .section-divider::before {
-  background: linear-gradient(
-    to right,
-    transparent                    0%,
-    rgba(var(--amb-cool), 0.18)  30%,
-    rgba(var(--amb-warm), 0.35)  100%
+  background-image: linear-gradient(
+    90deg,
+    transparent                        0%,
+    rgba(var(--amb-cool),  0.10)     15%,
+    rgba(var(--amb-warm),  0.55)     50%,
+    rgba(var(--amb-cool),  0.75)     75%,
+    rgba(var(--amb-warm),  0.90)    100%
   );
+  animation-direction: normal;
 }
 
 .section-divider::after {
-  background: linear-gradient(
-    to left,
-    transparent                    0%,
-    rgba(var(--amb-cool), 0.18)  30%,
-    rgba(var(--amb-warm), 0.35)  100%
+  background-image: linear-gradient(
+    90deg,
+    rgba(var(--amb-warm),  0.90)     0%,
+    rgba(var(--amb-cool),  0.75)    25%,
+    rgba(var(--amb-warm),  0.55)    50%,
+    rgba(var(--amb-cool),  0.10)    85%,
+    transparent                      100%
   );
+  animation-direction: reverse;
 }
 
-/* ── Center gem / diamond ── */
+/* ── Center gem cluster ── */
 .divider-gem {
   display: block;
-  width: 8px;
-  height: 8px;
-  border-radius: 1.5px;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
   transform: rotate(45deg);
-  background: linear-gradient(135deg, #f20d46 0%, #6366f1 100%);
-  box-shadow:
-    0 0 10px rgba(242, 13,  70, 0.35),
-    0 0  4px rgba( 99,102, 241, 0.25);
+  background: linear-gradient(135deg, #f20d46 0%, #a855f7 50%, #6366f1 100%);
   flex-shrink: 0;
-  transition: transform 0.6s ease, box-shadow 0.4s ease;
+  animation: gemPulse 3s ease-in-out infinite;
+  transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  z-index: 2;
 }
 
-.section-divider:hover .divider-gem {
-  transform: rotate(225deg) scale(1.25);
+/* Inner highlight chip */
+.divider-gem::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 1px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.55) 0%, transparent 70%);
+  z-index: 3;
+}
+
+/* Orbiting micro-dot 1 */
+.divider-gem::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
+  border-radius: 50%;
+  background: rgba(242, 13, 70, 0.90);
   box-shadow:
-    0 0 18px rgba(242, 13,  70, 0.50),
-    0 0  8px rgba( 99,102, 241, 0.40);
+    0 0 6px 2px rgba(242, 13, 70, 0.50),
+    0 0 3px 1px rgba(99, 102, 241, 0.35);
+  animation: orbFloat 2.8s ease-in-out infinite;
+  z-index: 4;
+  transform-origin: center;
 }
 
-/* ── Variant: plain (line only, no gem) ── */
+/* Radial halo glow ring behind gem */
+.section-divider .divider-gem-wrap,
+.section-divider .divider-gem {
+  --halo-size: 36px;
+}
+
+/* Halo via sibling selector — we generate it on .divider-gem using outline trick */
+.divider-gem {
+  outline: none;
+  /* outer soft halo */
+  filter: none;
+}
+
+/* ── Hover state ── */
+.section-divider:hover .divider-gem {
+  animation: gemSpin 1.2s cubic-bezier(0.34,1.56,0.64,1) forwards, gemPulse 3s ease-in-out 1.2s infinite;
+  box-shadow:
+    0 0 0px  8px rgba(242, 13, 70, 0.08),
+    0 0 28px 4px rgba(242, 13, 70, 0.65),
+    0 0 14px 4px rgba(99, 102, 241, 0.50);
+}
+
+.section-divider:hover::before,
+.section-divider:hover::after {
+  animation-duration: 1.5s;
+  height: 2px;
+}
+
+/* ── Sparkle accent dots flanking the gem ── */
+.section-divider .divider-gem + span,
+.section-divider .divider-sparkle {
+  display: none; /* opt-in only */
+}
+
+/* Auto sparkle dots via layered box-shadow on the lines */
+.section-divider::before {
+  /* Paint a couple of accent dots via gradient stops — no extra elements */
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.section-divider::after {
+  mask-image: linear-gradient(to left, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/* ── Variant: plain ── */
 [data-divider="plain"] .divider-gem { display: none; }
 [data-divider="plain"]::before {
-  background: linear-gradient(
-    to right,
-    transparent 0%, rgba(148,163,184,0.25) 50%, transparent 100%
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%, rgba(148,163,184,0.20) 30%, rgba(148,163,184,0.40) 50%,
+    rgba(148,163,184,0.20) 70%, transparent 100%
   );
+  height: 1px;
+  animation: none;
 }
 [data-divider="plain"]::after {
-  background: linear-gradient(
-    to left,
-    transparent 0%, rgba(148,163,184,0.25) 50%, transparent 100%
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%, rgba(148,163,184,0.20) 30%, rgba(148,163,184,0.40) 50%,
+    rgba(148,163,184,0.20) 70%, transparent 100%
   );
+  height: 1px;
+  animation: none;
 }
 
-/* ── Variant: dots (three-dot rule) ── */
+/* ── Variant: dots ── */
 [data-divider="dots"]::before,
 [data-divider="dots"]::after { display: none; }
-[data-divider="dots"] .divider-gem { display: none; }
-[data-divider="dots"]::before {
-  content: '· · ·';
-  display: block;
-  flex: none;
-  font-size: 1.25rem;
-  letter-spacing: 0.5em;
-  color: rgba(148,163,184,0.55);
-  background: none;
+[data-divider="dots"] .divider-gem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
   height: auto;
+  transform: none;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  animation: none;
+}
+[data-divider="dots"] .divider-gem::before { display: none; }
+[data-divider="dots"] .divider-gem::after {
+  content: '';
+  width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(242, 13, 70, 0.55);
+  box-shadow:
+    -14px 0 0 rgba(99,102,241,0.45),
+     14px 0 0 rgba(99,102,241,0.45);
+  animation: gemPulse 2.5s ease-in-out infinite;
+  transform: none;
+  margin: 0;
+  position: static;
 }
 
-/* ── Variant: double (two stacked lines) ── */
+/* ── Variant: double ── */
 [data-divider="double"] {
   flex-direction: column;
-  gap: 4px;
-  padding: 2rem 0;
+  gap: 5px;
+  padding: 2.5rem 0;
 }
 [data-divider="double"]::before,
 [data-divider="double"]::after {
   flex: none;
   width: 100%;
-  max-width: 40rem;
+  max-width: 44rem;
 }
-[data-divider="double"]::before { opacity: 1; }
-[data-divider="double"]::after  { opacity: 0.35; }
+[data-divider="double"]::before { opacity: 1; height: 1.5px; }
+[data-divider="double"]::after  { opacity: 0.30; height: 1px; animation-direction: reverse; }
 [data-divider="double"] .divider-gem { display: none; }
 
-/* ── Inside containers (narrower) ── */
+/* ── Compact variant ── */
 .section-divider.divider-sm {
-  max-width: 36rem;
-  padding: 1.5rem 0;
+  max-width: 38rem;
+  padding: 2rem 0;
+}
+.section-divider.divider-sm .divider-gem {
+  width: 9px;
+  height: 9px;
+}
+
+/* ── Reduced motion override ── */
+@media (prefers-reduced-motion: reduce) {
+  .section-divider::before,
+  .section-divider::after { animation: none; }
+  .divider-gem            { animation: none; }
+  .divider-gem::after     { animation: none; }
 }
 
 

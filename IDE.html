@@ -44,6 +44,17 @@
     tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#f20d46" }, fontFamily: { mono: ["'Fira Code'", "monospace"], sans: ["'Space Grotesk'", "sans-serif"] } } } };
   </script>
   <link rel="stylesheet" href="animations.css">
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      if(typeof emailjs !== "undefined") {
+        emailjs.init("mUWYYaTiZhAWgB0TH"); 
+      }
+    })();
+  </script>
+
 </head>
 
 <body
@@ -260,7 +271,7 @@
       </div>
 
       <!-- Editor Content -->
-      <div class="flex-1 overflow-auto custom-scrollbar bg-slate-50 relative"
+      <div class="flex-1 flex flex-col overflow-x-hidden overflow-y-auto custom-scrollbar bg-slate-50 relative min-h-0"
         id="editor-content-area">
         <div
           class="fixed inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMTQ4LCAxNjMsIDE4NCLCAwLjE1KSIvPjwvc3ZnPg==')] opacity-60 pointer-events-none z-0">
@@ -575,7 +586,6 @@
     if (themeToggle) themeToggle.addEventListener('click', () => setTheme(!htmlEl.classList.contains('dark')));
   </script>
   <!-- External Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
   <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -586,7 +596,7 @@
   <script src="js/ide-extensions.js"></script>
 
   <!-- External JS Controllers (to be created) -->
-  <script src="js/portfolio-engine.js"></script>
+  <script defer src="js/portfolio-engine.js"></script>
   <script src="js/ui-controller.js"></script>
   <script src="js/terminal.js"></script>
   <script src="js/ai-chat.js"></script>
