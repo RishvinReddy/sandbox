@@ -1,322 +1,223 @@
-# Rishvin Reddy
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="./dark_mode.svg?v=2"
-  />
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="./light_mode.svg?v=2"
-  />
-  <img
-    src="./dark_mode.svg?v=2"
-    alt="Rishvin Reddy — Engineering Profile"
-    width="100%"
-  />
-</picture>
-
-
-
-⸻
-
-## ✦ About Me
-
 <div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/about_dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/about_light.svg?v=2">
-  <img alt="Rishvin Reddy — About Me" src="./assets/about_dark.svg?v=2" width="100%">
-</picture>
+
+# RISHVIN REDDY
+**Cybersecurity × Systems × IoT × Full-Stack**
+
+B.Tech CSE student building security-focused systems across cybersecurity, digital forensics, IoT, blockchain, and full-stack engineering.
+
+[Portfolio](https://rishvinreddy.github.io) · [LinkedIn](https://linkedin.com/in/rishvin-reddy) · [Email](mailto:rishvinreddy@gmail.com) · [GitHub](https://github.com/RishvinReddy)
+
+_Last synchronized: 29 Sep 2026_
+
 </div>
 
 ⸻
 
-## ✦ Engineering Profile
+## About
 
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/cards/engineering_profile_dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/cards/engineering_profile_light.svg?v=2">
-  <img alt="Engineering Profile" src="./assets/cards/engineering_profile_dark.svg?v=2" width="100%">
-</picture>
-</div>
-<br/>
+B.Tech CSE student at Woxsen University. My engineering focus is on building practical, secure software systems—bridging the gap between hardware (IoT), evidence integrity (Digital Forensics/Blockchain), and modern web infrastructure. I build systems that are secure, observable, testable, and useful.
 
 ⸻
 
-## ✦ What I Build
-
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/cards/what_i_build_dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/cards/what_i_build_light.svg?v=2">
-  <img alt="What I Build" src="./assets/cards/what_i_build_dark.svg?v=2" width="100%">
-</picture>
-</div>
-<br/>
-
-⸻
-
-## ✦ Technical Domains
-
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/cards/technical_domains_dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/cards/technical_domains_light.svg?v=2">
-  <img alt="Technical Domains" src="./assets/cards/technical_domains_dark.svg?v=2" width="100%">
-</picture>
-</div>
-<br/>
+## Currently Building
+<!-- CURRENTLY_BUILDING_START -->
+| Project | Focus | Status |
+|---|---|---|
+| **[ForensiX](https://github.com/RishvinReddy/ForensiX)** | Digital Forensics & DFIR | Active |
+| **[ChainForensics](https://github.com/RishvinReddy/ChainForensics)** | IoT Security & Blockchain | Active |
+| **[PrismTransfer](https://github.com/RishvinReddy/PrismTransfer)** | Systems Engineering | Active |
+| **[ClientFlow](https://github.com/RishvinReddy/ClientFlow)** | Full-Stack SaaS | Active |
+<!-- CURRENTLY_BUILDING_END -->
 
 ⸻
 
-## ✦ Tech Stack
+## Flagship Systems
+<!-- FLAGSHIP_PROJECTS_START -->
+### 01 — ForensiX
+**Digital Forensics & DFIR**
 
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/cards/tech_stack_dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/cards/tech_stack_light.svg?v=2">
-  <img alt="Rishvin Reddy Engineering Tech Stack" src="./assets/cards/tech_stack_dark.svg?v=2" width="100%">
-</picture>
-</div>
+Modular digital forensics and incident response platform.
 
-⸻
+[Repository](https://github.com/RishvinReddy/ForensiX)
 
-## ✦ Selected Engineering Projects
+<details>
+<summary><b>Architecture</b></summary>
 
-<!-- STARRED_REPOS_START -->
-## ✦ Featured Projects
-<table>
-<tr>
-<td width="50%" valign="top">
-<a href="https://github.com/RishvinReddy/rishvinreddy.github.io">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/projects/project-rishvinreddy-github-io-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/projects/project-rishvinreddy-github-io-light.svg">
-  <img alt="rishvinreddy.github.io - Engineering project" src="./assets/projects/project-rishvinreddy-github-io-light.svg" width="100%">
-</picture>
-</a>
-</td>
-<td width="50%" valign="top">
-<a href="https://github.com/RishvinReddy/AI-Security-Guardian">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/projects/project-ai-security-guardian-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/projects/project-ai-security-guardian-light.svg">
-  <img alt="AI-Security-Guardian - Engineering project" src="./assets/projects/project-ai-security-guardian-light.svg" width="100%">
-</picture>
-</a>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<a href="https://github.com/RishvinReddy/n8n-ai-github-code-to-linkedin-publisher">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/projects/project-n8n-ai-github-code-to-linkedin-publisher-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/projects/project-n8n-ai-github-code-to-linkedin-publisher-light.svg">
-  <img alt="n8n-ai-github-code-to-linkedin-publ… - Engineering project" src="./assets/projects/project-n8n-ai-github-code-to-linkedin-publisher-light.svg" width="100%">
-</picture>
-</a>
-</td>
-<td width="50%" valign="top">
-<a href="https://github.com/RishvinReddy/rishvin-labs">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/projects/project-rishvin-labs-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/projects/project-rishvin-labs-light.svg">
-  <img alt="rishvin-labs - Engineering project" src="./assets/projects/project-rishvin-labs-light.svg" width="100%">
-</picture>
-</a>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<a href="https://github.com/RishvinReddy/HandMatrix">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/projects/project-handmatrix-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/projects/project-handmatrix-light.svg">
-  <img alt="HandMatrix - Engineering project" src="./assets/projects/project-handmatrix-light.svg" width="100%">
-</picture>
-</a>
-</td>
-<td width="50%" valign="top">
-<a href="https://github.com/RishvinReddy/Smart-cart-os">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/projects/project-smart-cart-os-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/projects/project-smart-cart-os-light.svg">
-  <img alt="Smart-cart-os - Engineering project" src="./assets/projects/project-smart-cart-os-light.svg" width="100%">
-</picture>
-</a>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<a href="https://github.com/RishvinReddy/Biometric-Voting-System">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/projects/project-biometric-voting-system-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/projects/project-biometric-voting-system-light.svg">
-  <img alt="Biometric-Voting-System - Engineering project" src="./assets/projects/project-biometric-voting-system-light.svg" width="100%">
-</picture>
-</a>
-</td>
-<td width="50%" valign="top">
-<a href="https://github.com/RishvinReddy/Face-Mesh-Verification-System">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/projects/project-face-mesh-verification-system-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/projects/project-face-mesh-verification-system-light.svg">
-  <img alt="Face-Mesh-Verification-System - Engineering project" src="./assets/projects/project-face-mesh-verification-system-light.svg" width="100%">
-</picture>
-</a>
-</td>
-</tr>
-</table>
-<!-- STARRED_REPOS_END -->
+```text
+Windows Host
+     │
+     ├── Evidence Acquisition
+     │
+     ├── Registry Analysis
+     │
+     ├── Filesystem Engine
+     │
+     ├── Memory Analysis
+     │
+     ├── Malware Analysis
+     │
+     └── Reporting
+             │
+         Evidence Vault
+```
+</details>
 
+---
 
+### 02 — ChainForensics
+**IoT Security & Blockchain**
 
+Blockchain-backed IoT forensic evidence platform.
 
+[Repository](https://github.com/RishvinReddy/ChainForensics)
 
+<details>
+<summary><b>Architecture</b></summary>
 
+```text
+IoT Device
+    ↓
+ESP32 / Simulator
+    ↓
+MQTT Broker
+    ↓
+Forensics Engine
+    ↓
+Evidence Hash
+    ↓
+Blockchain Registry
+    ↓
+IPFS / Evidence Storage
+```
+</details>
 
+---
 
+### 03 — PrismTransfer
+**Systems Engineering**
 
+Offline camera-to-camera file transfer using animated QR packets.
 
+[Repository](https://github.com/RishvinReddy/PrismTransfer)
 
-## ✦ Current Engineering Direction
+<details>
+<summary><b>Architecture</b></summary>
 
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/cards/engineering_direction_dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/cards/engineering_direction_light.svg?v=2">
-  <img alt="Engineering Direction" src="./assets/cards/engineering_direction_dark.svg?v=2" width="100%">
-</picture>
-</div>
+```text
+Sender
+  ↓
+File
+  ↓
+Compression
+  ↓
+Transfer Manifest
+  ↓
+Packetization
+  ↓
+Animated QR
+  ↓
+Camera
+  ↓
+QR Decoder
+  ↓
+CRC32 Validation
+  ↓
+File Reconstruction
+```
+</details>
+
+---
+
+### 04 — ClientFlow
+**Full-Stack SaaS**
+
+Multi-tenant business booking platform.
+
+[Repository](https://github.com/RishvinReddy/ClientFlow)
+
+---
+<!-- FLAGSHIP_PROJECTS_END -->
 
 ⸻
 
-## ✦ GitHub Analytics
+## Engineering Domains
 
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/analytics/views_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/analytics/views_light.svg">
-  <img alt="Profile Views" src="./assets/analytics/views_dark.svg" >
-</picture>
-<br/><br/>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/analytics/profile_details_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/analytics/profile_details_light.svg">
-  <img alt="GitHub Profile Details" src="./assets/analytics/profile_details_dark.svg" width='95%'>
-</picture>
-<p>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/analytics/stats_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/analytics/stats_light.svg">
-  <img alt="GitHub Stats" src="./assets/analytics/stats_dark.svg" height='160'>
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/analytics/repos_per_language_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/analytics/repos_per_language_light.svg">
-  <img alt="Repositories per Language" src="./assets/analytics/repos_per_language_dark.svg" height='160'>
-</picture>
-</p>
-<p>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/analytics/most_commit_language_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/analytics/most_commit_language_light.svg">
-  <img alt="Most Commit Language" src="./assets/analytics/most_commit_language_dark.svg" height='160'>
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/analytics/productive_time_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/analytics/productive_time_light.svg">
-  <img alt="Productive Time" src="./assets/analytics/productive_time_dark.svg" height='160'>
-</picture>
-</p>
-<br/>
-<img src="https://github-profile-trophy.vercel.app/?username=RishvinReddy&theme=algolia&no-frame=true&margin-w=15&margin-h=15&row=1&column=6" alt="GitHub Trophies" />
-<br/><br/>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/analytics/activity_graph_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/analytics/activity_graph_light.svg">
-  <img alt="GitHub Activity Graph" src="./assets/analytics/activity_graph_dark.svg" width='95%'>
-</picture>
-</div>
+| Domain | Focus / Evidence |
+|---|---|
+| **Cybersecurity** | DFIR, security automation, vulnerability research |
+| **Digital Forensics** | ForensiX, evidence acquisition, artifact analysis |
+| **IoT Security** | IoT telemetry, evidence collection, device security |
+| **Blockchain** | Evidence integrity, smart contracts, decentralized storage |
+| **Full-Stack** | Next.js, TypeScript, PostgreSQL/Supabase |
+| **Infrastructure** | CI/CD, automation, deployment |
 
 ⸻
 
-## ✦ Engineering Philosophy
-
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/cards/engineering_philosophy_dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/cards/engineering_philosophy_light.svg?v=2">
-  <img alt="Engineering Philosophy" src="./assets/cards/engineering_philosophy_dark.svg?v=2" width="100%">
-</picture>
-</div>
-<br/>
+## Tech Stack
+<!-- TECH_STACK_START -->
+**Languages**: TypeScript, JavaScript, Python, C++, C, SQL, Solidity  
+**Frontend**: React, Next.js, Tailwind CSS  
+**Backend**: Node.js, PostgreSQL, Supabase, SQLite, Redis, IPFS  
+**Security / Systems**: Electron  
+**Infrastructure**: Docker, GitHub Actions, AWS, Vercel
+<!-- TECH_STACK_END -->
 
 ⸻
 
-## ✦ Founder & Builder
-
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/cards/rishvin_labs_dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/cards/rishvin_labs_light.svg?v=2">
-  <img alt="Rishvin Labs — Founder and Builder" src="./assets/cards/rishvin_labs_dark.svg?v=2" width="100%">
-</picture>
-</div>
-<br/>
+## Latest Engineering Activity
+<!-- ACTIVITY_START -->
+**[ai-powered-cloudinary-media-workflow](https://github.com/RishvinReddy/ai-powered-cloudinary-media-workflow)** — An AI-powered media workflow that uses Cloudina...  
+**[algox-algorithmic-trading-platform](https://github.com/RishvinReddy/algox-algorithmic-trading-platform)** — AlgoX is a modular algorithmic trading and quan...  
+**[RishvinReddy](https://github.com/RishvinReddy/RishvinReddy)** — Personal GitHub profile of Erolla Rishvin Reddy...  
+  
+_Last synchronized: 29 Sep 2026_
+<!-- ACTIVITY_END -->
 
 ⸻
 
-## ✦ Academic Journey
+## Community & Engineering
 
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/cards/academic_journey_dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/cards/academic_journey_light.svg?v=2">
-  <img alt="Academic Journey — B.Tech CSE at Woxsen University" src="./assets/cards/academic_journey_dark.svg?v=2" width="100%">
-</picture>
-</div>
-<br/>
+- Hackathons
+- Technical events
+- Research
+- University projects
+- Open-source experimentation
 
 ⸻
 
-## ✦ Open To
-
+## GitHub Activity
+<!-- GITHUB_ANALYTICS_START -->
 <div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/cards/open_to_dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/cards/open_to_light.svg?v=2">
-  <img alt="Open to Engineering Opportunities" src="./assets/cards/open_to_dark.svg?v=2" width="100%">
-</picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/analytics/stats_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/analytics/stats_light.svg">
+    <img alt="GitHub Stats" src="./assets/analytics/stats_dark.svg" height='160'>
+  </picture>
+  <br/><br/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/analytics/activity_graph_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/analytics/activity_graph_light.svg">
+    <img alt="GitHub Activity Graph" src="./assets/analytics/activity_graph_dark.svg" width='100%'>
+  </picture>
 </div>
-<br/>
+<!-- GITHUB_ANALYTICS_END -->
 
 ⸻
 
-## ✦ Connect
+## Rishvin Labs
 
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/cards/connect_dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/cards/connect_light.svg?v=2">
-  <img alt="Connect with Rishvin Reddy" src="./assets/cards/connect_dark.svg?v=2" width="100%">
-</picture>
-<br/><br/>
-<p align="center">
-  <a href="https://github.com/RishvinReddy"><img src="https://img.shields.io/badge/GitHub-15171E?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <a href="https://linkedin.com/in/rishvin-reddy"><img src="https://img.shields.io/badge/LinkedIn-2C5282?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="mailto:rishvinreddy@gmail.com"><img src="https://img.shields.io/badge/Email-56B6C2?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-</p>
-</div>
-<br/>
+Independent engineering lab focused on security, infrastructure, developer tools and applied systems engineering.
+
+[rishvin-labs.vercel.app](https://rishvin-labs.vercel.app)
 
 ⸻
 
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/cards/footer_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/cards/footer_light.svg">
-  <img alt="Secure systems. Scalable engineering. Real-world impact." src="./assets/cards/footer_dark.svg" width="100%">
-</picture>
-</div>
+## Connect
+
+**Rishvin Reddy**  
+B.Tech CSE · Woxsen University  
+Cybersecurity · Digital Forensics · IoT · Full-Stack Engineering  
+
+[Portfolio](https://rishvinreddy.github.io) · [LinkedIn](https://linkedin.com/in/rishvin-reddy) · [Email](mailto:rishvinreddy@gmail.com) · [GitHub](https://github.com/RishvinReddy)
+
+**Open to**: internships, engineering opportunities, research collaborations and technical projects.

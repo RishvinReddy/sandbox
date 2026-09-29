@@ -1,46 +1,50 @@
 {
-  "max_projects": 8,
-  "minimum_stars": 1,
-  "blacklist": [],
-  "priority_repositories": [],
-  "excluded_name_patterns": [
-    ".github",
-    "dotfiles",
-    "sandbox",
-    "scratch",
-    "test",
-    "testing",
-    "demo",
-    "playground",
-    "template",
-    "templates"
+  "featured": [
+    {
+      "repo": "ForensiX",
+      "title": "ForensiX",
+      "category": "Digital Forensics & DFIR",
+      "description": "Modular digital forensics and incident response platform.",
+      "priority": 1,
+      "status": "Active",
+      "architecture": "Windows Host\n     │\n     ├── Evidence Acquisition\n     │\n     ├── Registry Analysis\n     │\n     ├── Filesystem Engine\n     │\n     ├── Memory Analysis\n     │\n     ├── Malware Analysis\n     │\n     └── Reporting\n             │\n         Evidence Vault"
+    },
+    {
+      "repo": "ChainForensics",
+      "title": "ChainForensics",
+      "category": "IoT Security & Blockchain",
+      "description": "Blockchain-backed IoT forensic evidence platform.",
+      "priority": 2,
+      "status": "Active",
+      "architecture": "IoT Device\n    ↓\nESP32 / Simulator\n    ↓\nMQTT Broker\n    ↓\nForensics Engine\n    ↓\nEvidence Hash\n    ↓\nBlockchain Registry\n    ↓\nIPFS / Evidence Storage"
+    },
+    {
+      "repo": "PrismTransfer",
+      "title": "PrismTransfer",
+      "category": "Systems Engineering",
+      "description": "Offline camera-to-camera file transfer using animated QR packets.",
+      "priority": 3,
+      "status": "Active",
+      "architecture": "Sender\n  ↓\nFile\n  ↓\nCompression\n  ↓\nTransfer Manifest\n  ↓\nPacketization\n  ↓\nAnimated QR\n  ↓\nCamera\n  ↓\nQR Decoder\n  ↓\nCRC32 Validation\n  ↓\nFile Reconstruction"
+    },
+    {
+      "repo": "ClientFlow",
+      "title": "ClientFlow",
+      "category": "Full-Stack SaaS",
+      "description": "Multi-tenant business booking platform.",
+      "priority": 4,
+      "status": "Active",
+      "architecture": ""
+    }
   ],
-  "domain_overrides": {
-    "Smart-Irrigation-System": "iot",
-    "Text-Search-Engine": "algorithms",
-    "AI-Security-Guardian": "cybersecurity"
-  },
-  "topic_priority": [
-    "cybersecurity",
-    "security",
-    "network-security",
-    "iot",
-    "embedded",
-    "esp32",
-    "arduino",
-    "blockchain",
-    "backend",
-    "api",
-    "automation",
-    "n8n",
-    "algorithms"
+  "tech_stack_allowlist": [
+    "TypeScript", "JavaScript", "Python", "C++", "C", "SQL", "Solidity",
+    "React", "Next.js", "Node.js", "Electron", "Tailwind CSS",
+    "PostgreSQL", "SQLite", "Supabase", "Redis", "IPFS",
+    "Docker", "GitHub Actions", "AWS", "Vercel"
   ],
-  "card": {
+  "card_settings": {
     "width": 560,
-    "height": 230,
-    "max_description_lines": 3,
-    "max_topics": 2,
-    "show_stars": true,
-    "show_updated_month": true
+    "height": 230
   }
 }

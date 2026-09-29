@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Erolla Rishvin Reddy</title>
+    <style>
+        /* --- CSS VARIABLES & BASE SETUP --- */
+        :root {
+            --bg-color: #F7F7F8;
+            --card-bg: #FFFFFF;
+            --text-primary: #1A202C; /* Deep Charcoal */
+            --text-secondary: #4A5568; /* Slate Gray */
+            --accent-color: #2C5282; /* Professional Steel Blue */
+            --accent-light: #EBF8FF;
+            --border-color: #E2E8F0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-secondary);
+            font-family: "Times New Roman", Times, serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* --- TYPOGRAPHY REQUIREMENTS --- */
+        h1, h2, h3 {
+            font-family: Georgia, serif;
+            color: var(--text-primary);
+            margin-top: 0;
+            font-weight: normal; /* Keeps it elegant */
+        }
+
+        .code, .tech-stack, .mono-accent {
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        /* --- LAYOUT & CONTAINERS --- */
+        .profile-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: var(--card-bg);
+            padding: 50px;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        /* --- HEADER --- */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* --- HERO / MAIN INFO --- */
+        .name-title {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 35px;
+            font-style: italic; /* Classic touch for Times New Roman */
+        }
+
+        /* --- SECTION HEADERS --- */
+        .section-title {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* --- SPECIALIZATION TAGS --- */
+        .tags-container {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tech-stack {
+            background-color: var(--accent-light);
+            color: var(--accent-color);
+            padding: 6px 14px;
+            border-radius: 2px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border: 1px solid #bee3f8;
+            text-transform: uppercase;
+        }
+
+        /* --- BIO --- */
+        .bio {
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            line-height: 1.8;
+            margin-bottom: 45px;
+        }
+
+        /* --- ENGINEERING FOCUS CARDS --- */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 45px;
+        }
+
+        .focus-card {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 4px;
+            background-color: #FAFAFA;
+            transition: border-color 0.2s ease;
+        }
+
+        .focus-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .focus-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .card-num {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .focus-card h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            font-weight: bold;
+        }
+
+        .focus-card p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* --- BLOCKQUOTE --- */
+        .mission-quote {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+            margin: 0;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .mission-quote strong {
+            font-family: Georgia, serif; /* Creates a nice punch within the Times quote */
+            font-style: normal;
+        }
+        
+        /* Media query for mobile */
+        @media (max-width: 600px) {
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+            .name-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <!-- Header -->
+        <header class="top-nav">
+            <span>✦ About Me</span>
+            <span class="mono-accent">01 / Profile</span>
+        </header>
+
+        <!-- Main Identity -->
+        <h1 class="name-title">Erolla Rishvin Reddy</h1>
+        <div class="subtitle">
+            Computer Science & Engineering &middot; Class of 2028<br>
+            Woxsen University
+        </div>
+
+        <!-- Specialization -->
+        <h2 class="section-title">Specialization</h2>
+        <div class="tags-container">
+            <span class="tech-stack">Blockchain</span>
+            <span class="tech-stack">IoT</span>
+            <span class="tech-stack">Cybersecurity</span>
+        </div>
+
+        <!-- Bio -->
+        <p class="bio">
+            I build across the hardware-to-software spectrum — from embedded prototypes and sensor-driven automation to backend systems, web applications, security tooling, and blockchain-oriented engineering projects.
+        </p>
+
+        <!-- Engineering Focus -->
+        <h2 class="section-title">Engineering Focus</h2>
+        <div class="focus-grid">
+            
+            <div class="focus-card">
+                <div class="focus-card-header">
+                    <span class="mono-accent card-num">01</span>
+                    <h3>Cybersecurity</h3>
+                </div>
+                <p>Network Security & Tools</p>
+            </div>
+
+            <div class="focus-card">
+                <div class="focus-card-header">
+                    <span class="mono-accent card-num">02</span>
+                    <h3>IoT / Embedded</h3>
+                </div>
+                <p>Sensor Systems & Automation</p>
+            </div>
+
+            <div class="focus-card">
+                <div class="focus-card-header">
+                    <span class="mono-accent card-num">03</span>
+                    <h3>Blockchain</h3>
+                </div>
+                <p>Applied Decentralized Systems</p>
+            </div>
+
+            <div class="focus-card">
+                <div class="focus-card-header">
+                    <span class="mono-accent card-num">04</span>
+                    <h3>Full-Stack</h3>
+                </div>
+                <p>Backend Systems & APIs</p>
+            </div>
+
+        </div>
+
+        <!-- Quote -->
+        <blockquote class="mission-quote">
+            "I do not just write code.<br>
+            <strong>I design systems that solve real problems.</strong>"
+        </blockquote>
+
+    </div>
+
+</body>
+</html>
