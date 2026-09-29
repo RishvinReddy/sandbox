@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#0D1117"/>
+  <rect x="20" y="20" width="760" height="220" fill="#0D1117" stroke="#30363D" rx="8" stroke-width="1"/>
+  <text x="60" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#F9FAFB" font-weight="700" letter-spacing="1">EXPERIENCE &amp;amp; DEVELOPMENT</text>
+  <line x1="20" y1="80" x2="780" y2="80" stroke="#30363D" stroke-width="1"/>
+  <text x="60" y="110" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#F9FAFB" font-weight="700" letter-spacing="1">PEGASYSTEMS</text>
+  <text x="60" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#9CA3AF" font-weight="normal" letter-spacing="normal">Pega Platform Intern · 2026</text>
+  <text x="60" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#F9FAFB" font-weight="700" letter-spacing="1">DATALAKE SOLUTIONS</text>
+  <text x="60" y="190" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#9CA3AF" font-weight="normal" letter-spacing="normal">Internship · 2026</text>
+  <text x="400" y="110" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#F9FAFB" font-weight="700" letter-spacing="1">ACADEMIC ENGINEERING</text>
+  <text x="400" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#9CA3AF" font-weight="normal" letter-spacing="normal">B.Tech CSE · Woxsen University</text>
+  <text x="400" y="150" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#9CA3AF" font-weight="normal" letter-spacing="normal">2024–2028 · CGPA 9.01/10</text>
+</svg>

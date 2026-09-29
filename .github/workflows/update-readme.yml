@@ -31,22 +31,18 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run Profile Engine v2
+      - name: Run Profile SVG Generator
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
         run: |
-          python scripts/profile_engine.py
-          
-      - name: Validate Profile
-        run: |
-          python scripts/validate_profile.py
+          PYTHONPATH=$(pwd)/scripts python scripts/generate_svgs.py
 
       - name: Commit changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add README.md
+          git add README.md assets/
           if git diff --cached --quiet; then
             echo "No profile changes detected."
             exit 0
